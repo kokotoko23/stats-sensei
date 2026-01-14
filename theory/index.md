@@ -25,22 +25,22 @@ title: 理論編 - Stats Sensei
 
 - [平均・中央値・最頻値]({{ site.baseurl }}/theory/mean-median-mode/)
 - [分散と標準偏差]({{ site.baseurl }}/theory/variance-std/)
-- ヒストグラムと度数分布（準備中）
+- [ヒストグラムと度数分布]({{ site.baseurl }}/theory/histogram/)
 
 ### 確率の基礎
 
 統計学の土台となる確率論の基礎を学びます。
 
 - [確率の基本概念]({{ site.baseurl }}/theory/probability-basics/)
-- 条件付き確率とベイズの定理（準備中）
-- 確率変数と期待値（準備中）
+- [条件付き確率とベイズの定理]({{ site.baseurl }}/theory/conditional-probability/)
+- [確率変数と期待値]({{ site.baseurl }}/theory/expected-value/)
 
 ### 確率分布
 
 データの分布を表現するための確率分布を学びます。
 
-- 二項分布（準備中）
-- ポアソン分布（準備中）
+- [二項分布]({{ site.baseurl }}/theory/binomial/)
+- [ポアソン分布]({{ site.baseurl }}/theory/poisson/)
 - [正規分布]({{ site.baseurl }}/theory/normal-distribution/)
 
 ### 推定と検定
@@ -49,7 +49,7 @@ title: 理論編 - Stats Sensei
 
 - [区間推定]({{ site.baseurl }}/theory/interval-estimation/)
 - [仮説検定の基礎]({{ site.baseurl }}/theory/hypothesis-testing/)
-- t検定（準備中）
+- [t検定]({{ site.baseurl }}/theory/t-test/)
 
 ### 回帰分析
 
@@ -57,7 +57,7 @@ title: 理論編 - Stats Sensei
 
 - [相関分析]({{ site.baseurl }}/theory/correlation/)
 - [単回帰分析]({{ site.baseurl }}/theory/regression/)
-- 重回帰分析（準備中）
+- [重回帰分析]({{ site.baseurl }}/theory/multiple-regression/)
 
 ---
 

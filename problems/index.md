@@ -31,7 +31,7 @@ title: 問題編 - Stats Sensei
 
 基礎を理解した上で取り組む問題です。
 
-- 正規分布の確率計算（準備中）
+- [正規分布の確率計算]({{ site.baseurl }}/problems/normal-distribution-problems/)
 - [区間推定の問題]({{ site.baseurl }}/problems/interval-estimation-problems/)
 - [仮説検定の問題]({{ site.baseurl }}/problems/hypothesis-testing-problems/)
 
@@ -40,7 +40,7 @@ title: 問題編 - Stats Sensei
 実践的な統計分析の問題です。
 
 - [相関・回帰分析の問題]({{ site.baseurl }}/problems/regression-problems/)
-- 実データを使った分析問題（準備中）
+- [実データを使った分析問題]({{ site.baseurl }}/problems/real-data-analysis/)
 
 ---
 
