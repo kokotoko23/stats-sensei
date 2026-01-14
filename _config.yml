@@ -1,0 +1,52 @@
+# Stats Sensei - 統計学習サイト
+# Jekyll設定ファイル
+
+title: Stats Sensei
+description: 統計学をわかりやすく学べる学習サイト。基礎から応用まで、理論と実践問題で統計力を身につけよう。
+baseurl: "/stats-sensei"
+url: "https://kokotoko23.github.io"
+
+# テーマ設定
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+# ビルド設定
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+
+# コレクション設定
+collections:
+  theory:
+    output: true
+    permalink: /theory/:name/
+  problems:
+    output: true
+    permalink: /problems/:name/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "theory"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "problems"
+    values:
+      layout: default
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# 除外ファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
