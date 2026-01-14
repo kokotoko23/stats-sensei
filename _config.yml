@@ -44,6 +44,9 @@ defaults:
     values:
       layout: default
 
+# 広告設定（trueで表示、falseで非表示）
+show_ads: false
+
 # 除外ファイル
 exclude:
   - Gemfile

@@ -85,17 +85,21 @@
   </header>
 
   <main id="content" class="main-content" role="main">
+    {% if site.show_ads %}
     <!-- 広告プレースホルダー（ヘッダー下） -->
     <div class="ad-placeholder ad-placeholder-header">
       [広告スペース - Google AdSense]
     </div>
+    {% endif %}
 
     {{ content }}
 
+    {% if site.show_ads %}
     <!-- 広告プレースホルダー（フッター上） -->
     <div class="ad-placeholder ad-placeholder-footer">
       [広告スペース - Google AdSense]
     </div>
+    {% endif %}
 
     <footer class="site-footer">
       <span class="site-footer-owner">
