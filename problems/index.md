@@ -76,6 +76,15 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>変動係数、データ変換、プールした分散、偏差値</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/histogram-problems/">ヒストグラムと度数分布の問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="time-estimate">8問 / 約25分</span>
+</div>
+<p>度数分布表、累積度数、階級値、分布の形状</p>
+</div>
+
 </div>
 
 <div class="category-section">
@@ -109,7 +118,25 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <div class="category-section">
 <div class="category-header">
 <h2>確率分布</h2>
-<span class="category-stats">正規分布・二項分布</span>
+<span class="category-stats">正規分布・二項分布・ポアソン分布</span>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/binomial-problems/">二項分布の問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">8問 / 約30分</span>
+</div>
+<p>成功確率、期待値と分散、累積確率、正規近似</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/poisson-problems/">ポアソン分布の問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">8問 / 約30分</span>
+</div>
+<p>稀な事象の確率、待ち時間、二項分布の近似</p>
 </div>
 
 <div class="problem-card">
