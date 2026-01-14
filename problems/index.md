@@ -35,7 +35,7 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <div class="category-section">
 <div class="category-header">
 <h2>記述統計</h2>
-<span class="category-stats">50問 / データの要約と可視化</span>
+<span class="category-stats">75問 / データの要約と可視化</span>
 </div>
 
 <div class="problem-card">
@@ -95,12 +95,30 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>標準化、四分位数、シンプソンのパラドックス</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/descriptive-stats-04/">代表値と散布度の演習</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="time-estimate">13問 / 約40分</span>
+</div>
+<p>平均、中央値、分散、標準偏差、四分位範囲の計算練習</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/descriptive-stats-05/">データの可視化と解釈</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">12問 / 約45分</span>
+</div>
+<p>箱ひげ図、散布図、分布の形状、グラフの選択</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>確率の基礎</h2>
-<span class="category-stats">50問 / 確率計算と期待値</span>
+<span class="category-stats">75問 / 確率計算と期待値</span>
 </div>
 
 <div class="problem-card">
@@ -150,12 +168,30 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>組み合わせ、幾何分布、チェビシェフの不等式</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/probability-06/">確率の基礎演習</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="time-estimate">13問 / 約35分</span>
+</div>
+<p>基本的な確率計算、和の法則、積の法則、余事象</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/probability-07/">順列と組み合わせの問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">12問 / 約45分</span>
+</div>
+<p>順列、組み合わせ、重複順列、二項係数</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>確率分布</h2>
-<span class="category-stats">46問 / 正規分布・二項分布・ポアソン分布</span>
+<span class="category-stats">70問 / 正規分布・二項分布・ポアソン分布</span>
 </div>
 
 <div class="problem-card">
@@ -205,12 +241,32 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>分布の選択、近似、混合分布、中心極限定理</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/distributions-02/">離散分布の演習問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">12問 / 約40分</span>
+</div>
+<p>二項分布、ポアソン分布、幾何分布の基本計算</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/distributions-03/">連続分布の演習問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">12問 / 約50分</span>
+</div>
+<p>正規分布、指数分布、カイ二乗分布、t分布</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>推定と検定</h2>
-<span class="category-stats">49問 / 区間推定・仮説検定</span>
+<span class="category-stats">62問 / 区間推定・仮説検定</span>
 </div>
 
 <div class="problem-card">
@@ -260,12 +316,21 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>カイ二乗検定、F検定、分散分析、多重比較</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/estimation-testing-05/">検定の選び方と実践</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">13問 / 約45分</span>
+</div>
+<p>検定手法の選択、サンプルサイズ設計、効果量</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>回帰分析</h2>
-<span class="category-stats">43問 / 相関・単回帰・重回帰</span>
+<span class="category-stats">67問 / 相関・単回帰・重回帰</span>
 </div>
 
 <div class="problem-card">
@@ -306,12 +371,30 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>変数選択、交互作用、リッジ回帰、モデル評価</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/regression-05/">回帰分析の基礎演習</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="time-estimate">12問 / 約35分</span>
+</div>
+<p>散布図、相関係数の計算、回帰直線、残差</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/regression-06/">重回帰分析の実践</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">12問 / 約45分</span>
+</div>
+<p>係数の解釈、VIF、ダミー変数、残差診断</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>実践・応用</h2>
-<span class="category-stats">39問 / 総合問題・ケーススタディ</span>
+<span class="category-stats">63問 / 総合問題・ケーススタディ</span>
 </div>
 
 <div class="problem-card">
@@ -350,6 +433,25 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>グラフの誤解、p値の誤解、生存者バイアス、シンプソンのパラドックス</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/real-data-05/">データサイエンス入門問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">12問 / 約50分</span>
+</div>
+<p>機械学習の基礎、交差検証、バイアスとバリアンス、評価指標</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/real-data-06/">統計の落とし穴</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">12問 / 約45分</span>
+</div>
+<p>よくある間違い、誤った解釈、バイアスの検出</p>
+</div>
+
 </div>
 
 ---
@@ -365,6 +467,6 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 
 ---
 
-**総問題数：約280問**
+**総問題数：約412問**
 
 [理論編]({{ site.baseurl }}/theory/) | [用語集]({{ site.baseurl }}/glossary/) | [トップページ]({{ site.baseurl }}/)
