@@ -23,7 +23,7 @@ title: Stats Sensei - 統計学習サイト
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/problems/">問題編（410問以上）</a></h3>
+<h3><a href="{{ site.baseurl }}/problems/">問題編（450問以上）</a></h3>
 <p><span class="difficulty-badge difficulty-1">基本</span><span class="difficulty-badge difficulty-2">標準</span><span class="difficulty-badge difficulty-3">発展</span>の3段階で段階的に学習</p>
 </div>
 

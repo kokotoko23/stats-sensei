@@ -191,7 +191,7 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <div class="category-section">
 <div class="category-header">
 <h2>確率分布</h2>
-<span class="category-stats">70問 / 正規分布・二項分布・ポアソン分布</span>
+<span class="category-stats">77問 / 正規分布・二項分布・ポアソン分布</span>
 </div>
 
 <div class="problem-card">
@@ -261,12 +261,21 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>正規分布、指数分布、カイ二乗分布、t分布</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/distributions-04/">確率分布の実践問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">7問 / 約30分</span>
+</div>
+<p>分布の選択、近似手法、期待値計算、混合分布</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>推定と検定</h2>
-<span class="category-stats">62問 / 区間推定・仮説検定</span>
+<span class="category-stats">75問 / 区間推定・仮説検定</span>
 </div>
 
 <div class="problem-card">
@@ -325,12 +334,22 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>検定手法の選択、サンプルサイズ設計、効果量</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/estimation-testing-06/">推定と検定の総合演習</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">13問 / 約50分</span>
+</div>
+<p>最尤推定、検出力、効果量、前提条件の確認</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>回帰分析</h2>
-<span class="category-stats">67問 / 相関・単回帰・重回帰</span>
+<span class="category-stats">77問 / 相関・単回帰・重回帰</span>
 </div>
 
 <div class="problem-card">
@@ -389,12 +408,22 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>係数の解釈、VIF、ダミー変数、残差診断</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/regression-07/">回帰分析の診断と評価</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">10問 / 約40分</span>
+</div>
+<p>残差分析、Cook's距離、AIC/BIC、交差検証</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>実践・応用</h2>
-<span class="category-stats">63問 / 総合問題・ケーススタディ</span>
+<span class="category-stats">75問 / 総合問題・ケーススタディ</span>
 </div>
 
 <div class="problem-card">
@@ -452,6 +481,15 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>よくある間違い、誤った解釈、バイアスの検出</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/real-data-07/">ビジネス統計の実践</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">12問 / 約50分</span>
+</div>
+<p>LTV、NPS、ファネル分析、品質管理、価格弾力性</p>
+</div>
+
 </div>
 
 ---
@@ -467,6 +505,6 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 
 ---
 
-**総問題数：約412問**
+**総問題数：約454問**
 
 [理論編]({{ site.baseurl }}/theory/) | [用語集]({{ site.baseurl }}/glossary/) | [トップページ]({{ site.baseurl }}/)
