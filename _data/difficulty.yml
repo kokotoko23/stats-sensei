@@ -1,0 +1,60 @@
+# 難易度設定
+levels:
+  1:
+    name: "基本"
+    label: "★☆☆"
+    color: "#4CAF50"
+    description: "基礎的な計算問題"
+  2:
+    name: "標準"
+    label: "★★☆"
+    color: "#FF9800"
+    description: "応用的な思考が必要"
+  3:
+    name: "発展"
+    label: "★★★"
+    color: "#F44336"
+    description: "総合的な理解が必要"
+
+# カテゴリ設定
+categories:
+  descriptive:
+    name: "記述統計"
+    order: 1
+    topics:
+      - mean-median
+      - variance-std
+      - histogram
+  probability:
+    name: "確率の基礎"
+    order: 2
+    topics:
+      - probability-basics
+      - conditional-probability
+      - expected-value
+  distributions:
+    name: "確率分布"
+    order: 3
+    topics:
+      - binomial
+      - poisson
+      - normal-distribution
+  inference:
+    name: "推定と検定"
+    order: 4
+    topics:
+      - interval-estimation
+      - hypothesis-testing
+      - t-test
+  regression:
+    name: "回帰分析"
+    order: 5
+    topics:
+      - correlation
+      - regression
+      - multiple-regression
+  applied:
+    name: "実践・応用"
+    order: 6
+    topics:
+      - real-data-analysis

@@ -7,7 +7,41 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css?v=">
   <style>
-    /* 広告プレースホルダーのスタイル */
+    :root {
+      --primary-color: #159957;
+      --primary-dark: #0d6942;
+      --difficulty-easy: #4CAF50;
+      --difficulty-medium: #FF9800;
+      --difficulty-hard: #F44336;
+      --essential-color: #9C27B0;
+      --bg-light: #f8f9fa;
+      --border-color: #e0e0e0;
+    }
+
+    /* ナビゲーション改善 */
+    .site-nav {
+      background-color: rgba(0,0,0,0.2);
+      padding: 12px 0;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: background-color 0.2s;
+      font-size: 14px;
+    }
+    .site-nav a:hover,
+    .site-nav a.active {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    /* 広告プレースホルダー */
     .ad-placeholder {
       background-color: #f5f5f5;
       border: 1px dashed #ccc;
@@ -17,58 +51,302 @@
       color: #999;
       font-size: 14px;
     }
-    .ad-placeholder-header {
-      margin-bottom: 20px;
-    }
-    .ad-placeholder-sidebar {
-      margin: 20px 0;
-    }
-    .ad-placeholder-footer {
-      margin-top: 30px;
-    }
-    /* ナビゲーションスタイル */
-    .site-nav {
-      background-color: rgba(255,255,255,0.1);
-      padding: 10px 0;
-      margin-bottom: 10px;
-    }
-    .site-nav a {
-      color: rgba(255,255,255,0.9);
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    .site-nav a:hover {
-      text-decoration: underline;
-    }
-    /* テーブルのスタイル改善 */
+
+    /* テーブルスタイル */
     table {
       border-collapse: collapse;
       width: 100%;
       margin: 1em 0;
     }
     th, td {
-      border: 1px solid #ddd;
-      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
       text-align: left;
     }
     th {
-      background-color: #f0f0f0;
+      background-color: var(--bg-light);
+      font-weight: 600;
     }
-    /* detailsタグのスタイル */
+    tr:hover {
+      background-color: #fafafa;
+    }
+
+    /* Details/Summary スタイル */
     details {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px 15px;
-      margin: 15px 0;
+      background-color: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0;
+      margin: 20px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
     details summary {
       cursor: pointer;
-      font-weight: bold;
-      color: #159957;
+      font-weight: 600;
+      color: var(--primary-color);
+      padding: 14px 18px;
+      background-color: var(--bg-light);
+      border-radius: 8px;
+      list-style: none;
     }
-    details summary:hover {
-      text-decoration: underline;
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary::before {
+      content: ">";
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.2s;
+    }
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details[open] summary {
+      border-radius: 8px 8px 0 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    details > *:not(summary) {
+      padding: 0 18px;
+    }
+    details > p:first-of-type {
+      padding-top: 14px;
+    }
+
+    /* 難易度バッジ */
+    .difficulty-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      margin-right: 8px;
+    }
+    .difficulty-1 { background-color: var(--difficulty-easy); }
+    .difficulty-2 { background-color: var(--difficulty-medium); }
+    .difficulty-3 { background-color: var(--difficulty-hard); }
+
+    .essential-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background-color: var(--essential-color);
+      color: white;
+    }
+
+    /* 問題カード */
+    .problem-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .problem-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: var(--primary-color);
+    }
+    .problem-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    .problem-card h3 a {
+      color: #333;
+      text-decoration: none;
+    }
+    .problem-card h3 a:hover {
+      color: var(--primary-color);
+    }
+    .problem-card .meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .problem-card .time-estimate {
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* カテゴリセクション */
+    .category-section {
+      margin: 30px 0;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .category-header h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .category-stats {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    /* フィルターUI */
+    .filter-bar {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .filter-group {
+      margin-bottom: 12px;
+    }
+    .filter-group:last-child {
+      margin-bottom: 0;
+    }
+    .filter-bar label {
+      font-weight: 600;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    .filter-buttons {
+      display: inline-flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      border-color: var(--primary-color);
+    }
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 用語集スタイル */
+    .glossary-section {
+      margin: 24px 0;
+    }
+    .glossary-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding: 12px;
+      background: var(--bg-light);
+      border-radius: 8px;
+    }
+    .glossary-nav a {
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .glossary-nav a:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+    .glossary-term {
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+    .glossary-term:last-child {
+      border-bottom: none;
+    }
+    .glossary-term dt {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+    }
+    .glossary-term dd {
+      margin: 0;
+      color: #444;
+      line-height: 1.7;
+    }
+    .glossary-term .related-link {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    /* クイックコースバナー */
+    .quick-course-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .quick-course-banner h2 {
+      margin: 0 0 10px 0;
+    }
+    .quick-course-banner p {
+      margin: 0 0 16px 0;
+      opacity: 0.9;
+    }
+    .quick-course-banner a {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 10px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .quick-course-banner a:hover {
+      transform: scale(1.05);
+    }
+
+    /* 進捗表示 */
+    .progress-bar {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .progress-bar .progress {
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 600px) {
+      .site-nav {
+        gap: 4px;
+      }
+      .site-nav a {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .filter-bar {
+        padding: 12px;
+      }
+      .problem-card .meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
   {% include head-custom.html %}
@@ -76,9 +354,11 @@
 <body>
   <header class="page-header" role="banner">
     <nav class="site-nav">
-      <a href="{{ site.baseurl }}/">Top</a>
-      <a href="{{ site.baseurl }}/theory/">Theory</a>
-      <a href="{{ site.baseurl }}/problems/">Problems</a>
+      <a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active"{% endif %}>Top</a>
+      <a href="{{ site.baseurl }}/theory/"{% if page.url contains "/theory" %} class="active"{% endif %}>Theory</a>
+      <a href="{{ site.baseurl }}/problems/"{% if page.url contains "/problems" %} class="active"{% endif %}>Problems</a>
+      <a href="{{ site.baseurl }}/quick-course/"{% if page.url contains "/quick-course" %} class="active"{% endif %}>Quick</a>
+      <a href="{{ site.baseurl }}/glossary/"{% if page.url contains "/glossary" %} class="active"{% endif %}>Glossary</a>
     </nav>
     <h1 class="project-name">{{ site.title }}</h1>
     <h2 class="project-tagline">{{ site.description }}</h2>
@@ -86,27 +366,25 @@
 
   <main id="content" class="main-content" role="main">
     {% if site.show_ads %}
-    <!-- 広告プレースホルダー（ヘッダー下） -->
-    <div class="ad-placeholder ad-placeholder-header">
-      [広告スペース - Google AdSense]
+    <div class="ad-placeholder">
+      [AD Space - Google AdSense]
     </div>
     {% endif %}
 
     {{ content }}
 
     {% if site.show_ads %}
-    <!-- 広告プレースホルダー（フッター上） -->
-    <div class="ad-placeholder ad-placeholder-footer">
-      [広告スペース - Google AdSense]
+    <div class="ad-placeholder" style="margin-top: 40px;">
+      [AD Space - Google AdSense]
     </div>
     {% endif %}
 
     <footer class="site-footer">
       <span class="site-footer-owner">
-        <a href="https://github.com/kokotoko23/stats-sensei">Stats Sensei</a> - 統計学習サイト
+        <a href="https://github.com/kokotoko23/stats-sensei">Stats Sensei</a> - Statistics Learning Site
       </span>
       <span class="site-footer-credits">
-        This site is powered by <a href="https://pages.github.com">GitHub Pages</a>.
+        Powered by <a href="https://pages.github.com">GitHub Pages</a>
       </span>
     </footer>
   </main>
