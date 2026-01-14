@@ -32,7 +32,7 @@ title: 問題編 - Stats Sensei
 基礎を理解した上で取り組む問題です。
 
 - 正規分布の確率計算（準備中）
-- 区間推定の問題（準備中）
+- [区間推定の問題]({{ site.baseurl }}/problems/interval-estimation-problems/)
 - 仮説検定の問題（準備中）
 
 ### 応用レベル

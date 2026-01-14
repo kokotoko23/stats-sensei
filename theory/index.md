@@ -47,7 +47,7 @@ title: 理論編 - Stats Sensei
 
 サンプルデータから母集団の特性を推測する方法を学びます。
 
-- 点推定と区間推定（準備中）
+- [区間推定]({{ site.baseurl }}/theory/interval-estimation/)
 - 仮説検定の基礎（準備中）
 - t検定（準備中）
 
