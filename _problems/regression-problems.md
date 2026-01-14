@@ -26,7 +26,7 @@ order: 6
 
 (3) 相関係数 $r \approx 0.05$ の場合
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -65,7 +65,7 @@ order: 6
 | 4 | 6 |
 | 5 | 7 |
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -101,7 +101,7 @@ $$r = \frac{9}{\sqrt{10 \times 10}} = \frac{9}{10} = 0.9$$
 
 問題2のデータを使って、回帰直線 $\hat{y} = a + bx$ を求めてください。
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -137,7 +137,7 @@ $$\hat{y} = 2.3 + 0.9x$$
 
 (2) 決定係数 $R^2$ を求めてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -170,7 +170,7 @@ $$R^2 = r^2 = 0.9^2 = 0.81$$
 
 (3) 国のチョコレート消費量とノーベル賞受賞者数に正の相関がある
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -220,7 +220,7 @@ $$\hat{y} = 200 + 3.5x$$
 
 (4) この回帰式の限界は何ですか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -272,7 +272,7 @@ $$\hat{y} = 200 + 3.5 \times 100 = 200 + 350 = 550 \text{万円}$$
 
 (4) この予測の注意点を述べてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

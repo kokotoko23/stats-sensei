@@ -20,7 +20,7 @@ order: 1
 
 このクラスの平均点を求めてください。
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -48,7 +48,7 @@ $$= \frac{845}{10} = 84.5$$
 
 **データ：23, 45, 12, 67, 34, 89, 56**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -78,7 +78,7 @@ $$= \frac{845}{10} = 84.5$$
 
 **データ：18, 25, 32, 41, 55, 63**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -109,7 +109,7 @@ $$\text{中央値} = \frac{32 + 41}{2} = \frac{73}{2} = 36.5$$
 
 **データ：3, 5, 7, 5, 8, 5, 9, 7, 5, 3, 7, 5**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -158,7 +158,7 @@ $$\text{中央値} = \frac{32 + 41}{2} = \frac{73}{2} = 36.5$$
 
 (3) このデータの場合、平均と中央値のどちらがより「典型的な」来客数を表していると考えられますか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

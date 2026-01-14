@@ -22,7 +22,7 @@ order: 5
 
 (3) ダイエット後の体重が減少したか調べたい
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -58,7 +58,7 @@ order: 5
 
 母平均が 100 かどうかを検定するとき、z値を求めてください。
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -77,7 +77,7 @@ $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}} = \frac{108 - 100}{15 / \sqrt{25
 
 （臨界値：$z = \pm 1.96$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -110,7 +110,7 @@ $z = 2.67$（問題2より）
 
 （$t_{0.05}(11) = 1.796$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -147,7 +147,7 @@ $1.54 < 1.796$ なので棄却域に入らない。
 
 (3) $p = 0.003$
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -184,7 +184,7 @@ $0.003 < 0.05$（さらに $< 0.01$）なので **帰無仮説を棄却**
 
 (3) 有意水準を 1% から 5% に変更すると、第1種の誤りの確率はどうなりますか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -222,7 +222,7 @@ $0.003 < 0.05$（さらに $< 0.01$）なので **帰無仮説を棄却**
 
 (3) 有意水準 5% で検定を行い、結論を述べてください（$z_{0.05} = 1.645$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

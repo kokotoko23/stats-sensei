@@ -18,7 +18,7 @@ order: 2
 
 **データ：4, 6, 8, 10, 12**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -54,7 +54,7 @@ $$s^2 = \frac{40}{5-1} = \frac{40}{4} = 10$$
 
 **データ：4, 6, 8, 10, 12**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -77,7 +77,7 @@ $$s = \sqrt{10} \approx 3.16$$
 
 **データB：10, 15, 20, 25, 30**
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -127,7 +127,7 @@ $$s_B^2 = \frac{250}{4} = 62.5$$
 
 (3) 90点を取った生徒は、上位何%に入ると考えられますか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -176,7 +176,7 @@ $$70 \pm 20 = 50 \text{点} \sim 90 \text{点}$$
 
 (4) この工場の品質管理として、規格を「50.0mm $\pm$ 0.5mm」と設定した場合、この10個の部品は全て規格内に収まっていますか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

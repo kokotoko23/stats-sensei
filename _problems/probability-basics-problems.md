@@ -22,7 +22,7 @@ order: 3
 
 (3) 奇数が出る確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -65,7 +65,7 @@ $$P(奇数) = \frac{3}{6} = \frac{1}{2}$$
 
 (2) スペード以外を引く確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -94,7 +94,7 @@ $$P(\text{スペード以外}) = 1 - P(\text{スペード}) = 1 - \frac{1}{4} = 
 
 52枚のトランプから1枚引くとき、「ダイヤまたはエース」を引く確率を求めてください。
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -127,7 +127,7 @@ $$= \frac{13}{52} + \frac{4}{52} - \frac{1}{52} = \frac{16}{52} = \frac{4}{13}$$
 
 (2) 少なくとも1回は表が出る確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -174,7 +174,7 @@ $$P(\text{少なくとも1回表}) = 1 - \frac{1}{8} = \frac{7}{8}$$
 
 (3) 数学好きの生徒の中から1人選んだとき、その人が理系である確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -217,7 +217,7 @@ $$= \frac{60/200}{100/200} = \frac{60}{100} = 0.6$$
 
 (3) 2個とも同じ色である確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

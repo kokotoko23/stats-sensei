@@ -22,7 +22,7 @@ order: 4
 
 (3) $n = 144$
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -61,7 +61,7 @@ $$SE = \frac{12}{\sqrt{144}} = \frac{12}{12} = 1$$
 
 母平均の95%信頼区間を求めてください。（$z_{0.025} = 1.96$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -94,7 +94,7 @@ $$10.2 \pm 1.96 \times 0.1 = 10.2 \pm 0.196$$
 
 母平均の95%信頼区間を求めてください。（$t_{0.025}(19) = 2.093$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -132,7 +132,7 @@ $$165 \pm 2.093 \times 1.34 = 165 \pm 2.80$$
 
 (4) 信頼係数と区間の幅の関係を説明してください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -175,7 +175,7 @@ $$50 \pm 2.576 \times 2 = 50 \pm 5.15$$
 
 母集団の標準偏差が $\sigma = 10$ と推定されています。95%信頼区間の幅を $\pm 2$ 以内にしたい場合、最低何個のサンプルが必要ですか？（$z_{0.025} = 1.96$）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -210,7 +210,7 @@ $$n = \left(\frac{1.96 \times 10}{2}\right)^2 = \left(\frac{19.6}{2}\right)^2 = 
 
 (3) この結果から「全従業員の平均通勤時間は40分以下である」と言えますか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

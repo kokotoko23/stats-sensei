@@ -34,7 +34,7 @@ order: 8
 
 (4) このデータから読み取れるビジネス上の示唆を述べてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -105,7 +105,7 @@ $$s = \sqrt{21.3} \approx 4.6 \text{万円}$$
 
 (3) 品質改善のための提案を述べてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -163,7 +163,7 @@ $$501.2 \pm 1.96 \times \frac{4.8}{\sqrt{100}} = 501.2 \pm 0.94$$
 
 (3) マーケティング戦略への示唆を述べてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -219,7 +219,7 @@ $z > 1.96$ なので**有意差あり**。
 
 (3) ビジネス上の意思決定をどうすべきですか？
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -274,7 +274,7 @@ $$z = \frac{0.062 - 0.045}{0.010} = 1.7$$
 
 (3) 来年1月の売上を予測する際の注意点を述べてください
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答

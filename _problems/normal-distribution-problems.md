@@ -22,7 +22,7 @@ order: 7
 
 (3) 60点
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -63,7 +63,7 @@ $$z = \frac{60 - 60}{10} = 0$$
 
 (3) $P(-1 < Z < 1)$
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -107,7 +107,7 @@ $$= 2 \times 0.8413 - 1 = 0.6826$$
 
 (3) 重量が470gから530gの間になる確率
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -151,7 +151,7 @@ $$= 0.9332 - (1 - 0.9332) = 0.9332 - 0.0668 = 0.8664$$
 
 (2) 下位5%になるのは何点以下ですか？（$z = -1.645$ で下位5%）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -190,7 +190,7 @@ $$x = 500 + (-1.645) \times 100 = 500 - 164.5 = 335.5$$
 
 (3) 通勤時間が短い方から20%に入る時間は何分以下？（$z = -0.84$ で下位20%）
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
@@ -234,7 +234,7 @@ IQスコアは平均100、標準偏差15の正規分布に従うとされてい�
 
 (3) IQが70以下または130以上の人の割合
 
-<details>
+<details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
