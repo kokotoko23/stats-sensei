@@ -39,7 +39,7 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/problems/basic-mean-median/">代表値の計算問題</a></h3>
+<h3><a href="{{ site.baseurl }}/problems/basic-mean-median/">代表値の計算問題（基礎編）</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="essential-badge">厳選</span>
@@ -49,13 +49,31 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/problems/variance-std-problems/">分散と標準偏差の計算問題</a></h3>
+<h3><a href="{{ site.baseurl }}/problems/mean-median-02/">代表値の計算問題（標準編）</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">10問 / 約30分</span>
+</div>
+<p>加重平均、トリム平均、調和平均、外れ値の影響</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/variance-std-problems/">分散と標準偏差の計算問題（基礎編）</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="essential-badge">厳選</span>
 <span class="time-estimate">5問 / 約20分</span>
 </div>
 <p>分散、標準偏差、ばらつきの評価</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/variance-std-02/">分散と標準偏差の応用問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">10問 / 約35分</span>
+</div>
+<p>変動係数、データ変換、プールした分散、偏差値</p>
 </div>
 
 </div>
@@ -67,13 +85,23 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/problems/probability-basics-problems/">確率の基本計算問題</a></h3>
+<h3><a href="{{ site.baseurl }}/problems/probability-basics-problems/">確率の基本計算問題（基礎編）</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="essential-badge">厳選</span>
 <span class="time-estimate">6問 / 約20分</span>
 </div>
 <p>古典的確率、余事象、条件付き確率</p>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/probability-02/">確率の応用問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">9問 / 約40分</span>
+</div>
+<p>ベイズの定理、期待値、モンティ・ホール問題</p>
 </div>
 
 </div>
