@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css?v=">
+  <style>
+    /* 広告プレースホルダーのスタイル */
+    .ad-placeholder {
+      background-color: #f5f5f5;
+      border: 1px dashed #ccc;
+      padding: 20px;
+      text-align: center;
+      margin: 20px 0;
+      color: #999;
+      font-size: 14px;
+    }
+    .ad-placeholder-header {
+      margin-bottom: 20px;
+    }
+    .ad-placeholder-sidebar {
+      margin: 20px 0;
+    }
+    .ad-placeholder-footer {
+      margin-top: 30px;
+    }
+    /* ナビゲーションスタイル */
+    .site-nav {
+      background-color: rgba(255,255,255,0.1);
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+    .site-nav a {
+      color: rgba(255,255,255,0.9);
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .site-nav a:hover {
+      text-decoration: underline;
+    }
+    /* テーブルのスタイル改善 */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    /* detailsタグのスタイル */
+    details {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin: 15px 0;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #159957;
+    }
+    details summary:hover {
+      text-decoration: underline;
+    }
+  </style>
+  {% include head-custom.html %}
+</head>
+<body>
+  <header class="page-header" role="banner">
+    <nav class="site-nav">
+      <a href="{{ site.baseurl }}/">Top</a>
+      <a href="{{ site.baseurl }}/theory/">Theory</a>
+      <a href="{{ site.baseurl }}/problems/">Problems</a>
+    </nav>
+    <h1 class="project-name">{{ site.title }}</h1>
+    <h2 class="project-tagline">{{ site.description }}</h2>
+  </header>
+
+  <main id="content" class="main-content" role="main">
+    <!-- 広告プレースホルダー（ヘッダー下） -->
+    <div class="ad-placeholder ad-placeholder-header">
+      [広告スペース - Google AdSense]
+    </div>
+
+    {{ content }}
+
+    <!-- 広告プレースホルダー（フッター上） -->
+    <div class="ad-placeholder ad-placeholder-footer">
+      [広告スペース - Google AdSense]
+    </div>
+
+    <footer class="site-footer">
+      <span class="site-footer-owner">
+        <a href="https://github.com/kokotoko23/stats-sensei">Stats Sensei</a> - 統計学習サイト
+      </span>
+      <span class="site-footer-credits">
+        This site is powered by <a href="https://pages.github.com">GitHub Pages</a>.
+      </span>
+    </footer>
+  </main>
+</body>
+</html>

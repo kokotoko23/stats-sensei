@@ -24,7 +24,7 @@ title: 問題編 - Stats Sensei
 統計学の基本を確認する問題です。
 
 - [代表値の計算問題]({{ site.baseurl }}/problems/basic-mean-median/)
-- 分散と標準偏差の計算（準備中）
+- [分散と標準偏差の計算]({{ site.baseurl }}/problems/variance-std-problems/)
 - 確率の基本計算（準備中）
 
 ### 標準レベル

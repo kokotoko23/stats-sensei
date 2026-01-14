@@ -24,7 +24,7 @@ title: 理論編 - Stats Sensei
 データの特徴を数値やグラフで要約する方法を学びます。
 
 - [平均・中央値・最頻値]({{ site.baseurl }}/theory/mean-median-mode/)
-- 分散と標準偏差（準備中）
+- [分散と標準偏差]({{ site.baseurl }}/theory/variance-std/)
 - ヒストグラムと度数分布（準備中）
 
 ### 確率の基礎
@@ -41,7 +41,7 @@ title: 理論編 - Stats Sensei
 
 - 二項分布（準備中）
 - ポアソン分布（準備中）
-- 正規分布（準備中）
+- [正規分布]({{ site.baseurl }}/theory/normal-distribution/)
 
 ### 推定と検定
 
