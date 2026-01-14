@@ -31,7 +31,7 @@ title: 理論編 - Stats Sensei
 
 統計学の土台となる確率論の基礎を学びます。
 
-- 確率の基本概念（準備中）
+- [確率の基本概念]({{ site.baseurl }}/theory/probability-basics/)
 - 条件付き確率とベイズの定理（準備中）
 - 確率変数と期待値（準備中）
 
