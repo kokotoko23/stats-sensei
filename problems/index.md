@@ -39,7 +39,7 @@ title: 問題編 - Stats Sensei
 
 実践的な統計分析の問題です。
 
-- 回帰分析の解釈（準備中）
+- [相関・回帰分析の問題]({{ site.baseurl }}/problems/regression-problems/)
 - 実データを使った分析問題（準備中）
 
 ---

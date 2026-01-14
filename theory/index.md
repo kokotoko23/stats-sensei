@@ -55,8 +55,8 @@ title: 理論編 - Stats Sensei
 
 変数間の関係を分析する方法を学びます。
 
-- 相関分析（準備中）
-- 単回帰分析（準備中）
+- [相関分析]({{ site.baseurl }}/theory/correlation/)
+- [単回帰分析]({{ site.baseurl }}/theory/regression/)
 - 重回帰分析（準備中）
 
 ---
