@@ -2,6 +2,7 @@
 layout: default
 title: クイックコース
 description: 統計学の基礎を最短で学ぶ厳選問題集
+permalink: /quick-course/
 ---
 
 # クイックコース

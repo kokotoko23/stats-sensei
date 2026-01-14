@@ -2,6 +2,7 @@
 layout: default
 title: 統計用語集
 description: 統計学の重要用語をカテゴリ別に解説
+permalink: /glossary/
 ---
 
 # 統計用語集

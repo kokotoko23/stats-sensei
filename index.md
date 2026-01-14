@@ -17,69 +17,35 @@ title: Stats Sensei - 統計学習サイト
 
 ## メインコンテンツ
 
-<div class="category-section">
-<div class="category-header">
-<h2>理論編</h2>
-<span class="category-stats">15テーマ</span>
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/theory/">理論編（15テーマ）</a></h3>
+<p>記述統計 / 確率の基礎 / 確率分布 / 推定と検定 / 回帰分析</p>
 </div>
 
-統計学の基礎概念から応用理論まで、体系的に学習できます。
-
-| カテゴリ | 内容 |
-|---------|------|
-| 記述統計 | 平均・中央値、分散・標準偏差、ヒストグラム |
-| 確率の基礎 | 確率の基本、条件付き確率、期待値 |
-| 確率分布 | 二項分布、ポアソン分布、正規分布 |
-| 推定と検定 | 区間推定、仮説検定、t検定 |
-| 回帰分析 | 相関分析、単回帰、重回帰 |
-
-<a href="{{ site.baseurl }}/theory/" style="display: inline-block; margin-top: 10px; padding: 8px 20px; background: #159957; color: white; border-radius: 20px; text-decoration: none;">理論編を見る</a>
-
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/">問題編（70問以上）</a></h3>
+<p><span class="difficulty-badge difficulty-1">基本</span><span class="difficulty-badge difficulty-2">標準</span><span class="difficulty-badge difficulty-3">発展</span>の3段階で段階的に学習</p>
 </div>
-
-<div class="category-section">
-<div class="category-header">
-<h2>問題編</h2>
-<span class="category-stats">8セット / 40問以上</span>
-</div>
-
-実践的な問題を解いて理解を深めましょう。全問題に詳しい解説付き。
-
-| 難易度 | 内容 |
-|--------|------|
-| <span class="difficulty-badge difficulty-1">基本</span> | 代表値、分散、確率の基本計算 |
-| <span class="difficulty-badge difficulty-2">標準</span> | 正規分布、区間推定、仮説検定 |
-| <span class="difficulty-badge difficulty-3">発展</span> | 回帰分析、実データ分析 |
-
-<a href="{{ site.baseurl }}/problems/" style="display: inline-block; margin-top: 10px; padding: 8px 20px; background: #159957; color: white; border-radius: 20px; text-decoration: none;">問題編を見る</a>
-
-</div>
-
----
-
-## 学習サポート
 
 <div class="problem-card">
 <h3><a href="{{ site.baseurl }}/glossary/">用語集</a></h3>
-<p>統計学で使われる重要用語をカテゴリ別に解説。わからない用語があったらここで確認。</p>
+<p>35以上の統計用語をカテゴリ別に解説</p>
 </div>
 
 <div class="problem-card">
 <h3><a href="{{ site.baseurl }}/quick-course/">クイックコース</a></h3>
-<p>各分野から厳選した40問で、統計学の基礎を最短で学習。復習にも最適。</p>
+<p>厳選30問で統計学の基礎を最短マスター</p>
 </div>
 
 ---
 
 ## このサイトの特徴
 
-| 特徴 | 説明 |
-|------|------|
-| 段階的な学習設計 | 基礎から応用まで、順を追って学習できるカリキュラム構成 |
-| 理論と実践の両立 | 概念の理解だけでなく、問題演習で実践力を養成 |
-| わかりやすい解説 | 数式だけでなく、具体例やイメージで理解を促進 |
-| 難易度別の問題 | 自分のレベルに合わせて問題を選択可能 |
-| スマホ対応 | いつでもどこでも学習できる |
+- **段階的な学習設計** - 基礎から応用まで順を追って学習
+- **理論と実践の両立** - 概念の理解と問題演習で実践力を養成
+- **わかりやすい解説** - 数式だけでなく具体例やイメージで理解を促進
+- **難易度別の問題** - 自分のレベルに合わせて選択可能
+- **スマホ対応** - いつでもどこでも学習できる
 
 ---
 

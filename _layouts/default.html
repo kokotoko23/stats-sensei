@@ -140,57 +140,68 @@
     .problem-card {
       background: white;
       border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin: 12px 0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 8px 0;
       transition: box-shadow 0.2s, border-color 0.2s;
     }
     .problem-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       border-color: var(--primary-color);
     }
     .problem-card h3 {
-      margin: 0 0 8px 0;
-      font-size: 16px;
+      margin: 0 0 6px 0;
+      font-size: 15px;
     }
     .problem-card h3 a {
-      color: #333;
+      color: var(--primary-color);
       text-decoration: none;
     }
     .problem-card h3 a:hover {
-      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    .problem-card h3 a::after {
+      content: " >";
+      font-size: 12px;
     }
     .problem-card .meta {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
     .problem-card .time-estimate {
       color: #666;
-      font-size: 12px;
+      font-size: 11px;
+    }
+    .problem-card p {
+      margin: 4px 0 0 0;
+      font-size: 13px;
+      color: #666;
     }
 
     /* カテゴリセクション */
     .category-section {
-      margin: 30px 0;
+      margin: 20px 0;
     }
     .category-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 16px;
+      padding: 10px 14px;
       background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: white;
-      border-radius: 8px;
-      margin-bottom: 16px;
+      border-radius: 6px;
+      margin-bottom: 10px;
     }
     .category-header h2 {
       margin: 0;
-      font-size: 18px;
+      font-size: 16px;
+      color: white !important;
     }
     .category-stats {
-      font-size: 13px;
+      font-size: 12px;
+      color: white;
       opacity: 0.9;
     }
 
