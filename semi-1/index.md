@@ -124,14 +124,12 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">時系列・ベイズ・シミュレーション</span>
 </div>
 
-- 時系列解析（AR、MA、ARIMA）
-- 分割表の解析
-- 不完全データの統計処理（EMアルゴリズム）
-- モデル選択（AIC、交差検証）
-- ベイズ法とMCMC
-- シミュレーション（モンテカルロ法、ブートストラップ）
+- [時系列解析]({{ site.baseurl }}/semi-1/8-advanced/timeseries/)（AR、MA、ARIMA）
+- [ベイズ法とMCMC]({{ site.baseurl }}/semi-1/8-advanced/bayesian/)（事後分布、ギブスサンプリング）
+- [モデル選択]({{ site.baseurl }}/semi-1/8-advanced/model-selection/)（AIC、BIC、交差検証）
+- [シミュレーション]({{ site.baseurl }}/semi-1/8-advanced/simulation/)（モンテカルロ、ブートストラップ）
 
-*（準備中）*
+[発展的手法を学ぶ →]({{ site.baseurl }}/semi-1/8-advanced/)
 
 </div>
 
