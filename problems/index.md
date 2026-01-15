@@ -329,7 +329,7 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <div class="category-section">
 <div class="category-header">
 <h2>推定と検定</h2>
-<span class="category-stats">87問 / 区間推定・仮説検定</span>
+<span class="category-stats">100問 / 区間推定・仮説検定</span>
 </div>
 
 <div class="problem-card">
@@ -407,12 +407,21 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>t検定、カイ二乗検定、F検定、検出力分析</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/estimation-testing-08/">区間推定の実践演習</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">13問 / 約50分</span>
+</div>
+<p>信頼区間、必要サンプルサイズ、ブートストラップ</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>回帰分析</h2>
-<span class="category-stats">90問 / 相関・単回帰・重回帰</span>
+<span class="category-stats">102問 / 相関・単回帰・重回帰</span>
 </div>
 
 <div class="problem-card">
@@ -490,12 +499,21 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>相関係数の計算、回帰直線、決定係数、残差</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/regression-09/">回帰分析の解釈問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">12問 / 約45分</span>
+</div>
+<p>係数の解釈、対数変換、交互作用、多重共線性</p>
+</div>
+
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>実践・応用</h2>
-<span class="category-stats">87問 / 総合問題・ケーススタディ</span>
+<span class="category-stats">100問 / 総合問題・ケーススタディ</span>
 </div>
 
 <div class="problem-card">
@@ -571,6 +589,15 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 <p>相関の誤解、p値の誤解、因果推論、統計リテラシー</p>
 </div>
 
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/problems/real-data-09/">統計分析の実務問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-3">発展</span>
+<span class="time-estimate">13問 / 約55分</span>
+</div>
+<p>異常検知、欠損値処理、因果推論、再現性危機</p>
+</div>
+
 </div>
 
 ---
@@ -586,6 +613,6 @@ description: 統計学の練習問題集。基礎から応用まで段階的に�
 
 ---
 
-**総問題数：約565問**
+**総問題数：約603問**
 
 [理論編]({{ site.baseurl }}/theory/) | [用語集]({{ site.baseurl }}/glossary/) | [トップページ]({{ site.baseurl }}/)
