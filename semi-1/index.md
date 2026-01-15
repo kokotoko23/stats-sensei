@@ -38,11 +38,11 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">離散・連続分布</span>
 </div>
 
-- 離散型分布（二項、ポアソン、超幾何、負の二項など）
-- 連続型分布（ガンマ、ベータ、非心分布など）
-- 極限定理と漸近理論（中心極限定理、デルタ法）
+- [離散型分布]({{ site.baseurl }}/semi-1/2-distributions/discrete/)（超幾何、負の二項、多項）
+- [連続型分布]({{ site.baseurl }}/semi-1/2-distributions/continuous/)（ガンマ、ベータ、非心分布）
+- [極限定理]({{ site.baseurl }}/semi-1/2-distributions/limit-theorems/)（CLT、デルタ法）
 
-*（準備中）*
+[確率分布を学ぶ →]({{ site.baseurl }}/semi-1/2-distributions/)
 
 </div>
 
