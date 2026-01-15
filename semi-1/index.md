@@ -23,12 +23,12 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">基礎理論</span>
 </div>
 
-- 事象と確率、条件付き確率、ベイズの定理
-- 確率分布と母関数（モーメント母関数、確率母関数）
-- 分布の特性値（積率、歪度、尖度）
-- 変数変換とヤコビアン
+- [確率の基礎]({{ site.baseurl }}/semi-1/1-probability/fundamentals/)（条件付き確率、ベイズの定理）
+- [母関数]({{ site.baseurl }}/semi-1/1-probability/generating-functions/)（MGF、PGF、特性関数）
+- [積率と特性値]({{ site.baseurl }}/semi-1/1-probability/moments/)（歪度、尖度、不等式）
+- [変数変換]({{ site.baseurl }}/semi-1/1-probability/transformations/)（ヤコビアン、畳み込み）
 
-*（準備中）*
+[確率論を学ぶ →]({{ site.baseurl }}/semi-1/1-probability/)
 
 </div>
 
