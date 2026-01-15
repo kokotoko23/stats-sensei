@@ -95,10 +95,10 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">分散分析・標本調査</span>
 </div>
 
-- 分散分析と実験計画法
-- 標本調査法（層化抽出、クラスター抽出）
+- [分散分析と実験計画]({{ site.baseurl }}/semi-1/6-design/anova/)（ANOVA、多重比較）
+- [標本調査法]({{ site.baseurl }}/semi-1/6-design/sampling/)（層化、クラスター抽出）
 
-*（準備中）*
+[実験計画・調査を学ぶ →]({{ site.baseurl }}/semi-1/6-design/)
 
 </div>
 
