@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 統計検定準1級対策 - Stats Sensei
-description: 統計検定準1級の対策コンテンツ。統計学実践ワークブック全32章に対応した理論解説と問題集。
+description: 統計検定準1級の対策コンテンツ。理論解説と問題集で準1級合格を目指す。
 ---
 
 # 統計検定準1級対策
@@ -20,7 +20,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>1. 確率論</h2>
-<span class="category-stats">ワークブック第1-4章対応</span>
+<span class="category-stats">基礎理論</span>
 </div>
 
 - 事象と確率、条件付き確率、ベイズの定理
@@ -35,7 +35,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>2. 確率分布</h2>
-<span class="category-stats">ワークブック第5-7章対応</span>
+<span class="category-stats">離散・連続分布</span>
 </div>
 
 - 離散型分布（二項、ポアソン、超幾何、負の二項など）
@@ -49,7 +49,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>3. 統計的推測</h2>
-<span class="category-stats">ワークブック第8-13章対応</span>
+<span class="category-stats">推定・検定理論</span>
 </div>
 
 - 推定の基礎（最尤法、十分統計量、フィッシャー情報量）
@@ -65,7 +65,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>4. 確率過程</h2>
-<span class="category-stats">ワークブック第14-15章対応</span>
+<span class="category-stats">マルコフ連鎖・ポアソン過程</span>
 </div>
 
 - マルコフ連鎖（推移確率、定常分布）
@@ -78,7 +78,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>5. 回帰分析</h2>
-<span class="category-stats">ワークブック第16-19章対応</span>
+<span class="category-stats">GLM・生存時間分析</span>
 </div>
 
 - 重回帰分析と正則化（リッジ、LASSO）
@@ -93,7 +93,7 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>6. 実験計画・調査</h2>
-<span class="category-stats">ワークブック第20-21章対応</span>
+<span class="category-stats">分散分析・標本調査</span>
 </div>
 
 - 分散分析と実験計画法
@@ -106,23 +106,23 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 <div class="category-section">
 <div class="category-header">
 <h2>7. 多変量解析</h2>
-<span class="category-stats">ワークブック第22-26章対応</span>
+<span class="category-stats">PCA・判別・クラスター</span>
 </div>
 
-- 主成分分析
-- 判別分析とSVM
-- クラスター分析
+- [主成分分析]({{ site.baseurl }}/semi-1/7-multivariate/pca/)
+- [判別分析とSVM]({{ site.baseurl }}/semi-1/7-multivariate/discriminant/)
+- [クラスター分析]({{ site.baseurl }}/semi-1/7-multivariate/clustering/)
 - 因子分析・構造方程式
 - 正準相関、多次元尺度法、対応分析
 
-*（準備中）*
+[多変量解析を学ぶ →]({{ site.baseurl }}/semi-1/7-multivariate/)
 
 </div>
 
 <div class="category-section">
 <div class="category-header">
 <h2>8. 発展的手法</h2>
-<span class="category-stats">ワークブック第27-32章対応</span>
+<span class="category-stats">時系列・ベイズ・シミュレーション</span>
 </div>
 
 - 時系列解析（AR、MA、ARIMA）
@@ -147,13 +147,6 @@ description: 統計検定準1級の対策コンテンツ。統計学実践ワー
 | 3 | 問題を解いて理解を確認 |
 | 4 | 公式集で重要公式を暗記 |
 | 5 | 過去問で実践練習 |
-
----
-
-## 参考書籍
-
-- **統計学実践ワークブック**（日本統計学会編） - 公式テキスト
-- 統計検定準1級 公式問題集
 
 ---
 

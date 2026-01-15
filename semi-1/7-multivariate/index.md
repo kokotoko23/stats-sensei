@@ -12,13 +12,13 @@ description: 主成分分析、判別分析、クラスター分析など多変�
 
 ## このカテゴリで学ぶこと
 
-| 手法 | 目的 | ワークブック |
-|-----|------|-------------|
-| [主成分分析]({{ site.baseurl }}/semi-1/7-multivariate/pca/) | 次元削減、データ要約 | 第22章 |
-| [判別分析]({{ site.baseurl }}/semi-1/7-multivariate/discriminant/) | グループ分類 | 第23章 |
-| [クラスター分析]({{ site.baseurl }}/semi-1/7-multivariate/clustering/) | グループ発見 | 第24章 |
-| [因子分析]({{ site.baseurl }}/semi-1/7-multivariate/factor-analysis/) | 潜在因子の抽出 | 第25章 |
-| [その他の手法]({{ site.baseurl }}/semi-1/7-multivariate/other-methods/) | MDS、正準相関など | 第26章 |
+| 手法 | 目的 |
+|-----|------|
+| [主成分分析]({{ site.baseurl }}/semi-1/7-multivariate/pca/) | 次元削減、データ要約 |
+| [判別分析]({{ site.baseurl }}/semi-1/7-multivariate/discriminant/) | グループ分類 |
+| [クラスター分析]({{ site.baseurl }}/semi-1/7-multivariate/clustering/) | グループ発見 |
+| [因子分析]({{ site.baseurl }}/semi-1/7-multivariate/factor-analysis/) | 潜在因子の抽出 |
+| [その他の手法]({{ site.baseurl }}/semi-1/7-multivariate/other-methods/) | MDS、正準相関など |
 
 ---
 
