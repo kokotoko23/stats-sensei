@@ -1,0 +1,233 @@
+---
+layout: default
+title: 区間推定 - 準1級対策
+description: 信頼区間の構成法、ピボット量、尤度に基づく信頼区間を解説
+---
+
+# 区間推定
+
+点推定の不確実性を区間で表現する手法を学びます。
+
+---
+
+## 1. 信頼区間の基本概念
+
+### 1.1 定義
+
+**信頼係数**（信頼水準）$1 - \alpha$ の信頼区間 $[L(\mathbf{X}), U(\mathbf{X})]$ とは：
+
+$$P(L(\mathbf{X}) \leq \theta \leq U(\mathbf{X})) = 1 - \alpha$$
+
+がすべての $\theta$ で成り立つような区間。
+
+### 1.2 解釈
+
+- 真のパラメータ $\theta$ は固定された（未知の）値
+- 信頼区間 $[L, U]$ は確率変数
+- 「100回の独立な標本抽出で、約$(1-\alpha) \times 100$回は真の値を含む」という意味
+
+### 1.3 両側信頼区間と片側信頼区間
+
+| 種類 | 条件 |
+|-----|------|
+| 両側 | $P(L \leq \theta \leq U) = 1-\alpha$ |
+| 下側片側 | $P(\theta \geq L) = 1-\alpha$ |
+| 上側片側 | $P(\theta \leq U) = 1-\alpha$ |
+
+---
+
+## 2. ピボット量による構成
+
+### 2.1 ピボット量の定義
+
+統計量 $Q(\mathbf{X}, \theta)$ が**ピボット量**であるとは、その分布が $\theta$ に依存しないこと。
+
+### 2.2 構成手順
+
+1. ピボット量 $Q(\mathbf{X}, \theta)$ を見つける
+2. 分位点 $q_{\alpha/2}$, $q_{1-\alpha/2}$ を求める
+3. $P(q_{\alpha/2} \leq Q \leq q_{1-\alpha/2}) = 1-\alpha$ を $\theta$ について解く
+
+### 2.3 代表的なピボット量
+
+| 状況 | ピボット量 | 分布 |
+|-----|----------|------|
+| $N(\mu, \sigma^2)$, $\sigma^2$既知 | $\frac{\bar{X} - \mu}{\sigma/\sqrt{n}}$ | $N(0,1)$ |
+| $N(\mu, \sigma^2)$, $\sigma^2$未知 | $\frac{\bar{X} - \mu}{S/\sqrt{n}}$ | $t_{n-1}$ |
+| $N(\mu, \sigma^2)$, $\sigma^2$の推定 | $\frac{(n-1)S^2}{\sigma^2}$ | $\chi^2_{n-1}$ |
+| 二項分布（大標本） | $\frac{\hat{p} - p}{\sqrt{p(1-p)/n}}$ | $N(0,1)$ |
+
+---
+
+## 3. 正規母集団の信頼区間
+
+### 3.1 平均の信頼区間（$\sigma^2$既知）
+
+$$\bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+
+### 3.2 平均の信頼区間（$\sigma^2$未知）
+
+$$\bar{X} \pm t_{n-1, \alpha/2} \frac{S}{\sqrt{n}}$$
+
+### 3.3 分散の信頼区間
+
+$$\left[\frac{(n-1)S^2}{\chi^2_{n-1, \alpha/2}}, \frac{(n-1)S^2}{\chi^2_{n-1, 1-\alpha/2}}\right]$$
+
+### 3.4 2標本の平均差の信頼区間（等分散）
+
+$$(\bar{X} - \bar{Y}) \pm t_{n_1+n_2-2, \alpha/2} \cdot S_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$$
+
+プールした分散：$S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}$
+
+### 3.5 2標本の分散比の信頼区間
+
+$$\left[\frac{S_1^2/S_2^2}{F_{n_1-1, n_2-1, \alpha/2}}, \frac{S_1^2/S_2^2}{F_{n_1-1, n_2-1, 1-\alpha/2}}\right]$$
+
+---
+
+## 4. 尤度に基づく信頼区間
+
+### 4.1 対数尤度比に基づく方法
+
+対数尤度比統計量：
+
+$$W(\theta) = 2[\ell(\hat{\theta}) - \ell(\theta)]$$
+
+大標本では $W(\theta) \sim \chi^2_1$（ウィルクスの定理）
+
+信頼区間：
+
+$$\{\theta : W(\theta) \leq \chi^2_{1, \alpha}\}$$
+
+### 4.2 プロファイル尤度
+
+パラメータ $(\theta, \nu)$ で $\theta$ についての信頼区間を求めるとき：
+
+$$\ell_p(\theta) = \max_\nu \ell(\theta, \nu)$$
+
+### 4.3 漸近信頼区間
+
+MLEの漸近正規性を利用：
+
+$$\hat{\theta} \pm z_{\alpha/2} \sqrt{\frac{1}{n \cdot I(\hat{\theta})}}$$
+
+---
+
+## 5. 二項分布の信頼区間
+
+### 5.1 ワルドの信頼区間（大標本）
+
+$$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+### 5.2 ウィルソンのスコア信頼区間
+
+$$\frac{\hat{p} + \frac{z^2}{2n}}{1 + \frac{z^2}{n}} \pm \frac{z}{1 + \frac{z^2}{n}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}$$
+
+### 5.3 クロッパー・ピアソンの正確信頼区間
+
+ベータ分布の分位点を利用：
+
+$$[B_{\alpha/2}(x, n-x+1), B_{1-\alpha/2}(x+1, n-x)]$$
+
+- $x$：成功回数、$n$：試行回数
+
+---
+
+## 6. 多次元の信頼領域
+
+### 6.1 楕円体信頼領域
+
+$p$ 次元パラメータ $\boldsymbol{\theta}$ の信頼領域：
+
+$$(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta})^\top I_n(\hat{\boldsymbol{\theta}}) (\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}) \leq \chi^2_{p, \alpha}$$
+
+### 6.2 同時信頼区間
+
+複数のパラメータに対する同時信頼区間：
+
+**ボンフェローニ補正**：
+
+各信頼係数を $1 - \alpha/p$ にする
+
+**シェッフェの方法**：
+
+$$\hat{\theta}_j \pm \sqrt{p \cdot F_{p, n-p, \alpha}} \cdot \text{SE}(\hat{\theta}_j)$$
+
+---
+
+## 7. 例題
+
+### 例題1：t信頼区間
+
+$n = 16$ 個のデータから $\bar{x} = 50$, $s = 8$ が得られた。母平均の95%信頼区間を求めよ。（$t_{15, 0.025} = 2.131$）
+
+<details markdown="1">
+<summary>解答を見る</summary>
+
+### 解答
+
+$$\bar{x} \pm t_{n-1, \alpha/2} \frac{s}{\sqrt{n}} = 50 \pm 2.131 \times \frac{8}{\sqrt{16}}$$
+
+$$= 50 \pm 2.131 \times 2 = 50 \pm 4.262$$
+
+**答え：$[45.74, 54.26]$**
+
+</details>
+
+---
+
+### 例題2：分散の信頼区間
+
+$n = 20$ のデータで $s^2 = 25$ のとき、母分散の95%信頼区間を求めよ。（$\chi^2_{19, 0.025} = 32.85$, $\chi^2_{19, 0.975} = 8.91$）
+
+<details markdown="1">
+<summary>解答を見る</summary>
+
+### 解答
+
+$$\left[\frac{(n-1)s^2}{\chi^2_{n-1, \alpha/2}}, \frac{(n-1)s^2}{\chi^2_{n-1, 1-\alpha/2}}\right]$$
+
+$$= \left[\frac{19 \times 25}{32.85}, \frac{19 \times 25}{8.91}\right]$$
+
+$$= \left[\frac{475}{32.85}, \frac{475}{8.91}\right] = [14.46, 53.31]$$
+
+**答え：$[14.46, 53.31]$**
+
+</details>
+
+---
+
+### 例題3：二項分布の信頼区間
+
+100回の試行で35回成功した。成功確率のワルドの95%信頼区間を求めよ。
+
+<details markdown="1">
+<summary>解答を見る</summary>
+
+### 解答
+
+$$\hat{p} = \frac{35}{100} = 0.35$$
+
+$$\text{SE} = \sqrt{\frac{0.35 \times 0.65}{100}} = \sqrt{0.002275} \approx 0.0477$$
+
+$$0.35 \pm 1.96 \times 0.0477 = 0.35 \pm 0.0935$$
+
+**答え：$[0.257, 0.443]$**
+
+</details>
+
+---
+
+## 8. 重要公式まとめ
+
+| 項目 | 公式 |
+|-----|------|
+| $\mu$ の信頼区間（$\sigma$未知） | $\bar{x} \pm t_{n-1, \alpha/2} \cdot s/\sqrt{n}$ |
+| $\sigma^2$ の信頼区間 | $[(n-1)s^2/\chi^2_{\alpha/2}, (n-1)s^2/\chi^2_{1-\alpha/2}]$ |
+| 二項分布（ワルド） | $\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}(1-\hat{p})/n}$ |
+| 尤度比信頼区間 | $\{\theta : 2[\ell(\hat{\theta}) - \ell(\theta)] \leq \chi^2_{1, \alpha}\}$ |
+| 漸近信頼区間 | $\hat{\theta} \pm z_{\alpha/2}/\sqrt{nI(\hat{\theta})}$ |
+
+---
+
+[統計的推測に戻る]({{ site.baseurl }}/semi-1/3-inference/) | [準1級トップ]({{ site.baseurl }}/semi-1/) | [トップページ]({{ site.baseurl }}/)

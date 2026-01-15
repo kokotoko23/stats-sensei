@@ -52,13 +52,12 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">推定・検定理論</span>
 </div>
 
-- 推定の基礎（最尤法、十分統計量、フィッシャー情報量）
-- 区間推定
-- 検定の基礎と検定法の導出
-- 正規分布・一般の分布に関する検定
-- ノンパラメトリック法
+- [推定の基礎]({{ site.baseurl }}/semi-1/3-inference/estimation/)（最尤法、十分統計量、情報量）
+- [区間推定]({{ site.baseurl }}/semi-1/3-inference/interval/)（信頼区間、ピボット量）
+- [検定の基礎]({{ site.baseurl }}/semi-1/3-inference/testing/)（尤度比検定、UMP検定）
+- [ノンパラメトリック法]({{ site.baseurl }}/semi-1/3-inference/nonparametric/)（順位検定、符号検定）
 
-*（準備中）*
+[統計的推測を学ぶ →]({{ site.baseurl }}/semi-1/3-inference/)
 
 </div>
 
@@ -81,12 +80,12 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">GLM・生存時間分析</span>
 </div>
 
-- 重回帰分析と正則化（リッジ、LASSO）
-- 回帰診断法（残差分析、Cook's距離）
-- 質的回帰と一般化線形モデル
-- 生存時間解析
+- [重回帰分析と正則化]({{ site.baseurl }}/semi-1/5-regression/regularization/)（リッジ、LASSO）
+- [回帰診断法]({{ site.baseurl }}/semi-1/5-regression/diagnostics/)（残差分析、Cook's距離）
+- [一般化線形モデル]({{ site.baseurl }}/semi-1/5-regression/glm/)（ロジスティック、ポアソン）
+- [生存時間分析]({{ site.baseurl }}/semi-1/5-regression/survival/)（ハザード、Coxモデル）
 
-*（準備中）*
+[回帰分析を学ぶ →]({{ site.baseurl }}/semi-1/5-regression/)
 
 </div>
 
@@ -112,8 +111,8 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 - [主成分分析]({{ site.baseurl }}/semi-1/7-multivariate/pca/)
 - [判別分析とSVM]({{ site.baseurl }}/semi-1/7-multivariate/discriminant/)
 - [クラスター分析]({{ site.baseurl }}/semi-1/7-multivariate/clustering/)
-- 因子分析・構造方程式
-- 正準相関、多次元尺度法、対応分析
+- [因子分析・構造方程式]({{ site.baseurl }}/semi-1/7-multivariate/factor-analysis/)
+- [正準相関、MDS、対応分析]({{ site.baseurl }}/semi-1/7-multivariate/other-methods/)
 
 [多変量解析を学ぶ →]({{ site.baseurl }}/semi-1/7-multivariate/)
 
