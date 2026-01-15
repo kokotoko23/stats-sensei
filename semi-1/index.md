@@ -67,10 +67,10 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <span class="category-stats">マルコフ連鎖・ポアソン過程</span>
 </div>
 
-- マルコフ連鎖（推移確率、定常分布）
-- 確率過程の基礎（ブラウン運動、ポアソン過程）
+- [マルコフ連鎖]({{ site.baseurl }}/semi-1/4-stochastic/markov/)（推移確率、定常分布）
+- [確率過程の基礎]({{ site.baseurl }}/semi-1/4-stochastic/processes/)（ポアソン過程、ブラウン運動）
 
-*（準備中）*
+[確率過程を学ぶ →]({{ site.baseurl }}/semi-1/4-stochastic/)
 
 </div>
 
