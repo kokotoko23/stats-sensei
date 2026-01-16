@@ -12,6 +12,7 @@ plugins:
   - jekyll-remote-theme
 
 # ビルド設定
+permalink: pretty
 markdown: kramdown
 kramdown:
   input: GFM
