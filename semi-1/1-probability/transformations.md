@@ -69,11 +69,11 @@ $$P(Y = y) = \sum_{x: g(x) = y} P(X = x)$$
 
 $Y = g(X)$ で $g$ が単調増加のとき：
 
-$$f_Y(y) = f_X(g^{-1}(y)) \cdot \left|\frac{d}{dy}g^{-1}(y)\right|$$
+$$f_Y(y) = f_X(g^{-1}(y)) \cdot \left\lvert\frac{d}{dy}g^{-1}(y)\right\rvert$$
 
 $g$ が単調減少でも同様（絶対値をとる）。
 
-**ポイント**：$\left|\frac{d}{dy}g^{-1}(y)\right|$ は「$y$ の小さな変化が $x$ のどれだけの変化に対応するか」を表す。これが変換による「引き伸ばし/圧縮」を補正する因子。
+**ポイント**：$\left\lvert\frac{d}{dy}g^{-1}(y)\right\rvert$ は「$y$ の小さな変化が $x$ のどれだけの変化に対応するか」を表す。これが変換による「引き伸ばし/圧縮」を補正する因子。
 
 ### 1.3 一般の変換
 
@@ -123,11 +123,11 @@ $(U, V)$ の同時密度関数：
 
 $$f_{U,V}(u, v) = f_{X,Y}(x(u,v), y(u,v)) \cdot \lvert J^{-1} \rvert$$
 
-$$= f_{X,Y}(x(u,v), y(u,v)) \cdot \left|\frac{\partial(x, y)}{\partial(u, v)}\right|$$
+$$= f_{X,Y}(x(u,v), y(u,v)) \cdot \left\lvert\frac{\partial(x, y)}{\partial(u, v)}\right\rvert$$
 
 ### 2.4 ヤコビアンの性質
 
-$$\left|\frac{\partial(x, y)}{\partial(u, v)}\right| = \left|\frac{\partial(u, v)}{\partial(x, y)}\right|^{-1}$$
+$$\left\lvert\frac{\partial(x, y)}{\partial(u, v)}\right\rvert = \left\lvert\frac{\partial(u, v)}{\partial(x, y)}\right\rvert^{-1}$$
 
 ---
 
@@ -184,7 +184,7 @@ $$x = r\cos\theta, \quad y = r\sin\theta$$
 
 ヤコビアン：
 
-$$\left|\frac{\partial(x, y)}{\partial(r, \theta)}\right| = \begin{vmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{vmatrix} = r\cos^2\theta + r\sin^2\theta = r$$
+$$\left\lvert\frac{\partial(x, y)}{\partial(r, \theta)}\right\rvert = \begin{vmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{vmatrix} = r\cos^2\theta + r\sin^2\theta = r$$
 
 **直感的理解**：半径 $r$ が大きいほど、角度の変化に対応する弧の長さが大きくなるため、面積要素が $r$ に比例して大きくなる。
 
@@ -374,7 +374,7 @@ $X, Y$ が独立に $\text{Exp}(1)$ に従うとき、$U = X + Y$, $V = X/(X+Y)$
 
 $$\frac{\partial(x, y)}{\partial(u, v)} = \begin{vmatrix} v & u \\ 1-v & -u \end{vmatrix} = -uv - u(1-v) = -u$$
 
-$$\left|\frac{\partial(x, y)}{\partial(u, v)}\right| = u$$
+$$\left\lvert\frac{\partial(x, y)}{\partial(u, v)}\right\rvert = u$$
 
 元の同時密度：
 
