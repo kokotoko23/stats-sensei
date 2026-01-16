@@ -100,6 +100,8 @@ $$\sqrt{n}(g(X_n) - g(\theta)) \xrightarrow{d} N(0, \sigma^2 [g'(\theta)]^2)$$
 
 $$\text{Avar}(g(X_n)) \approx \frac{\sigma^2 [g'(\theta)]^2}{n}$$
 
+**注**：$\text{Avar}$ は **A**symptotic **Var**iance（漸近分散）の略。標本サイズ $n$ が大きいときの分散を表す。
+
 ### 4.3 多変数への拡張
 
 $\sqrt{n}(\mathbf{X}_n - \boldsymbol{\theta}) \xrightarrow{d} N(\mathbf{0}, \boldsymbol{\Sigma})$ のとき：
