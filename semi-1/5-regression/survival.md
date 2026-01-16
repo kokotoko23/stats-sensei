@@ -37,7 +37,7 @@ $$S(t) = P(T > t) = 1 - F(t)$$
 
 時刻 $t$ まで生存した条件で、直後にイベントが起こる瞬間的な確率（率）：
 
-$$h(t) = \lim_{\Delta t \to 0} \frac{P(t \leq T < t + \Delta t | T \geq t)}{\Delta t}$$
+$$h(t) = \lim_{\Delta t \to 0} \frac{P(t \leq T < t + \Delta t \mid T \geq t)}{\Delta t}$$
 
 $$h(t) = \frac{f(t)}{S(t)} = -\frac{d}{dt}\log S(t)$$
 

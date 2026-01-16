@@ -141,7 +141,7 @@ $$\text{Bin}(n, p) \approx \text{Poi}(\lambda)$$
 
 $X \sim \text{Poi}(\lambda_1)$, $Y \sim \text{Poi}(\lambda_2)$ が独立のとき：
 
-$$X | X + Y = n \sim \text{Bin}\left(n, \frac{\lambda_1}{\lambda_1 + \lambda_2}\right)$$
+$$X \mid X + Y = n \sim \text{Bin}\left(n, \frac{\lambda_1}{\lambda_1 + \lambda_2}\right)$$
 
 ### 5.4 ポアソンの加法性
 

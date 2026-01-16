@@ -145,13 +145,13 @@ $$S(t) = S(0) \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W(t)\rig
 
 確率過程 $\{X_n\}$ がマルチンゲール：
 
-$$E[X_{n+1} | X_1, \ldots, X_n] = X_n$$
+$$E[X_{n+1} \mid X_1, \ldots, X_n] = X_n$$
 
 ### 5.2 ブラウン運動のマルチンゲール性
 
 $W(t)$ はマルチンゲール：
 
-$$E[W(t) | W(s), s \leq u] = W(u) \quad (u < t)$$
+$$E[W(t) \mid W(s), s \leq u] = W(u) \quad (u < t)$$
 
 ### 5.3 オプショナル・サンプリング定理
 

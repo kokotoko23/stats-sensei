@@ -43,22 +43,22 @@ $$P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i} P(A_i) - \sum_{i<j} P(A_i \cap 
 
 $P(B) > 0$ のとき、$B$ が起こったという条件のもとでの $A$ の確率：
 
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
 
 ### 2.2 乗法定理
 
-$$P(A \cap B) = P(A|B) P(B) = P(B|A) P(A)$$
+$$P(A \cap B) = P(A \mid B) P(B) = P(B \mid A) P(A)$$
 
 一般化（連鎖律）：
 
-$$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) P(A_2|A_1) P(A_3|A_1 \cap A_2) \cdots$$
+$$P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) P(A_2 \mid A_1) P(A_3 \mid A_1 \cap A_2) \cdots$$
 
 ### 2.3 条件付き確率の性質
 
-条件付き確率 $P(\cdot | B)$ も確率の公理を満たす：
+条件付き確率 $P(\cdot \mid B)$ も確率の公理を満たす：
 
-- $P(A|B) \geq 0$
-- $P(\Omega|B) = 1$
+- $P(A \mid B) \geq 0$
+- $P(\Omega \mid B) = 1$
 - 可算加法性を満たす
 
 ---
@@ -72,8 +72,8 @@ $A$ と $B$ が**独立**：
 $$P(A \cap B) = P(A) P(B)$$
 
 同値条件：
-- $P(A|B) = P(A)$（$P(B) > 0$ のとき）
-- $P(B|A) = P(B)$（$P(A) > 0$ のとき）
+- $P(A \mid B) = P(A)$（$P(B) > 0$ のとき）
+- $P(B \mid A) = P(B)$（$P(A) > 0$ のとき）
 
 ### 3.2 相互独立と対独立
 
@@ -110,7 +110,7 @@ $B_1, B_2, \ldots, B_n$ が $\Omega$ の**分割**：
 
 ### 4.2 全確率の公式
 
-$$P(A) = \sum_{i=1}^{n} P(A|B_i) P(B_i)$$
+$$P(A) = \sum_{i=1}^{n} P(A \mid B_i) P(B_i)$$
 
 ---
 
@@ -118,24 +118,24 @@ $$P(A) = \sum_{i=1}^{n} P(A|B_i) P(B_i)$$
 
 ### 5.1 基本形
 
-$$P(B_j|A) = \frac{P(A|B_j) P(B_j)}{\sum_{i=1}^{n} P(A|B_i) P(B_i)}$$
+$$P(B_j \mid A) = \frac{P(A \mid B_j) P(B_j)}{\sum_{i=1}^{n} P(A \mid B_i) P(B_i)}$$
 
 ### 5.2 用語
 
 | 用語 | 意味 |
 |-----|------|
 | 事前確率 | $P(B_j)$：データ観測前の確率 |
-| 尤度 | $P(A|B_j)$：$B_j$ のもとでのデータの確率 |
-| 事後確率 | $P(B_j|A)$：データ観測後の確率 |
-| 周辺尤度 | $\sum_i P(A|B_i) P(B_i)$：正規化定数 |
+| 尤度 | $P(A \mid B_j)$：$B_j$ のもとでのデータの確率 |
+| 事後確率 | $P(B_j \mid A)$：データ観測後の確率 |
+| 周辺尤度 | $\sum_i P(A \mid B_i) P(B_i)$：正規化定数 |
 
 ### 5.3 連続版
 
-$$f_{\Theta|X}(\theta|x) = \frac{f_{X|\Theta}(x|\theta) f_\Theta(\theta)}{\int f_{X|\Theta}(x|\theta') f_\Theta(\theta') d\theta'}$$
+$$f_{\Theta \mid X}(\theta \mid x) = \frac{f_{X \mid \Theta}(x \mid \theta) f_\Theta(\theta)}{\int f_{X \mid \Theta}(x \mid \theta') f_\Theta(\theta') d\theta'}$$
 
 ### 5.4 オッズ形式
 
-$$\frac{P(B_1|A)}{P(B_2|A)} = \frac{P(A|B_1)}{P(A|B_2)} \cdot \frac{P(B_1)}{P(B_2)}$$
+$$\frac{P(B_1 \mid A)}{P(B_2 \mid A)} = \frac{P(A \mid B_1)}{P(A \mid B_2)} \cdot \frac{P(B_1)}{P(B_2)}$$
 
 事後オッズ = 尤度比 × 事前オッズ
 
@@ -145,21 +145,21 @@ $$\frac{P(B_1|A)}{P(B_2|A)} = \frac{P(A|B_1)}{P(A|B_2)} \cdot \frac{P(B_1)}{P(B_
 
 ### 6.1 定義
 
-$$E[X|Y=y] = \sum_x x \cdot P(X=x|Y=y)$$ （離散）
+$$E[X \mid Y=y] = \sum_x x \cdot P(X=x \mid Y=y)$$ （離散）
 
-$$E[X|Y=y] = \int x \cdot f_{X|Y}(x|y) dx$$ （連続）
+$$E[X \mid Y=y] = \int x \cdot f_{X \mid Y}(x \mid y) dx$$ （連続）
 
 ### 6.2 全期待値の公式（繰り返し期待値の法則）
 
-$$E[X] = E[E[X|Y]]$$
+$$E[X] = E[E[X \mid Y]]$$
 
 ### 6.3 条件付き分散
 
-$$\text{Var}(X|Y) = E[X^2|Y] - (E[X|Y])^2$$
+$$\text{Var}(X \mid Y) = E[X^2 \mid Y] - (E[X \mid Y])^2$$
 
 ### 6.4 全分散の公式
 
-$$\text{Var}(X) = E[\text{Var}(X|Y)] + \text{Var}(E[X|Y])$$
+$$\text{Var}(X) = E[\text{Var}(X \mid Y)] + \text{Var}(E[X \mid Y])$$
 
 ---
 
@@ -179,7 +179,7 @@ $$\text{Var}(X) = E[\text{Var}(X|Y)] + \text{Var}(E[X|Y])$$
 
 ベイズの定理：
 
-$$P(D|+) = \frac{P(+|D) P(D)}{P(+|D) P(D) + P(+|D^c) P(D^c)}$$
+$$P(D \mid +) = \frac{P(+ \mid D) P(D)}{P(+ \mid D) P(D) + P(+ \mid D^c) P(D^c)}$$
 
 $$= \frac{0.95 \times 0.01}{0.95 \times 0.01 + 0.10 \times 0.99}$$
 
@@ -203,11 +203,11 @@ $$= \frac{0.0095}{0.0095 + 0.099} = \frac{0.0095}{0.1085} \approx 0.0875$$
 ### 解答
 
 - $P(A) = 2/6 = 1/3$, $P(B) = 4/6 = 2/3$
-- $P(\text{赤}|A) = 3/5$, $P(\text{赤}|B) = 1/5$
+- $P(\text{赤} \mid A) = 3/5$, $P(\text{赤} \mid B) = 1/5$
 
 全確率の公式：
 
-$$P(\text{赤}) = P(\text{赤}|A) P(A) + P(\text{赤}|B) P(B)$$
+$$P(\text{赤}) = P(\text{赤} \mid A) P(A) + P(\text{赤} \mid B) P(B)$$
 
 $$= \frac{3}{5} \times \frac{1}{3} + \frac{1}{5} \times \frac{2}{3}$$
 
@@ -221,7 +221,7 @@ $$= \frac{3}{15} + \frac{2}{15} = \frac{5}{15} = \frac{1}{3}$$
 
 ### 例題3：条件付き期待値
 
-$(X, Y)$ の同時分布が $P(X=i, Y=j) = c(i+j)$（$i, j \in \{1, 2\}$）のとき、$E[X|Y=1]$ を求めよ。
+$(X, Y)$ の同時分布が $P(X=i, Y=j) = c(i+j)$（$i, j \in \{1, 2\}$）のとき、$E[X \mid Y=1]$ を求めよ。
 
 <details markdown="1">
 <summary>解答を見る</summary>
@@ -240,7 +240,7 @@ $$P(Y=1) = P(X=1, Y=1) + P(X=2, Y=1) = \frac{2}{12} + \frac{3}{12} = \frac{5}{12
 
 条件付き期待値：
 
-$$E[X|Y=1] = 1 \times P(X=1|Y=1) + 2 \times P(X=2|Y=1)$$
+$$E[X \mid Y=1] = 1 \times P(X=1 \mid Y=1) + 2 \times P(X=2 \mid Y=1)$$
 
 $$= 1 \times \frac{2/12}{5/12} + 2 \times \frac{3/12}{5/12} = \frac{2}{5} + \frac{6}{5} = \frac{8}{5}$$
 
@@ -254,13 +254,13 @@ $$= 1 \times \frac{2/12}{5/12} + 2 \times \frac{3/12}{5/12} = \frac{2}{5} + \fra
 
 | 項目 | 公式 |
 |-----|------|
-| 条件付き確率 | $P(A\|B) = P(A \cap B)/P(B)$ |
-| 乗法定理 | $P(A \cap B) = P(A\|B)P(B)$ |
+| 条件付き確率 | $P(A \mid B) = P(A \cap B)/P(B)$ |
+| 乗法定理 | $P(A \cap B) = P(A \mid B)P(B)$ |
 | 独立 | $P(A \cap B) = P(A)P(B)$ |
-| 全確率の公式 | $P(A) = \sum_i P(A\|B_i)P(B_i)$ |
-| ベイズの定理 | $P(B_j\|A) = P(A\|B_j)P(B_j)/P(A)$ |
-| 全期待値の公式 | $E[X] = E[E[X\|Y]]$ |
-| 全分散の公式 | $\text{Var}(X) = E[\text{Var}(X\|Y)] + \text{Var}(E[X\|Y])$ |
+| 全確率の公式 | $P(A) = \sum_i P(A \mid B_i)P(B_i)$ |
+| ベイズの定理 | $P(B_j \mid A) = P(A \mid B_j)P(B_j)/P(A)$ |
+| 全期待値の公式 | $E[X] = E[E[X \mid Y]]$ |
+| 全分散の公式 | $\text{Var}(X) = E[\text{Var}(X \mid Y)] + \text{Var}(E[X \mid Y])$ |
 
 ---
 

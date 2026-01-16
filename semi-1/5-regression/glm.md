@@ -51,7 +51,7 @@ $$f(y; \theta, \phi) = \exp\left\{ \frac{y\theta - b(\theta)}{a(\phi)} + c(y, \p
 
 二値応答 $Y \in \{0, 1\}$ に対し：
 
-$$P(Y = 1 | \mathbf{x}) = \pi(\mathbf{x}) = \frac{\exp(\mathbf{x}^\top \boldsymbol{\beta})}{1 + \exp(\mathbf{x}^\top \boldsymbol{\beta})}$$
+$$P(Y = 1 \mid \mathbf{x}) = \pi(\mathbf{x}) = \frac{\exp(\mathbf{x}^\top \boldsymbol{\beta})}{1 + \exp(\mathbf{x}^\top \boldsymbol{\beta})}$$
 
 ロジット変換：
 
@@ -85,7 +85,7 @@ $$\ell(\boldsymbol{\beta}) = \sum_{i=1}^{n} \left\{ y_i \log\pi_i + (1-y_i)\log(
 
 標準正規分布の累積分布関数 $\Phi$ を使用：
 
-$$P(Y = 1 | \mathbf{x}) = \Phi(\mathbf{x}^\top \boldsymbol{\beta})$$
+$$P(Y = 1 \mid \mathbf{x}) = \Phi(\mathbf{x}^\top \boldsymbol{\beta})$$
 
 ### 3.2 ロジスティック回帰との比較
 

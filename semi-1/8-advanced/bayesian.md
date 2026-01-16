@@ -14,13 +14,13 @@ description: 事前分布、事後分布、MCMCを解説
 
 ### 1.1 ベイズの定理（パラメータ推定版）
 
-$$p(\theta | \mathbf{x}) = \frac{p(\mathbf{x} | \theta) p(\theta)}{p(\mathbf{x})} \propto p(\mathbf{x} | \theta) p(\theta)$$
+$$p(\theta \mid \mathbf{x}) = \frac{p(\mathbf{x} \mid \theta) p(\theta)}{p(\mathbf{x})} \propto p(\mathbf{x} \mid \theta) p(\theta)$$
 
 | 用語 | 記号 | 意味 |
 |-----|------|------|
 | 事前分布 | $p(\theta)$ | データ観測前の信念 |
-| 尤度 | $p(\mathbf{x} \| \theta)$ | データが観測される確率 |
-| 事後分布 | $p(\theta \| \mathbf{x})$ | データ観測後の信念 |
+| 尤度 | $p(\mathbf{x} \mid \theta)$ | データが観測される確率 |
+| 事後分布 | $p(\theta \mid \mathbf{x})$ | データ観測後の信念 |
 | 周辺尤度 | $p(\mathbf{x})$ | 正規化定数 |
 
 ### 1.2 事後分布 ∝ 尤度 × 事前分布
@@ -50,11 +50,11 @@ $$\text{posterior} \propto \text{likelihood} \times \text{prior}$$
 
 事前：$p \sim \text{Beta}(\alpha, \beta)$
 
-事後：$p | x \sim \text{Beta}(\alpha + x, \beta + n - x)$
+事後：$p \mid x \sim \text{Beta}(\alpha + x, \beta + n - x)$
 
 **事後期待値**：
 
-$$E[p | x] = \frac{\alpha + x}{\alpha + \beta + n}$$
+$$E[p \mid x] = \frac{\alpha + x}{\alpha + \beta + n}$$
 
 ### 2.4 正規分布×正規分布
 
@@ -62,7 +62,7 @@ $$E[p | x] = \frac{\alpha + x}{\alpha + \beta + n}$$
 
 事前：$\mu \sim N(\mu_0, \tau_0^2)$
 
-事後：$\mu | \bar{x} \sim N(\mu_n, \tau_n^2)$
+事後：$\mu \mid \bar{x} \sim N(\mu_n, \tau_n^2)$
 
 $$\mu_n = \frac{\frac{\mu_0}{\tau_0^2} + \frac{n\bar{x}}{\sigma^2}}{\frac{1}{\tau_0^2} + \frac{n}{\sigma^2}}$$
 
@@ -76,15 +76,15 @@ $$\frac{1}{\tau_n^2} = \frac{1}{\tau_0^2} + \frac{n}{\sigma^2}$$
 
 | 推定量 | 定義 | 損失関数 |
 |-------|------|---------|
-| 事後平均 | $E[\theta \| \mathbf{x}]$ | 二乗損失 |
-| 事後中央値 | $\text{median}(\theta \| \mathbf{x})$ | 絶対損失 |
-| 事後最頻値（MAP） | $\arg\max p(\theta \| \mathbf{x})$ | 0-1損失 |
+| 事後平均 | $E[\theta \mid \mathbf{x}]$ | 二乗損失 |
+| 事後中央値 | $\text{median}(\theta \mid \mathbf{x})$ | 絶対損失 |
+| 事後最頻値（MAP） | $\arg\max p(\theta \mid \mathbf{x})$ | 0-1損失 |
 
 ### 3.2 信用区間（Credible Interval）
 
 確率 $1 - \alpha$ で $\theta$ が含まれる区間：
 
-$$P(\theta \in [L, U] | \mathbf{x}) = 1 - \alpha$$
+$$P(\theta \in [L, U] \mid \mathbf{x}) = 1 - \alpha$$
 
 **最高事後密度（HPD）区間**：最も短い信用区間。
 
@@ -105,10 +105,10 @@ $$P(\theta \in [L, U] | \mathbf{x}) = 1 - \alpha$$
 
 ### 4.2 メトロポリス・ヘイスティングス法
 
-1. 提案分布 $q(\theta^* | \theta^{(t)})$ から候補 $\theta^*$ を生成
+1. 提案分布 $q(\theta^* \mid \theta^{(t)})$ から候補 $\theta^*$ を生成
 2. 採択確率を計算：
 
-$$\alpha = \min\left(1, \frac{p(\theta^* | \mathbf{x}) q(\theta^{(t)} | \theta^*)}{p(\theta^{(t)} | \mathbf{x}) q(\theta^* | \theta^{(t)})}\right)$$
+$$\alpha = \min\left(1, \frac{p(\theta^* \mid \mathbf{x}) q(\theta^{(t)} \mid \theta^*)}{p(\theta^{(t)} \mid \mathbf{x}) q(\theta^* \mid \theta^{(t)})}\right)$$
 
 3. 確率 $\alpha$ で $\theta^{(t+1)} = \theta^*$、それ以外は $\theta^{(t+1)} = \theta^{(t)}$
 
@@ -116,8 +116,8 @@ $$\alpha = \min\left(1, \frac{p(\theta^* | \mathbf{x}) q(\theta^{(t)} | \theta^*
 
 多次元パラメータ $\boldsymbol{\theta} = (\theta_1, \ldots, \theta_k)$ の各成分を条件付き分布からサンプリング：
 
-1. $\theta_1^{(t+1)} \sim p(\theta_1 | \theta_2^{(t)}, \ldots, \theta_k^{(t)}, \mathbf{x})$
-2. $\theta_2^{(t+1)} \sim p(\theta_2 | \theta_1^{(t+1)}, \theta_3^{(t)}, \ldots, \theta_k^{(t)}, \mathbf{x})$
+1. $\theta_1^{(t+1)} \sim p(\theta_1 \mid \theta_2^{(t)}, \ldots, \theta_k^{(t)}, \mathbf{x})$
+2. $\theta_2^{(t+1)} \sim p(\theta_2 \mid \theta_1^{(t+1)}, \theta_3^{(t)}, \ldots, \theta_k^{(t)}, \mathbf{x})$
 3. ...
 
 ### 4.4 収束診断
@@ -135,11 +135,11 @@ $$\alpha = \min\left(1, \frac{p(\theta^* | \mathbf{x}) q(\theta^{(t)} | \theta^*
 
 2つのモデル $M_1$, $M_2$ の比較：
 
-$$BF_{12} = \frac{p(\mathbf{x} | M_1)}{p(\mathbf{x} | M_2)}$$
+$$BF_{12} = \frac{p(\mathbf{x} \mid M_1)}{p(\mathbf{x} \mid M_2)}$$
 
 ### 5.2 周辺尤度
 
-$$p(\mathbf{x} | M) = \int p(\mathbf{x} | \theta, M) p(\theta | M) d\theta$$
+$$p(\mathbf{x} \mid M) = \int p(\mathbf{x} \mid \theta, M) p(\theta \mid M) d\theta$$
 
 ### 5.3 解釈
 
@@ -167,11 +167,11 @@ $\text{Beta}(1, 1) = \text{Uniform}(0, 1)$（無情報事前分布）
 
 事後分布：
 
-$$p | x \sim \text{Beta}(1 + 7, 1 + 3) = \text{Beta}(8, 4)$$
+$$p \mid x \sim \text{Beta}(1 + 7, 1 + 3) = \text{Beta}(8, 4)$$
 
 事後期待値：
 
-$$E[p | x] = \frac{8}{8 + 4} = \frac{8}{12} = \frac{2}{3} \approx 0.667$$
+$$E[p \mid x] = \frac{8}{8 + 4} = \frac{8}{12} = \frac{2}{3} \approx 0.667$$
 
 **答え：事後分布は $\text{Beta}(8, 4)$、期待値は 2/3**
 
@@ -202,20 +202,20 @@ $$= \frac{8 \times 4}{12^2 \times 13} = \frac{32}{144 \times 13} = \frac{32}{187
 
 ### 例題3：MHアルゴリズム
 
-対称な提案分布（$q(\theta^* | \theta) = q(\theta | \theta^*)$）のとき、採択確率の式を簡略化せよ。
+対称な提案分布（$q(\theta^* \mid \theta) = q(\theta \mid \theta^*)$）のとき、採択確率の式を簡略化せよ。
 
 <details markdown="1">
 <summary>解答を見る</summary>
 
 ### 解答
 
-対称な提案分布では $q(\theta^* | \theta) = q(\theta | \theta^*)$ なので：
+対称な提案分布では $q(\theta^* \mid \theta) = q(\theta \mid \theta^*)$ なので：
 
-$$\alpha = \min\left(1, \frac{p(\theta^* | \mathbf{x})}{p(\theta | \mathbf{x})}\right)$$
+$$\alpha = \min\left(1, \frac{p(\theta^* \mid \mathbf{x})}{p(\theta \mid \mathbf{x})}\right)$$
 
 事後分布の比のみで採択確率が決まる。
 
-**答え：$\alpha = \min(1, p(\theta^* | \mathbf{x})/p(\theta | \mathbf{x}))$**
+**答え：$\alpha = \min(1, p(\theta^* \mid \mathbf{x})/p(\theta \mid \mathbf{x}))$**
 
 （メトロポリスアルゴリズム）
 
@@ -227,10 +227,10 @@ $$\alpha = \min\left(1, \frac{p(\theta^* | \mathbf{x})}{p(\theta | \mathbf{x})}\
 
 | 項目 | 公式 |
 |-----|------|
-| ベイズの定理 | $p(\theta \| \mathbf{x}) \propto p(\mathbf{x} \| \theta) p(\theta)$ |
+| ベイズの定理 | $p(\theta \mid \mathbf{x}) \propto p(\mathbf{x} \mid \theta) p(\theta)$ |
 | 二項×ベータ | 事後 $\text{Beta}(\alpha+x, \beta+n-x)$ |
-| MH採択確率 | $\alpha = \min(1, \frac{p(\theta^*\|\mathbf{x})q(\theta\|\theta^*)}{p(\theta\|\mathbf{x})q(\theta^*\|\theta)})$ |
-| ベイズ因子 | $BF_{12} = p(\mathbf{x}\|M_1)/p(\mathbf{x}\|M_2)$ |
+| MH採択確率 | $\alpha = \min(1, \frac{p(\theta^*\mid\mathbf{x})q(\theta\mid\theta^*)}{p(\theta\mid\mathbf{x})q(\theta^*\mid\theta)})$ |
+| ベイズ因子 | $BF_{12} = p(\mathbf{x}\mid M_1)/p(\mathbf{x}\mid M_2)$ |
 
 ---
 

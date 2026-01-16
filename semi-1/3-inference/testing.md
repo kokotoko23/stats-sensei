@@ -36,7 +36,7 @@ description: ネイマン・ピアソンの補題、尤度比検定、UMP検定�
 
 ### 1.4 検出力（検定力）
 
-$$\text{検出力} = 1 - \beta = P(\text{棄却} | H_1)$$
+$$\text{検出力} = 1 - \beta = P(\text{棄却} \mid H_1)$$
 
 $H_1$ が真のときに正しく棄却する確率。
 
@@ -270,7 +270,7 @@ $$\alpha_{\text{各}} = \frac{\alpha_{\text{全体}}}{m} = \frac{0.05}{5} = 0.01
 
 | 項目 | 公式 |
 |-----|------|
-| 検出力 | $1 - \beta = P(\text{棄却} \| H_1)$ |
+| 検出力 | $1 - \beta = P(\text{棄却} \mid H_1)$ |
 | ネイマン・ピアソン | 棄却域：$L(\theta_0)/L(\theta_1) \leq k$ |
 | 尤度比検定 | $-2\log\Lambda \sim \chi^2_r$（大標本） |
 | ワルド検定 | $W = (\hat{\theta}-\theta_0)^2 nI(\hat{\theta})$ |

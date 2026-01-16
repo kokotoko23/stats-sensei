@@ -53,7 +53,7 @@ $$E[U(\theta)] = 0$$
 
 統計量 $T(\mathbf{X})$ が $\theta$ に対して**十分統計量**であるとは、$T$ が与えられたときの $\mathbf{X}$ の条件付き分布が $\theta$ に依存しないこと：
 
-$$P(\mathbf{X} = \mathbf{x} | T(\mathbf{X}) = t)$$ が $\theta$ によらない
+$$P(\mathbf{X} = \mathbf{x} \mid T(\mathbf{X}) = t)$$ が $\theta$ によらない
 
 ### 2.2 分解定理（ネイマン・フィッシャーの分解定理）
 
@@ -155,7 +155,7 @@ $$e(T) = \frac{\text{CRLB}}{\text{Var}(T)} \leq 1$$
 
 $T$ を $\theta$ の不偏推定量、$S$ を十分統計量とする。
 
-$$T^* = E[T | S]$$ とおくと、$T^*$ も不偏推定量であり：
+$$T^* = E[T \mid S]$$ とおくと、$T^*$ も不偏推定量であり：
 
 $$\text{Var}(T^*) \leq \text{Var}(T)$$
 

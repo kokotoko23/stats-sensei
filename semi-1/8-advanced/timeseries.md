@@ -142,7 +142,7 @@ $$\Delta^d Y_t$$ が ARMA(p, q) に従う。
 
 ### 5.1 最小二乗予測
 
-$$\hat{Y}_{T+h} = E[Y_{T+h} | Y_1, \ldots, Y_T]$$
+$$\hat{Y}_{T+h} = E[Y_{T+h} \mid Y_1, \ldots, Y_T]$$
 
 ### 5.2 予測誤差分散
 

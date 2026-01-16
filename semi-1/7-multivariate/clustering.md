@@ -120,7 +120,7 @@ $$s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}$$
 
 データが $K$ 個の正規分布の混合から生成されると仮定：
 
-$$p(\mathbf{x}) = \sum_{k=1}^{K} \pi_k \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
+$$p(\mathbf{x}) = \sum_{k=1}^{K} \pi_k \mathcal{N}(\mathbf{x} \mid \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
 
 - $\pi_k$：混合比率（$\sum_k \pi_k = 1$）
 - $\boldsymbol{\mu}_k$：第$k$成分の平均
