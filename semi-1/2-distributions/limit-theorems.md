@@ -18,7 +18,7 @@ $$X_n \xrightarrow{a.s.} X \quad \Leftrightarrow \quad P\left(\lim_{n \to \infty
 
 ### 1.2 確率収束
 
-$$X_n \xrightarrow{p} X \quad \Leftrightarrow \quad \forall \epsilon > 0, \lim_{n \to \infty} P(|X_n - X| > \epsilon) = 0$$
+$$X_n \xrightarrow{p} X \quad \Leftrightarrow \quad \forall \epsilon > 0, \lim_{n \to \infty} P(\lvert X_n - X \rvert > \epsilon) = 0$$
 
 ### 1.3 分布収束（法則収束）
 
@@ -34,21 +34,21 @@ $$\text{概収束} \Rightarrow \text{確率収束} \Rightarrow \text{分布収�
 
 ## 2. 大数の法則
 
-### 2.1 弱い大数の法則（Weak Law）
+### 2.1 大数の弱法則（Weak Law）
 
 $X_1, X_2, \ldots$ が独立同分布で $E[X_i] = \mu$, $\text{Var}(X_i) = \sigma^2 < \infty$ のとき：
 
 $$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \xrightarrow{p} \mu$$
 
-### 2.2 強い大数の法則（Strong Law）
+### 2.2 大数の強法則（Strong Law）
 
-$E[|X_i|] < \infty$ のとき：
+$E[\lvert X_i \rvert] < \infty$ のとき：
 
 $$\bar{X}_n \xrightarrow{a.s.} \mu$$
 
 ### 2.3 チェビシェフの証明（弱法則）
 
-$$P(|\bar{X}_n - \mu| > \epsilon) \leq \frac{\text{Var}(\bar{X}_n)}{\epsilon^2} = \frac{\sigma^2}{n\epsilon^2} \to 0$$
+$$P(\lvert \bar{X}_n - \mu \rvert > \epsilon) \leq \frac{\text{Var}(\bar{X}_n)}{\epsilon^2} = \frac{\sigma^2}{n\epsilon^2} \to 0$$
 
 ---
 
@@ -82,7 +82,7 @@ $$\sum_{i=1}^n X_i \approx N(n\mu, n\sigma^2)$$
 
 CLT の収束速度の評価：
 
-$$\sup_x |F_n(x) - \Phi(x)| \leq \frac{C \cdot E[|X - \mu|^3]}{\sigma^3 \sqrt{n}}$$
+$$\sup_x \lvert F_n(x) - \Phi(x) \rvert \leq \frac{C \cdot E[\lvert X - \mu \rvert^3]}{\sigma^3 \sqrt{n}}$$
 
 $C \approx 0.4748$（ベリー・エッセーン定数）
 

@@ -109,7 +109,7 @@ $$\text{Cov}(X, Y) = E[(X-\mu_X)(Y-\mu_Y)] = E[XY] - E[X]E[Y]$$
 $$\rho_{XY} = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}$$
 
 - $-1 \leq \rho \leq 1$
-- $|\rho| = 1$ $\Leftrightarrow$ 完全な線形関係
+- $\lvert \rho \rvert = 1$ $\Leftrightarrow$ 完全な線形関係
 
 ### 4.3 分散の公式
 
@@ -139,21 +139,21 @@ $$E[X] = E[X \cdot \mathbf{1}_{X \geq a}] + E[X \cdot \mathbf{1}_{X < a}] \geq a
 
 任意の確率変数 $X$（$\text{Var}(X) < \infty$）に対し：
 
-$$P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}$$
+$$P(\lvert X - \mu \rvert \geq k\sigma) \leq \frac{1}{k^2}$$
 
 または：
 
-$$P(|X - \mu| \geq c) \leq \frac{\sigma^2}{c^2}$$
+$$P(\lvert X - \mu \rvert \geq c) \leq \frac{\sigma^2}{c^2}$$
 
 ### 6.2 証明
 
 マルコフの不等式を $(X - \mu)^2$ に適用：
 
-$$P(|X - \mu| \geq c) = P((X - \mu)^2 \geq c^2) \leq \frac{E[(X-\mu)^2]}{c^2} = \frac{\sigma^2}{c^2}$$
+$$P(\lvert X - \mu \rvert \geq c) = P((X - \mu)^2 \geq c^2) \leq \frac{E[(X-\mu)^2]}{c^2} = \frac{\sigma^2}{c^2}$$
 
 ### 6.3 応用例
 
-| $k$ | $P(\|X-\mu\| \geq k\sigma)$ の上界 |
+| $k$ | $P(\lvert X-\mu \rvert \geq k\sigma)$ の上界 |
 |-----|--------------------------------|
 | 2 | 25% |
 | 3 | 11.1% |
@@ -193,17 +193,17 @@ $$g(E[X]) \geq E[g(X)]$$
 
 $1/p + 1/q = 1$（$p, q > 1$）のとき：
 
-$$E[|XY|] \leq (E[|X|^p])^{1/p} (E[|Y|^q])^{1/q}$$
+$$E[\lvert XY \rvert] \leq (E[\lvert X \rvert^p])^{1/p} (E[\lvert Y \rvert^q])^{1/q}$$
 
 $p = q = 2$ のとき**コーシー・シュワルツの不等式**：
 
-$$|E[XY]|^2 \leq E[X^2] E[Y^2]$$
+$$\lvert E[XY] \rvert^2 \leq E[X^2] E[Y^2]$$
 
 ### 8.2 ミンコフスキーの不等式
 
 $p \geq 1$ のとき：
 
-$$(E[|X+Y|^p])^{1/p} \leq (E[|X|^p])^{1/p} + (E[|Y|^p])^{1/p}$$
+$$(E[\lvert X+Y \rvert^p])^{1/p} \leq (E[\lvert X \rvert^p])^{1/p} + (E[\lvert Y \rvert^p])^{1/p}$$
 
 ---
 
@@ -246,7 +246,7 @@ $$\gamma_1 = \frac{\mu_3}{\sigma^3} = \frac{2/\lambda^3}{1/\lambda^3} = 2$$
 
 ### 例題2：チェビシェフの不等式
 
-$E[X] = 100$, $\text{Var}(X) = 25$ のとき、$P(|X - 100| \geq 15)$ の上界を求めよ。
+$E[X] = 100$, $\text{Var}(X) = 25$ のとき、$P(\lvert X - 100 \rvert \geq 15)$ の上界を求めよ。
 
 <details markdown="1">
 <summary>解答を見る</summary>
@@ -259,7 +259,7 @@ $k\sigma = 15$ より $k = 3$
 
 チェビシェフの不等式：
 
-$$P(|X - 100| \geq 15) \leq \frac{1}{k^2} = \frac{1}{9} \approx 0.111$$
+$$P(\lvert X - 100 \rvert \geq 15) \leq \frac{1}{k^2} = \frac{1}{9} \approx 0.111$$
 
 **答え：$\leq 1/9 \approx 11.1\%$**
 
@@ -300,9 +300,9 @@ $$\sqrt{E[X]} \geq E[\sqrt{X}]$$
 | 歪度 | $\gamma_1 = E[(X-\mu)^3]/\sigma^3$ |
 | 尖度 | $\gamma_2 = E[(X-\mu)^4]/\sigma^4$ |
 | マルコフの不等式 | $P(X \geq a) \leq E[X]/a$ |
-| チェビシェフの不等式 | $P(\|X-\mu\| \geq k\sigma) \leq 1/k^2$ |
+| チェビシェフの不等式 | $P(\lvert X-\mu \rvert \geq k\sigma) \leq 1/k^2$ |
 | イェンセン（凸） | $g(E[X]) \leq E[g(X)]$ |
-| コーシー・シュワルツ | $\|E[XY]\|^2 \leq E[X^2]E[Y^2]$ |
+| コーシー・シュワルツ | $\lvert E[XY] \rvert^2 \leq E[X^2]E[Y^2]$ |
 
 ---
 
