@@ -83,9 +83,39 @@ $$\text{AIC} = -2\ell(\hat{\theta}) + 2k$$
 
 ### 2.2 AICの導出
 
-カルバック・ライブラー情報量の漸近不偏推定量。
+AICはカルバック・ライブラー情報量の漸近不偏推定量として導出されます。
 
-$$\text{KL}(f \| g) = \int f(x) \log \frac{f(x)}{g(x)} dx$$
+**Step 1: 予測分布の良さの指標**
+
+真の分布 $f(x)$ と推定したモデル $g(x|\hat{\theta})$ の近さをKL情報量で測る：
+
+$$\text{KL}(f \| g) = \int f(x) \log \frac{f(x)}{g(x|\hat{\theta})} dx = E_f[\log f(X)] - E_f[\log g(X|\hat{\theta})]$$
+
+**Step 2: 目標**
+
+第1項は定数なので、$E_f[\log g(X|\hat{\theta})]$ を最大化するモデルを選びたい。
+
+これを**期待対数尤度**と呼ぶ。
+
+**Step 3: 推定量のバイアス**
+
+訓練データで推定した $\hat{\theta}$ を使った対数尤度 $\ell(\hat{\theta})$ は、期待対数尤度の**過大評価**になる：
+
+$$E[\ell(\hat{\theta})] - E_f[\log g(X|\hat{\theta})] \approx k$$
+
+（正則条件のもと、漸近的にパラメータ数 $k$ だけ過大評価）
+
+**Step 4: バイアス補正**
+
+$$E_f[\log g(X|\hat{\theta})] \approx \ell(\hat{\theta}) - k$$
+
+これを $-2$ 倍して情報量基準の形に：
+
+$$\text{AIC} = -2\ell(\hat{\theta}) + 2k$$
+
+**直感的理解**：
+- $-2\ell(\hat{\theta})$：適合度（小さいほど良い）
+- $2k$：複雑さへのペナルティ（パラメータが多いほど大きい）
 
 ### 2.3 修正AIC（AICc）
 

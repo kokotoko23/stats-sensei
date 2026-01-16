@@ -89,11 +89,43 @@ $$\mathbf{S}_W = \sum_{i \in \text{群1}} (\mathbf{x}_i - \bar{\mathbf{x}}_1)(\m
 
 $$\max_{\mathbf{w}} J(\mathbf{w}) = \frac{\mathbf{w}^\top \mathbf{S}_B \mathbf{w}}{\mathbf{w}^\top \mathbf{S}_W \mathbf{w}}$$
 
-### 2.4 解
+### 2.4 解の導出
+
+**Step 1: レイリー商の最大化**
+
+目的関数はレイリー商の形をしている：
+
+$$J(\mathbf{w}) = \frac{\mathbf{w}^\top \mathbf{S}_B \mathbf{w}}{\mathbf{w}^\top \mathbf{S}_W \mathbf{w}}$$
+
+**Step 2: ラグランジュの未定乗数法**
+
+$\mathbf{w}^\top \mathbf{S}_W \mathbf{w} = 1$ という制約条件のもとで $\mathbf{w}^\top \mathbf{S}_B \mathbf{w}$ を最大化：
+
+$$L = \mathbf{w}^\top \mathbf{S}_B \mathbf{w} - \lambda(\mathbf{w}^\top \mathbf{S}_W \mathbf{w} - 1)$$
+
+**Step 3: 微分して0とおく**
+
+$$\frac{\partial L}{\partial \mathbf{w}} = 2\mathbf{S}_B \mathbf{w} - 2\lambda \mathbf{S}_W \mathbf{w} = 0$$
+
+$$\mathbf{S}_B \mathbf{w} = \lambda \mathbf{S}_W \mathbf{w}$$
+
+**Step 4: 一般化固有値問題**
+
+$$\mathbf{S}_W^{-1} \mathbf{S}_B \mathbf{w} = \lambda \mathbf{w}$$
+
+**Step 5: 2群の場合の簡略化**
+
+$\mathbf{S}_B = (\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2)(\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2)^\top$ より：
+
+$$\mathbf{S}_B \mathbf{w} = (\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2) \underbrace{(\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2)^\top \mathbf{w}}_{\text{スカラー}}$$
+
+これは常に $(\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2)$ の方向を向く。
+
+したがって：
 
 $$\mathbf{w} \propto \mathbf{S}_W^{-1}(\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2)$$
 
-2群の場合、最適な判別軸は $\mathbf{S}_W^{-1}$ と群平均の差の積で与えられる。
+**直感的理解**：群内の相関構造 $\mathbf{S}_W$ を考慮しながら、群平均の差の方向を見つける。
 
 ---
 
