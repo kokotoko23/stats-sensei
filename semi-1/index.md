@@ -17,7 +17,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 ## 学習カテゴリ
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>1. 確率論</h2>
 <span class="category-stats">基礎理論</span>
@@ -32,7 +32,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>2. 確率分布</h2>
 <span class="category-stats">離散・連続分布</span>
@@ -46,7 +46,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>3. 統計的推測</h2>
 <span class="category-stats">推定・検定理論</span>
@@ -61,7 +61,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>4. 確率過程</h2>
 <span class="category-stats">マルコフ連鎖・ポアソン過程</span>
@@ -74,7 +74,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>5. 回帰分析</h2>
 <span class="category-stats">GLM・生存時間分析</span>
@@ -89,7 +89,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>6. 実験計画・調査</h2>
 <span class="category-stats">分散分析・標本調査</span>
@@ -102,7 +102,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>7. 多変量解析</h2>
 <span class="category-stats">PCA・判別・クラスター</span>
@@ -118,7 +118,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 </div>
 
-<div class="category-section">
+<div class="category-section" markdown="1">
 <div class="category-header">
 <h2>8. 発展的手法</h2>
 <span class="category-stats">時系列・ベイズ・シミュレーション</span>
