@@ -378,6 +378,170 @@
         align-items: flex-start;
       }
     }
+
+    /* 選択式クイズUI */
+    .quiz-container {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .quiz-question {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      padding: 14px 18px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+    }
+    .quiz-option:hover:not(.disabled) {
+      border-color: var(--primary-color);
+      background: #f0fdf4;
+    }
+    .quiz-option.selected {
+      border-color: var(--primary-color);
+      background: #f0fdf4;
+    }
+    .quiz-option.correct {
+      border-color: #22c55e;
+      background: #dcfce7;
+    }
+    .quiz-option.incorrect {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+    .quiz-option.disabled {
+      cursor: default;
+    }
+    .quiz-option input[type="radio"] {
+      margin-right: 12px;
+      margin-top: 3px;
+      accent-color: var(--primary-color);
+    }
+    .quiz-option label {
+      cursor: pointer;
+      flex: 1;
+      line-height: 1.5;
+    }
+    .quiz-option.disabled label {
+      cursor: default;
+    }
+    .quiz-feedback {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      display: none;
+    }
+    .quiz-feedback.show {
+      display: block;
+    }
+    .quiz-feedback.correct {
+      background: #dcfce7;
+      border: 1px solid #22c55e;
+    }
+    .quiz-feedback.incorrect {
+      background: #fee2e2;
+      border: 1px solid #ef4444;
+    }
+    .quiz-feedback-icon {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+    .quiz-explanation {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .quiz-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background 0.2s;
+    }
+    .quiz-btn:hover {
+      background: var(--primary-dark);
+    }
+    .quiz-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* 進捗バー（問題ページ用） */
+    .quiz-progress {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 12px 16px;
+      background: var(--bg-light);
+      border-radius: 8px;
+    }
+    .quiz-progress-bar {
+      flex: 1;
+      height: 10px;
+      background: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 5px;
+      transition: width 0.3s ease;
+    }
+    .quiz-progress-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* 結果サマリー */
+    .quiz-result {
+      text-align: center;
+      padding: 32px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border-radius: 12px;
+      color: white;
+      margin: 24px 0;
+    }
+    .quiz-result h2 {
+      margin: 0 0 16px 0;
+      color: white;
+    }
+    .quiz-result .score {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 16px 0;
+    }
+    .quiz-result .score-detail {
+      font-size: 18px;
+      opacity: 0.9;
+    }
   </style>
   {% include head-custom.html %}
 </head>
@@ -419,5 +583,110 @@
       </span>
     </footer>
   </main>
+
+  <script>
+  // 選択式クイズシステム
+  document.addEventListener('DOMContentLoaded', function() {
+    // クイズの初期化
+    document.querySelectorAll('.quiz-container').forEach(function(quiz, index) {
+      const quizId = quiz.dataset.quizId || 'quiz-' + index;
+      const correctAnswer = quiz.dataset.correct;
+      const options = quiz.querySelectorAll('.quiz-option');
+      const feedback = quiz.querySelector('.quiz-feedback');
+      const checkBtn = quiz.querySelector('.quiz-btn');
+
+      let selectedAnswer = null;
+      let answered = false;
+
+      // 選択肢のクリック処理
+      options.forEach(function(option) {
+        option.addEventListener('click', function() {
+          if (answered) return;
+
+          // 既存の選択を解除
+          options.forEach(opt => opt.classList.remove('selected'));
+          option.querySelector('input[type="radio"]').checked = true;
+          option.classList.add('selected');
+          selectedAnswer = option.dataset.value;
+
+          if (checkBtn) {
+            checkBtn.disabled = false;
+          }
+        });
+      });
+
+      // 解答確認ボタン
+      if (checkBtn) {
+        checkBtn.addEventListener('click', function() {
+          if (!selectedAnswer || answered) return;
+
+          answered = true;
+          options.forEach(opt => opt.classList.add('disabled'));
+
+          const isCorrect = selectedAnswer === correctAnswer;
+
+          // 正解・不正解の表示
+          options.forEach(function(opt) {
+            if (opt.dataset.value === correctAnswer) {
+              opt.classList.add('correct');
+            } else if (opt.dataset.value === selectedAnswer && !isCorrect) {
+              opt.classList.add('incorrect');
+            }
+          });
+
+          // フィードバック表示
+          if (feedback) {
+            feedback.classList.add('show');
+            feedback.classList.add(isCorrect ? 'correct' : 'incorrect');
+            const icon = feedback.querySelector('.quiz-feedback-icon');
+            if (icon) {
+              icon.textContent = isCorrect ? '✓' : '✗';
+            }
+          }
+
+          checkBtn.disabled = true;
+          checkBtn.textContent = isCorrect ? '正解！' : '不正解';
+
+          // 進捗を保存
+          saveProgress(quizId, isCorrect);
+          updateProgressBar();
+        });
+      }
+    });
+
+    // 進捗保存
+    function saveProgress(quizId, isCorrect) {
+      const pageKey = window.location.pathname;
+      let progress = JSON.parse(localStorage.getItem('quiz-progress') || '{}');
+      if (!progress[pageKey]) {
+        progress[pageKey] = {};
+      }
+      progress[pageKey][quizId] = isCorrect;
+      localStorage.setItem('quiz-progress', JSON.stringify(progress));
+    }
+
+    // 進捗バー更新
+    function updateProgressBar() {
+      const progressBar = document.querySelector('.quiz-progress-fill');
+      const progressText = document.querySelector('.quiz-progress-text');
+      if (!progressBar || !progressText) return;
+
+      const pageKey = window.location.pathname;
+      const progress = JSON.parse(localStorage.getItem('quiz-progress') || '{}');
+      const pageProgress = progress[pageKey] || {};
+
+      const totalQuizzes = document.querySelectorAll('.quiz-container').length;
+      const answeredQuizzes = Object.keys(pageProgress).length;
+      const correctQuizzes = Object.values(pageProgress).filter(v => v).length;
+
+      const percentage = totalQuizzes > 0 ? (answeredQuizzes / totalQuizzes) * 100 : 0;
+      progressBar.style.width = percentage + '%';
+      progressText.textContent = correctQuizzes + ' / ' + totalQuizzes + ' 正解';
+    }
+
+    // 初期化時に進捗バーを更新
+    updateProgressBar();
+  });
+  </script>
 </body>
 </html>
