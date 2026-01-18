@@ -11,6 +11,7 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <div class="quick-course-banner" style="background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%);">
   <h2>準1級とは</h2>
   <p>大学専門課程（3・4年次）レベルの統計学の知識と、実社会での応用力が問われる試験です。</p>
+  <a href="{{ site.baseurl }}/semi-1/problems/" style="margin-top: 10px;">問題演習を始める →</a>
 </div>
 
 ---
@@ -130,6 +131,23 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 - [シミュレーション]({{ site.baseurl }}/semi-1/8-advanced/simulation/)（モンテカルロ、ブートストラップ）
 
 [発展的手法を学ぶ →]({{ site.baseurl }}/semi-1/8-advanced/)
+
+</div>
+
+<div class="category-section" markdown="1">
+<div class="category-header" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+<h2>問題演習</h2>
+<span class="category-stats">選択式問題で実力チェック</span>
+</div>
+
+試験形式に合わせた選択式問題で理解度を確認しましょう。
+
+- [推定の問題]({{ site.baseurl }}/semi-1/problems/estimation/)（MLE、十分統計量、CRLB）
+- [検定の問題]({{ site.baseurl }}/semi-1/problems/testing/)（尤度比検定、UMP、多重検定）
+- 信頼区間の問題（準備中）
+- 多変量解析の問題（準備中）
+
+[すべての問題を見る →]({{ site.baseurl }}/semi-1/problems/)
 
 </div>
 
