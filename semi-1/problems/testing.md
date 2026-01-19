@@ -20,7 +20,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 1：ネイマン・ピアソンの補題
 
-<div class="quiz-container" data-quiz-id="test-1" data-correct="b">
+<div class="quiz-container" data-quiz-id="test-1" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     $H_0: \theta = \theta_0$ vs $H_1: \theta = \theta_1$ の単純仮説の検定において、ネイマン・ピアソンの補題が保証することは何か。
   </div>
@@ -56,7 +56,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 2：尤度比検定の漸近分布
 
-<div class="quiz-container" data-quiz-id="test-2" data-correct="c">
+<div class="quiz-container" data-quiz-id="test-2" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     尤度比検定統計量 $-2\log\Lambda$ の漸近分布について正しいものはどれか。ただし、$H_0$ で $r$ 個のパラメータが制約されているとする。
   </div>
@@ -92,7 +92,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 3：UMP検定
 
-<div class="quiz-container" data-quiz-id="test-3" data-correct="a">
+<div class="quiz-container" data-quiz-id="test-3" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     一様最強力（UMP）検定が存在するのは、主にどのような状況か。
   </div>
@@ -128,7 +128,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 4：p値の解釈
 
-<div class="quiz-container" data-quiz-id="test-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="test-4" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     p値の正しい解釈はどれか。
   </div>
@@ -164,7 +164,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 5：多重検定
 
-<div class="quiz-container" data-quiz-id="test-5" data-correct="b">
+<div class="quiz-container" data-quiz-id="test-5" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     20個の独立な検定を有意水準 $\alpha = 0.05$ で行うとき、すべての帰無仮説が真でも少なくとも1つが有意になる確率（ファミリーワイズエラー率）はおよそいくらか。
   </div>
@@ -202,7 +202,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 6：検出力
 
-<div class="quiz-container" data-quiz-id="test-6" data-correct="c">
+<div class="quiz-container" data-quiz-id="test-6" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     検定の検出力（power）について正しいものはどれか。
   </div>
@@ -247,7 +247,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 7：スコア検定
 
-<div class="quiz-container" data-quiz-id="test-7" data-correct="b">
+<div class="quiz-container" data-quiz-id="test-7" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     スコア検定（Rao のスコア検定）の特徴として正しいものはどれか。
   </div>
@@ -291,7 +291,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 8：信頼区間と検定
 
-<div class="quiz-container" data-quiz-id="test-8" data-correct="a">
+<div class="quiz-container" data-quiz-id="test-8" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     95%信頼区間と有意水準5%の両側検定の関係として正しいものはどれか。
   </div>
@@ -334,7 +334,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 9：FDR制御
 
-<div class="quiz-container" data-quiz-id="test-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="test-9" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     偽発見率（FDR: False Discovery Rate）の制御について正しいものはどれか。
   </div>
@@ -382,7 +382,7 @@ permalink: /semi-1/problems/testing/
 
 ## 問題 10：ノンパラメトリック検定
 
-<div class="quiz-container" data-quiz-id="test-10" data-correct="c">
+<div class="quiz-container" data-quiz-id="test-10" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     2群の位置の差を検定するウィルコクソンの順位和検定（マン・ホイットニーのU検定）について正しいものはどれか。
   </div>

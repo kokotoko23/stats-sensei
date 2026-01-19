@@ -542,6 +542,96 @@
       font-size: 18px;
       opacity: 0.9;
     }
+
+    /* 難易度フィルターUI */
+    .difficulty-filter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: var(--bg-light);
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
+    .difficulty-filter-label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+    }
+    .difficulty-filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .difficulty-filter-btn {
+      padding: 8px 16px;
+      border: 2px solid var(--border-color);
+      border-radius: 20px;
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .difficulty-filter-btn:hover {
+      border-color: var(--primary-color);
+    }
+    .difficulty-filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+    .difficulty-filter-btn[data-difficulty="easy"] {
+      color: var(--difficulty-easy);
+      border-color: var(--difficulty-easy);
+    }
+    .difficulty-filter-btn[data-difficulty="easy"].active {
+      background: var(--difficulty-easy);
+      color: white;
+    }
+    .difficulty-filter-btn[data-difficulty="medium"] {
+      color: var(--difficulty-medium);
+      border-color: var(--difficulty-medium);
+    }
+    .difficulty-filter-btn[data-difficulty="medium"].active {
+      background: var(--difficulty-medium);
+      color: white;
+    }
+    .difficulty-filter-btn[data-difficulty="hard"] {
+      color: var(--difficulty-hard);
+      border-color: var(--difficulty-hard);
+    }
+    .difficulty-filter-btn[data-difficulty="hard"].active {
+      background: var(--difficulty-hard);
+      color: white;
+    }
+    .quiz-container.hidden {
+      display: none;
+    }
+    .quiz-container .difficulty-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .quiz-container[data-difficulty="easy"] .difficulty-tag {
+      background: var(--difficulty-easy);
+    }
+    .quiz-container[data-difficulty="medium"] .difficulty-tag {
+      background: var(--difficulty-medium);
+    }
+    .quiz-container[data-difficulty="hard"] .difficulty-tag {
+      background: var(--difficulty-hard);
+    }
+    .filter-count {
+      font-size: 13px;
+      color: #666;
+      margin-left: auto;
+    }
   </style>
   {% include head-custom.html %}
 </head>
@@ -686,7 +776,98 @@
 
     // 初期化時に進捗バーを更新
     updateProgressBar();
+
+    // 難易度フィルター機能
+    initDifficultyFilter();
   });
+
+  // 難易度フィルター初期化
+  function initDifficultyFilter() {
+    const quizzes = document.querySelectorAll('.quiz-container[data-difficulty]');
+    if (quizzes.length === 0) return;
+
+    // フィルターUIを作成
+    const progressBar = document.querySelector('.quiz-progress');
+    if (!progressBar) return;
+
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'difficulty-filter';
+    filterContainer.innerHTML = `
+      <span class="difficulty-filter-label">難易度:</span>
+      <div class="difficulty-filter-buttons">
+        <button class="difficulty-filter-btn active" data-difficulty="all">すべて</button>
+        <button class="difficulty-filter-btn" data-difficulty="easy">基礎</button>
+        <button class="difficulty-filter-btn" data-difficulty="medium">標準</button>
+        <button class="difficulty-filter-btn" data-difficulty="hard">発展</button>
+      </div>
+      <span class="filter-count"></span>
+    `;
+
+    progressBar.parentNode.insertBefore(filterContainer, progressBar.nextSibling);
+
+    // 各クイズに難易度タグを追加
+    quizzes.forEach(quiz => {
+      const difficulty = quiz.dataset.difficulty;
+      const question = quiz.querySelector('.quiz-question');
+      if (question && !question.querySelector('.difficulty-tag')) {
+        const difficultyLabels = { easy: '基礎', medium: '標準', hard: '発展' };
+        const tag = document.createElement('span');
+        tag.className = 'difficulty-tag';
+        tag.textContent = difficultyLabels[difficulty] || difficulty;
+        question.insertBefore(tag, question.firstChild);
+      }
+    });
+
+    // フィルターボタンのイベント
+    const filterBtns = filterContainer.querySelectorAll('.difficulty-filter-btn');
+    const filterCount = filterContainer.querySelector('.filter-count');
+
+    function updateFilter(selectedDifficulty) {
+      let visibleCount = 0;
+      const totalCount = quizzes.length;
+
+      quizzes.forEach(quiz => {
+        const quizDifficulty = quiz.dataset.difficulty;
+        // 対応するh2見出しも非表示/表示切り替え
+        const prevElement = quiz.previousElementSibling;
+        const prevPrevElement = prevElement ? prevElement.previousElementSibling : null;
+
+        if (selectedDifficulty === 'all' || quizDifficulty === selectedDifficulty) {
+          quiz.classList.remove('hidden');
+          if (prevElement && prevElement.tagName === 'HR') {
+            prevElement.style.display = '';
+          }
+          if (prevPrevElement && prevPrevElement.tagName === 'H2') {
+            prevPrevElement.style.display = '';
+          }
+          visibleCount++;
+        } else {
+          quiz.classList.add('hidden');
+          if (prevElement && prevElement.tagName === 'HR') {
+            prevElement.style.display = 'none';
+          }
+          if (prevPrevElement && prevPrevElement.tagName === 'H2') {
+            prevPrevElement.style.display = 'none';
+          }
+        }
+      });
+
+      filterCount.textContent = visibleCount + ' / ' + totalCount + ' 問表示中';
+
+      filterBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.difficulty === selectedDifficulty);
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateFilter(btn.dataset.difficulty);
+      });
+    });
+
+    // 初期表示
+    updateFilter('all');
+  }
   </script>
 </body>
 </html>

@@ -20,7 +20,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 1：ガンマ分布
 
-<div class="quiz-container" data-quiz-id="dist-1" data-correct="b">
+<div class="quiz-container" data-quiz-id="dist-1" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     $X_1, X_2, \ldots, X_n$ が独立に指数分布 $\text{Exp}(\lambda)$ に従うとき、$Y = \sum_{i=1}^n X_i$ の分布はどれか。
   </div>
@@ -64,7 +64,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 2：ベータ分布
 
-<div class="quiz-container" data-quiz-id="dist-2" data-correct="a">
+<div class="quiz-container" data-quiz-id="dist-2" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     $X \sim \text{Beta}(\alpha, \beta)$ のとき、$E[X]$ はどれか。
   </div>
@@ -106,7 +106,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 3：カイ二乗分布
 
-<div class="quiz-container" data-quiz-id="dist-3" data-correct="c">
+<div class="quiz-container" data-quiz-id="dist-3" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     $Z_1, Z_2, \ldots, Z_n$ が独立に標準正規分布 $N(0, 1)$ に従うとき、$\sum_{i=1}^n Z_i^2$ の分布はどれか。
   </div>
@@ -148,7 +148,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 4：中心極限定理
 
-<div class="quiz-container" data-quiz-id="dist-4" data-correct="b">
+<div class="quiz-container" data-quiz-id="dist-4" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     $X_1, X_2, \ldots, X_n$ が独立に期待値 $\mu$、分散 $\sigma^2$ の分布に従うとき、中心極限定理により $n \to \infty$ で分布収束するものはどれか。
   </div>
@@ -192,7 +192,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 5：デルタ法
 
-<div class="quiz-container" data-quiz-id="dist-5" data-correct="d">
+<div class="quiz-container" data-quiz-id="dist-5" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     $\sqrt{n}(\hat{\theta}_n - \theta) \xrightarrow{d} N(0, \sigma^2)$ のとき、連続微分可能な関数 $g$ に対してデルタ法を適用すると、$\sqrt{n}(g(\hat{\theta}_n) - g(\theta))$ の漸近分散はどれか。
   </div>
@@ -236,7 +236,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 6：t分布
 
-<div class="quiz-container" data-quiz-id="dist-6" data-correct="a">
+<div class="quiz-container" data-quiz-id="dist-6" data-correct="a" data-difficulty="easy">
   <div class="quiz-question">
     $Z \sim N(0,1)$ と $V \sim \chi^2_n$ が独立のとき、$T = \frac{Z}{\sqrt{V/n}}$ の分布はどれか。
   </div>
@@ -281,7 +281,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 7：F分布
 
-<div class="quiz-container" data-quiz-id="dist-7" data-correct="c">
+<div class="quiz-container" data-quiz-id="dist-7" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     $U \sim \chi^2_m$、$V \sim \chi^2_n$ が独立のとき、$F = \frac{U/m}{V/n}$ について正しいものはどれか。
   </div>
@@ -325,7 +325,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 8：負の二項分布
 
-<div class="quiz-container" data-quiz-id="dist-8" data-correct="b">
+<div class="quiz-container" data-quiz-id="dist-8" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     成功確率 $p$ のベルヌーイ試行を繰り返し、$r$ 回成功するまでの失敗回数 $X$ が従う分布はどれか。
   </div>
@@ -372,7 +372,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 9：順序統計量
 
-<div class="quiz-container" data-quiz-id="dist-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="dist-9" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     $X_1, \ldots, X_n$ が一様分布 $U(0, 1)$ からの i.i.d. 標本のとき、最大値 $X_{(n)}$ の期待値はどれか。
   </div>
@@ -418,7 +418,7 @@ permalink: /semi-1/problems/distributions/
 
 ## 問題 10：多変量正規分布
 
-<div class="quiz-container" data-quiz-id="dist-10" data-correct="a">
+<div class="quiz-container" data-quiz-id="dist-10" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     $(X, Y)^\top$ が二変量正規分布に従い、$\text{Cov}(X, Y) = 0$ のとき、正しいものはどれか。
   </div>

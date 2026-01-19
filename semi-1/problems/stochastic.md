@@ -20,7 +20,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 1：マルコフ連鎖の定義
 
-<div class="quiz-container" data-quiz-id="stoch-1" data-correct="c">
+<div class="quiz-container" data-quiz-id="stoch-1" data-correct="c" data-difficulty="easy">
   <div class="quiz-question">
     マルコフ連鎖の「マルコフ性」を正しく表しているものはどれか。
   </div>
@@ -60,7 +60,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 2：推移確率行列
 
-<div class="quiz-container" data-quiz-id="stoch-2" data-correct="a">
+<div class="quiz-container" data-quiz-id="stoch-2" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     2状態のマルコフ連鎖で、推移確率行列が $P = \begin{pmatrix} 0.7 & 0.3 \\ 0.4 & 0.6 \end{pmatrix}$ のとき、定常分布 $\boldsymbol{\pi} = (\pi_1, \pi_2)$ はどれか。
   </div>
@@ -105,7 +105,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 3：ポアソン過程
 
-<div class="quiz-container" data-quiz-id="stoch-3" data-correct="b">
+<div class="quiz-container" data-quiz-id="stoch-3" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     強度 $\lambda$ のポアソン過程 $\{N(t)\}$ において、$N(t)$ の分布と $N(s+t) - N(s)$（時刻 $s$ から $s+t$ までの事象数）の分布について正しいものはどれか。
   </div>
@@ -149,7 +149,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 4：到着間隔
 
-<div class="quiz-container" data-quiz-id="stoch-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="stoch-4" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     強度 $\lambda$ のポアソン過程において、連続する事象間の時間間隔（到着間隔）$T$ の分布はどれか。
   </div>
@@ -192,7 +192,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 5：エルゴード性
 
-<div class="quiz-container" data-quiz-id="stoch-5" data-correct="c">
+<div class="quiz-container" data-quiz-id="stoch-5" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     有限状態のマルコフ連鎖がエルゴード的（ergodic）であるための条件として<strong>正しいもの</strong>はどれか。
   </div>
@@ -235,7 +235,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 6：ランダムウォーク
 
-<div class="quiz-container" data-quiz-id="stoch-6" data-correct="b">
+<div class="quiz-container" data-quiz-id="stoch-6" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     1次元の単純ランダムウォークで、各ステップで確率 $p$ で右に1、確率 $q = 1-p$ で左に1移動する。原点からスタートして $n$ ステップ後の位置 $S_n$ の期待値 $E[S_n]$ はどれか。
   </div>
@@ -281,7 +281,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 7：初到達時間
 
-<div class="quiz-container" data-quiz-id="stoch-7" data-correct="a">
+<div class="quiz-container" data-quiz-id="stoch-7" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     マルコフ連鎖において、状態 $i$ から状態 $j$ への初到達時間（first passage time）$T_{ij} = \min\{n \geq 1 : X_n = j \mid X_0 = i\}$ の期待値 $m_{ij} = E[T_{ij}]$ について正しいものはどれか。
   </div>
@@ -325,7 +325,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 8：出生死亡過程
 
-<div class="quiz-container" data-quiz-id="stoch-8" data-correct="c">
+<div class="quiz-container" data-quiz-id="stoch-8" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     連続時間マルコフ連鎖である出生死亡過程（birth-death process）について正しいものはどれか。
   </div>
@@ -369,7 +369,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 9：ブラウン運動
 
-<div class="quiz-container" data-quiz-id="stoch-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="stoch-9" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     標準ブラウン運動（ウィーナー過程）$\{W(t), t \geq 0\}$ の性質として<strong>正しくないもの</strong>はどれか。
   </div>
@@ -414,7 +414,7 @@ permalink: /semi-1/problems/stochastic/
 
 ## 問題 10：マルチンゲール
 
-<div class="quiz-container" data-quiz-id="stoch-10" data-correct="b">
+<div class="quiz-container" data-quiz-id="stoch-10" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     確率過程 $\{M_n\}$ がマルチンゲールであるための条件はどれか。
   </div>

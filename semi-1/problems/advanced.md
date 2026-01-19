@@ -20,7 +20,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 1：ARモデル
 
-<div class="quiz-container" data-quiz-id="adv-1" data-correct="c">
+<div class="quiz-container" data-quiz-id="adv-1" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     AR(1)モデル $X_t = \phi X_{t-1} + \varepsilon_t$（$\varepsilon_t \sim \text{WN}(0, \sigma^2)$）が定常であるための条件はどれか。
   </div>
@@ -65,7 +65,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 2：MA過程の性質
 
-<div class="quiz-container" data-quiz-id="adv-2" data-correct="a">
+<div class="quiz-container" data-quiz-id="adv-2" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     MA(1)モデル $X_t = \varepsilon_t + \theta \varepsilon_{t-1}$ の自己相関関数について正しいものはどれか。
   </div>
@@ -113,7 +113,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 3：ベイズ推定
 
-<div class="quiz-container" data-quiz-id="adv-3" data-correct="b">
+<div class="quiz-container" data-quiz-id="adv-3" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     ベイズ推定において、事後分布が事前分布と同じ分布族に属するとき、その事前分布を何と呼ぶか。
   </div>
@@ -159,7 +159,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 4：モデル選択
 
-<div class="quiz-container" data-quiz-id="adv-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="adv-4" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     AIC（赤池情報量規準）とBIC（ベイズ情報量規準）の比較について正しいものはどれか。
   </div>
@@ -208,7 +208,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 5：ブートストラップ法
 
-<div class="quiz-container" data-quiz-id="adv-5" data-correct="c">
+<div class="quiz-container" data-quiz-id="adv-5" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     ブートストラップ法について正しいものはどれか。
   </div>
@@ -256,7 +256,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 6：ARIMA
 
-<div class="quiz-container" data-quiz-id="adv-6" data-correct="a">
+<div class="quiz-container" data-quiz-id="adv-6" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     ARIMA(p, d, q)モデルで、$d$ は何を表すか。
   </div>
@@ -302,7 +302,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 7：MCMC
 
-<div class="quiz-container" data-quiz-id="adv-7" data-correct="c">
+<div class="quiz-container" data-quiz-id="adv-7" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     マルコフ連鎖モンテカルロ法（MCMC）について正しいものはどれか。
   </div>
@@ -350,7 +350,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 8：交差検証
 
-<div class="quiz-container" data-quiz-id="adv-8" data-correct="b">
+<div class="quiz-container" data-quiz-id="adv-8" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     Leave-one-out交差検証（LOOCV）の特徴として正しいものはどれか。
   </div>
@@ -398,7 +398,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 9：モンテカルロ積分
 
-<div class="quiz-container" data-quiz-id="adv-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="adv-9" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     モンテカルロ積分で $\int g(x)f(x)dx$ を推定する方法として正しいものはどれか（$f(x)$ は確率密度関数）。
   </div>
@@ -445,7 +445,7 @@ permalink: /semi-1/problems/advanced/
 
 ## 問題 10：事後予測分布
 
-<div class="quiz-container" data-quiz-id="adv-10" data-correct="a">
+<div class="quiz-container" data-quiz-id="adv-10" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     ベイズ統計における事後予測分布 $p(\tilde{y} \mid \mathbf{y})$ の正しい表現はどれか。
   </div>

@@ -20,7 +20,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 1：一元配置分散分析
 
-<div class="quiz-container" data-quiz-id="design-1" data-correct="a">
+<div class="quiz-container" data-quiz-id="design-1" data-correct="a" data-difficulty="easy">
   <div class="quiz-question">
     一元配置分散分析において、帰無仮説 $H_0: \mu_1 = \mu_2 = \cdots = \mu_k$ の検定に用いる統計量はどれか。
   </div>
@@ -63,7 +63,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 2：二元配置分散分析
 
-<div class="quiz-container" data-quiz-id="design-2" data-correct="c">
+<div class="quiz-container" data-quiz-id="design-2" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     二元配置分散分析（繰り返しあり）で検定できる効果として<strong>含まれないもの</strong>はどれか。
   </div>
@@ -106,7 +106,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 3：多重比較
 
-<div class="quiz-container" data-quiz-id="design-3" data-correct="b">
+<div class="quiz-container" data-quiz-id="design-3" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     Tukey法（HSD法）の特徴として正しいものはどれか。
   </div>
@@ -149,7 +149,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 4：層化抽出法
 
-<div class="quiz-container" data-quiz-id="design-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="design-4" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     層化抽出法について正しいものはどれか。
   </div>
@@ -193,7 +193,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 5：クラスター抽出法
 
-<div class="quiz-container" data-quiz-id="design-5" data-correct="a">
+<div class="quiz-container" data-quiz-id="design-5" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     クラスター抽出法（集落抽出法）と層化抽出法の違いについて正しいものはどれか。
   </div>
@@ -235,7 +235,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 6：ラテン方格法
 
-<div class="quiz-container" data-quiz-id="design-6" data-correct="b">
+<div class="quiz-container" data-quiz-id="design-6" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     ラテン方格法の特徴として正しいものはどれか。
   </div>
@@ -278,7 +278,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 7：反復測定
 
-<div class="quiz-container" data-quiz-id="design-7" data-correct="c">
+<div class="quiz-container" data-quiz-id="design-7" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     反復測定分散分析で注意が必要な「球面性の仮定」とは何か。
   </div>
@@ -323,7 +323,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 8：系統抽出
 
-<div class="quiz-container" data-quiz-id="design-8" data-correct="a">
+<div class="quiz-container" data-quiz-id="design-8" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     系統抽出（等間隔抽出）について正しいものはどれか。
   </div>
@@ -366,7 +366,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 9：分散分析の仮定
 
-<div class="quiz-container" data-quiz-id="design-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="design-9" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     一元配置分散分析の仮定として<strong>正しくないもの</strong>はどれか。
   </div>
@@ -411,7 +411,7 @@ permalink: /semi-1/problems/design/
 
 ## 問題 10：二段抽出
 
-<div class="quiz-container" data-quiz-id="design-10" data-correct="b">
+<div class="quiz-container" data-quiz-id="design-10" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     二段抽出法について正しいものはどれか。
   </div>

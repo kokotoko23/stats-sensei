@@ -20,7 +20,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 1：最尤推定量の性質
 
-<div class="quiz-container" data-quiz-id="est-1" data-correct="c">
+<div class="quiz-container" data-quiz-id="est-1" data-correct="c" data-difficulty="easy">
   <div class="quiz-question">
     最尤推定量（MLE）の性質として<strong>正しくないもの</strong>はどれか。
   </div>
@@ -56,7 +56,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 2：フィッシャー情報量
 
-<div class="quiz-container" data-quiz-id="est-2" data-correct="b">
+<div class="quiz-container" data-quiz-id="est-2" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     ベルヌーイ分布 $\text{Ber}(p)$ の1標本のフィッシャー情報量 $I(p)$ はどれか。
   </div>
@@ -95,7 +95,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 3：十分統計量
 
-<div class="quiz-container" data-quiz-id="est-3" data-correct="a">
+<div class="quiz-container" data-quiz-id="est-3" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     $X_1, \ldots, X_n$ が独立に指数分布 $\text{Exp}(\lambda)$ に従うとき、$\lambda$ に対する十分統計量はどれか。
   </div>
@@ -134,7 +134,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 4：クラメル・ラオの不等式
 
-<div class="quiz-container" data-quiz-id="est-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="est-4" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     $X_1, \ldots, X_n$ が独立に $N(\mu, 1)$ に従うとき、$\mu$ の不偏推定量の分散の下界（クラメル・ラオ下界）はどれか。
   </div>
@@ -176,7 +176,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 5：最尤推定量の導出
 
-<div class="quiz-container" data-quiz-id="est-5" data-correct="c">
+<div class="quiz-container" data-quiz-id="est-5" data-correct="c" data-difficulty="easy">
   <div class="quiz-question">
     $X_1, \ldots, X_n$ が独立にポアソン分布 $\text{Poi}(\lambda)$ に従うとき、$\lambda$ の最尤推定量はどれか。
   </div>
@@ -218,7 +218,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 6：指数型分布族
 
-<div class="quiz-container" data-quiz-id="est-6" data-correct="a">
+<div class="quiz-container" data-quiz-id="est-6" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     指数型分布族の確率密度関数の標準形 $f(x;\theta) = h(x)\exp(\eta(\theta) T(x) - A(\theta))$ において、$T(x)$ は何を表すか。
   </div>
@@ -264,7 +264,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 7：完備性
 
-<div class="quiz-container" data-quiz-id="est-7" data-correct="c">
+<div class="quiz-container" data-quiz-id="est-7" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     統計量 $T$ が完備（complete）であることの定義として正しいものはどれか。
   </div>
@@ -305,7 +305,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 8：有効推定量
 
-<div class="quiz-container" data-quiz-id="est-8" data-correct="b">
+<div class="quiz-container" data-quiz-id="est-8" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     推定量が有効（efficient）であるとは何を意味するか。
   </div>
@@ -349,7 +349,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 9：モーメント推定量
 
-<div class="quiz-container" data-quiz-id="est-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="est-9" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     モーメント法（積率法）による推定について正しいものはどれか。
   </div>
@@ -393,7 +393,7 @@ permalink: /semi-1/problems/estimation/
 
 ## 問題 10：ベイズ推定量
 
-<div class="quiz-container" data-quiz-id="est-10" data-correct="a">
+<div class="quiz-container" data-quiz-id="est-10" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     二乗損失関数のもとでのベイズ推定量はどれか。
   </div>

@@ -20,7 +20,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 1：条件付き確率
 
-<div class="quiz-container" data-quiz-id="prob-1" data-correct="c">
+<div class="quiz-container" data-quiz-id="prob-1" data-correct="c" data-difficulty="easy">
   <div class="quiz-question">
     事象 $A$ と $B$ が独立であるとき、$P(A \cup B)$ を $P(A) = p$、$P(B) = q$ を用いて表すとどれか。
   </div>
@@ -62,7 +62,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 2：ベイズの定理
 
-<div class="quiz-container" data-quiz-id="prob-2" data-correct="b">
+<div class="quiz-container" data-quiz-id="prob-2" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     ある病気の有病率は1%である。検査の感度（病気の人が陽性になる確率）は95%、特異度（健康な人が陰性になる確率）は90%である。陽性と判定された人が実際に病気である確率に最も近いものはどれか。
   </div>
@@ -106,7 +106,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 3：積率母関数
 
-<div class="quiz-container" data-quiz-id="prob-3" data-correct="a">
+<div class="quiz-container" data-quiz-id="prob-3" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     確率変数 $X$ の積率母関数（MGF）が $M_X(t) = e^{3t + 2t^2}$ のとき、$E[X]$ と $\text{Var}(X)$ の値はどれか。
   </div>
@@ -150,7 +150,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 4：歪度と尖度
 
-<div class="quiz-container" data-quiz-id="prob-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="prob-4" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     標準正規分布の歪度（skewness）と尖度（kurtosis）の値はどれか。ただし、尖度は超過尖度（excess kurtosis）とする。
   </div>
@@ -190,7 +190,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 5：変数変換
 
-<div class="quiz-container" data-quiz-id="prob-5" data-correct="c">
+<div class="quiz-container" data-quiz-id="prob-5" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     $X \sim \text{Exp}(1)$（平均1の指数分布）のとき、$Y = -\log X$ の分布はどれか。
   </div>
@@ -234,7 +234,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 6：チェビシェフの不等式
 
-<div class="quiz-container" data-quiz-id="prob-6" data-correct="b">
+<div class="quiz-container" data-quiz-id="prob-6" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     確率変数 $X$ の平均が $\mu$、分散が $\sigma^2$ のとき、チェビシェフの不等式 $P(|X - \mu| \geq k\sigma) \leq ?$ の右辺はどれか。
   </div>
@@ -278,7 +278,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 7：条件付き期待値
 
-<div class="quiz-container" data-quiz-id="prob-7" data-correct="a">
+<div class="quiz-container" data-quiz-id="prob-7" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     確率変数 $X$, $Y$ に対して、全期待値の法則（law of total expectation）の正しい表現はどれか。
   </div>
@@ -322,7 +322,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 8：共分散と相関係数
 
-<div class="quiz-container" data-quiz-id="prob-8" data-correct="c">
+<div class="quiz-container" data-quiz-id="prob-8" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     $X$ と $Y$ の共分散 $\text{Cov}(X, Y) = 0$ のとき、必ず成り立つものはどれか。
   </div>
@@ -367,7 +367,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 9：イェンセンの不等式
 
-<div class="quiz-container" data-quiz-id="prob-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="prob-9" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     凸関数 $g$ と確率変数 $X$ に対するイェンセンの不等式として正しいものはどれか。
   </div>
@@ -414,7 +414,7 @@ permalink: /semi-1/problems/probability/
 
 ## 問題 10：確率母関数
 
-<div class="quiz-container" data-quiz-id="prob-10" data-correct="b">
+<div class="quiz-container" data-quiz-id="prob-10" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     非負整数値をとる確率変数 $X$ の確率母関数（PGF）$G_X(s) = E[s^X]$ について、$X \sim \text{Poisson}(\lambda)$ のとき $G_X(s)$ はどれか。
   </div>

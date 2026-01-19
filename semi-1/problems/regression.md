@@ -20,7 +20,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 1：最小二乗推定量
 
-<div class="quiz-container" data-quiz-id="reg-1" data-correct="b">
+<div class="quiz-container" data-quiz-id="reg-1" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     重回帰モデル $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$ において、最小二乗推定量 $\hat{\boldsymbol{\beta}}$ の表現として正しいものはどれか。
   </div>
@@ -62,7 +62,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 2：決定係数
 
-<div class="quiz-container" data-quiz-id="reg-2" data-correct="d">
+<div class="quiz-container" data-quiz-id="reg-2" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     決定係数 $R^2$ について<strong>正しいもの</strong>はどれか。
   </div>
@@ -104,7 +104,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 3：リッジ回帰
 
-<div class="quiz-container" data-quiz-id="reg-3" data-correct="c">
+<div class="quiz-container" data-quiz-id="reg-3" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     リッジ回帰の推定量はどれか。ただし $\lambda > 0$ は正則化パラメータ、$\mathbf{I}$ は単位行列。
   </div>
@@ -149,7 +149,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 4：ロジスティック回帰
 
-<div class="quiz-container" data-quiz-id="reg-4" data-correct="a">
+<div class="quiz-container" data-quiz-id="reg-4" data-correct="a" data-difficulty="easy">
   <div class="quiz-question">
     ロジスティック回帰で、係数 $\beta_j$ の解釈として正しいものはどれか。
   </div>
@@ -195,7 +195,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 5：Cox比例ハザードモデル
 
-<div class="quiz-container" data-quiz-id="reg-5" data-correct="b">
+<div class="quiz-container" data-quiz-id="reg-5" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     Cox比例ハザードモデルにおいて、ハザード関数 $h(t \mid \mathbf{x})$ の表現として正しいものはどれか。
   </div>
@@ -240,7 +240,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 6：多重共線性
 
-<div class="quiz-container" data-quiz-id="reg-6" data-correct="c">
+<div class="quiz-container" data-quiz-id="reg-6" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     多重共線性（multicollinearity）の問題として<strong>正しくないもの</strong>はどれか。
   </div>
@@ -283,7 +283,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 7：残差診断
 
-<div class="quiz-container" data-quiz-id="reg-7" data-correct="a">
+<div class="quiz-container" data-quiz-id="reg-7" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     回帰分析の残差プロットで「等分散性の仮定」が満たされているとき、残差と予測値の散布図はどのようなパターンを示すか。
   </div>
@@ -328,7 +328,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 8：LASSO
 
-<div class="quiz-container" data-quiz-id="reg-8" data-correct="d">
+<div class="quiz-container" data-quiz-id="reg-8" data-correct="d" data-difficulty="hard">
   <div class="quiz-question">
     LASSO回帰の罰則項として正しいものはどれか。
   </div>
@@ -372,7 +372,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 9：ポアソン回帰
 
-<div class="quiz-container" data-quiz-id="reg-9" data-correct="b">
+<div class="quiz-container" data-quiz-id="reg-9" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     ポアソン回帰でリンク関数として通常使用されるものはどれか。
   </div>
@@ -417,7 +417,7 @@ permalink: /semi-1/problems/regression/
 
 ## 問題 10：カプラン・マイヤー推定量
 
-<div class="quiz-container" data-quiz-id="reg-10" data-correct="a">
+<div class="quiz-container" data-quiz-id="reg-10" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     生存時間分析のカプラン・マイヤー推定量について正しいものはどれか。
   </div>

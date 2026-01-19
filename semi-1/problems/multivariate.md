@@ -20,7 +20,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 1：主成分分析
 
-<div class="quiz-container" data-quiz-id="mv-1" data-correct="b">
+<div class="quiz-container" data-quiz-id="mv-1" data-correct="b" data-difficulty="easy">
   <div class="quiz-question">
     主成分分析において、第1主成分の係数ベクトル $\mathbf{a}_1$ はどのように求められるか。ただし $\mathbf{S}$ は共分散行列。
   </div>
@@ -64,7 +64,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 2：主成分の性質
 
-<div class="quiz-container" data-quiz-id="mv-2" data-correct="c">
+<div class="quiz-container" data-quiz-id="mv-2" data-correct="c" data-difficulty="medium">
   <div class="quiz-question">
     主成分分析について<strong>正しくないもの</strong>はどれか。
   </div>
@@ -107,7 +107,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 3：線形判別分析
 
-<div class="quiz-container" data-quiz-id="mv-3" data-correct="a">
+<div class="quiz-container" data-quiz-id="mv-3" data-correct="a" data-difficulty="medium">
   <div class="quiz-question">
     2群の線形判別分析において、フィッシャーの判別関数が最大化するものはどれか。
   </div>
@@ -152,7 +152,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 4：クラスター分析
 
-<div class="quiz-container" data-quiz-id="mv-4" data-correct="d">
+<div class="quiz-container" data-quiz-id="mv-4" data-correct="d" data-difficulty="easy">
   <div class="quiz-question">
     階層的クラスタリングの結合方法について正しいものはどれか。
   </div>
@@ -197,7 +197,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 5：因子分析
 
-<div class="quiz-container" data-quiz-id="mv-5" data-correct="b">
+<div class="quiz-container" data-quiz-id="mv-5" data-correct="b" data-difficulty="medium">
   <div class="quiz-question">
     因子分析と主成分分析の違いについて正しいものはどれか。
   </div>
@@ -245,7 +245,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 6：正準相関分析
 
-<div class="quiz-container" data-quiz-id="mv-6" data-correct="a">
+<div class="quiz-container" data-quiz-id="mv-6" data-correct="a" data-difficulty="hard">
   <div class="quiz-question">
     正準相関分析（CCA）の目的として正しいものはどれか。
   </div>
@@ -289,7 +289,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 7：k-means法
 
-<div class="quiz-container" data-quiz-id="mv-7" data-correct="b">
+<div class="quiz-container" data-quiz-id="mv-7" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     k-means法のアルゴリズムについて<strong>正しいもの</strong>はどれか。
   </div>
@@ -338,7 +338,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 8：多次元尺度法
 
-<div class="quiz-container" data-quiz-id="mv-8" data-correct="c">
+<div class="quiz-container" data-quiz-id="mv-8" data-correct="c" data-difficulty="hard">
   <div class="quiz-question">
     多次元尺度法（MDS）について正しいものはどれか。
   </div>
@@ -384,7 +384,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 9：因子負荷量
 
-<div class="quiz-container" data-quiz-id="mv-9" data-correct="d">
+<div class="quiz-container" data-quiz-id="mv-9" data-correct="d" data-difficulty="medium">
   <div class="quiz-question">
     因子分析における因子負荷量の解釈として正しいものはどれか。
   </div>
@@ -428,7 +428,7 @@ permalink: /semi-1/problems/multivariate/
 
 ## 問題 10：判別分析の誤分類率
 
-<div class="quiz-container" data-quiz-id="mv-10" data-correct="b">
+<div class="quiz-container" data-quiz-id="mv-10" data-correct="b" data-difficulty="hard">
   <div class="quiz-question">
     判別分析の誤分類率の推定方法として、過学習の影響を減らすのに適したものはどれか。
   </div>
