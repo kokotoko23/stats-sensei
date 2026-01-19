@@ -10,7 +10,7 @@ permalink: /semi-1/problems/multivariate/
 主成分分析、判別分析、クラスター分析、因子分析に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -237,6 +237,234 @@ permalink: /semi-1/problems/multivariate/
       - $\mathbf{f}$：共通因子
       - $\boldsymbol{\Lambda}$：因子負荷量行列
       - $\boldsymbol{\varepsilon}$：独自因子（各変数固有の変動）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：正準相関分析
+
+<div class="quiz-container" data-quiz-id="mv-6" data-correct="a">
+  <div class="quiz-question">
+    正準相関分析（CCA）の目的として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">2つの変数群の線形結合間の相関を最大化する</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">1つの変数群の分散を最大化する</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">群間の分離を最大化する</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">観測変数を潜在因子で説明する</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      正準相関分析（CCA）：
+      - $\mathbf{X}$ の線形結合 $U = \mathbf{a}^\top \mathbf{X}$
+      - $\mathbf{Y}$ の線形結合 $V = \mathbf{b}^\top \mathbf{Y}$
+
+      $\text{Corr}(U, V)$ を最大化する $\mathbf{a}$, $\mathbf{b}$ を求める。
+
+      用途：2つのデータセット（例：心理テストと成績）の関係を分析。
+
+      (b) は主成分分析、(c) は判別分析、(d) は因子分析の目的。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：k-means法
+
+<div class="quiz-container" data-quiz-id="mv-7" data-correct="b">
+  <div class="quiz-question">
+    k-means法のアルゴリズムについて<strong>正しいもの</strong>はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">大域的最適解が保証される</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">クラスター内平方和を最小化する</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">クラスター数は自動的に決定される</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">外れ値に対して頑健である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      k-means法の特徴：
+
+      目的関数：$\sum_{k=1}^K \sum_{i \in C_k} \|\mathbf{x}_i - \boldsymbol{\mu}_k\|^2$（クラスター内平方和）
+
+      アルゴリズム：
+      1. 初期中心を設定
+      2. 各点を最も近い中心に割り当て
+      3. 各クラスターの中心を再計算
+      4. 収束まで2-3を繰り返す
+
+      制限：
+      - 局所最適解に陥る可能性（初期値依存）
+      - $k$ は事前に指定が必要
+      - 外れ値の影響を受けやすい
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：多次元尺度法
+
+<div class="quiz-container" data-quiz-id="mv-8" data-correct="c">
+  <div class="quiz-question">
+    多次元尺度法（MDS）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">元のデータの分散を最大化する</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">群間の分離を最大化する</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">対象間の距離（非類似度）を低次元空間で再現する</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">観測変数を潜在因子で説明する</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      多次元尺度法（MDS）：
+      - 入力：対象間の距離（非類似度）行列
+      - 出力：低次元空間での座標
+
+      目的：元の距離関係をできるだけ保存して可視化
+
+      種類：
+      - 計量的MDS：距離の値そのものを再現
+      - 非計量的MDS：距離の順序のみを再現
+
+      主成分分析がデータ行列から始めるのに対し、MDSは距離行列から始める。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：因子負荷量
+
+<div class="quiz-container" data-quiz-id="mv-9" data-correct="d">
+  <div class="quiz-question">
+    因子分析における因子負荷量の解釈として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">因子スコアの平均値</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">因子によって説明される全分散の割合</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">因子間の相関係数</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">各観測変数と各因子の相関（直交回転の場合）</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      因子負荷量 $\lambda_{ij}$：変数 $i$ と因子 $j$ の関係の強さ
+
+      直交回転（Varimax等）の場合：
+      - $\lambda_{ij}$ = 変数 $i$ と因子 $j$ の相関係数
+      - $\lambda_{ij}^2$ = 因子 $j$ が変数 $i$ を説明する割合
+
+      斜交回転の場合：因子負荷量 ≠ 相関係数
+
+      共通性：$h_i^2 = \sum_j \lambda_{ij}^2$（すべての因子で説明される分散の割合）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：判別分析の誤分類率
+
+<div class="quiz-container" data-quiz-id="mv-10" data-correct="b">
+  <div class="quiz-question">
+    判別分析の誤分類率の推定方法として、過学習の影響を減らすのに適したものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">再代入法（訓練データでそのまま評価）</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">交差検証法（クロスバリデーション）</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">訓練データを増やす</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">判別関数の係数を大きくする</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      誤分類率の推定方法：
+
+      | 方法 | 特徴 |
+      |-----|------|
+      | 再代入法 | 楽観的（過少推定）になりやすい |
+      | ホールドアウト法 | データを訓練・テストに分割 |
+      | 交差検証法 | データを効率的に使用、安定した推定 |
+      | ブートストラップ法 | 復元抽出で複数の推定 |
+
+      k分割交差検証：データをk分割し、k-1個で学習、1個でテストを繰り返す。
     </div>
   </div>
 </div>

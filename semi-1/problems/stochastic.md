@@ -10,7 +10,7 @@ permalink: /semi-1/problems/stochastic/
 マルコフ連鎖、ポアソン過程、ブラウン運動に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -227,6 +227,231 @@ permalink: /semi-1/problems/stochastic/
       エルゴード的なら、初期分布によらず定常分布に収束し、時間平均と空間平均が一致します。
 
       (a) は十分条件ですが、必要条件ではありません。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：ランダムウォーク
+
+<div class="quiz-container" data-quiz-id="stoch-6" data-correct="b">
+  <div class="quiz-question">
+    1次元の単純ランダムウォークで、各ステップで確率 $p$ で右に1、確率 $q = 1-p$ で左に1移動する。原点からスタートして $n$ ステップ後の位置 $S_n$ の期待値 $E[S_n]$ はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">$0$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">$n(p - q) = n(2p - 1)$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">$\sqrt{n}$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">$np$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      各ステップ $X_i$ は $+1$（確率 $p$）または $-1$（確率 $q$）をとります。
+
+      $E[X_i] = (+1) \cdot p + (-1) \cdot q = p - q = 2p - 1$
+
+      $S_n = \sum_{i=1}^n X_i$ より：
+
+      $$E[S_n] = n(p - q) = n(2p - 1)$$
+
+      $p = q = 0.5$ のとき $E[S_n] = 0$（対称ランダムウォーク）。
+
+      分散は $\text{Var}(S_n) = 4npq$ です。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：初到達時間
+
+<div class="quiz-container" data-quiz-id="stoch-7" data-correct="a">
+  <div class="quiz-question">
+    マルコフ連鎖において、状態 $i$ から状態 $j$ への初到達時間（first passage time）$T_{ij} = \min\{n \geq 1 : X_n = j \mid X_0 = i\}$ の期待値 $m_{ij} = E[T_{ij}]$ について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">定常分布 $\pi_j$ に対して、$m_{jj} = 1/\pi_j$ が成り立つ</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">$m_{ij} = m_{ji}$ が常に成り立つ</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">$m_{ii} = 0$ が常に成り立つ</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">$m_{ij}$ は常に有限である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      エルゴード的マルコフ連鎖では、平均回帰時間（mean recurrence time）と定常分布の間に：
+
+      $$m_{jj} = E[T_{jj}] = \frac{1}{\pi_j}$$
+
+      の関係があります。定常分布の確率が小さい状態ほど、そこに戻るまでの時間が長くなります。
+
+      (b) は対称でない限り成り立たない。
+      (c) は $T_{ii} \geq 1$ の定義より成り立たない。
+      (d) は一時的（transient）な状態では $m_{ij} = \infty$ になりうる。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：出生死亡過程
+
+<div class="quiz-container" data-quiz-id="stoch-8" data-correct="c">
+  <div class="quiz-question">
+    連続時間マルコフ連鎖である出生死亡過程（birth-death process）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">状態は任意の実数値をとりうる</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">状態 $n$ から状態 $n+2$ への直接遷移が可能</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">状態 $n$ からは $n+1$（出生）または $n-1$（死亡）への遷移のみ可能</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">待ち時間は正規分布に従う</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      出生死亡過程の特徴：
+
+      - 状態空間：非負整数 $\{0, 1, 2, \ldots\}$
+      - 遷移：$n \to n+1$（出生率 $\lambda_n$）または $n \to n-1$（死亡率 $\mu_n$）のみ
+      - 待ち時間：指数分布（連続時間マルコフ連鎖の性質）
+
+      例：
+      - M/M/1待ち行列（$\lambda_n = \lambda$, $\mu_n = \mu$）
+      - 単純出生過程（$\mu_n = 0$）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：ブラウン運動
+
+<div class="quiz-container" data-quiz-id="stoch-9" data-correct="d">
+  <div class="quiz-question">
+    標準ブラウン運動（ウィーナー過程）$\{W(t), t \geq 0\}$ の性質として<strong>正しくないもの</strong>はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">$W(0) = 0$ である</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">$W(t) - W(s) \sim N(0, t-s)$（$s < t$）</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">標本路は連続だが、ほとんど至る所で微分不可能</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">標本路は有界変動である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      標準ブラウン運動の性質：
+
+      1. $W(0) = 0$
+      2. 独立増分：重なりのない区間の増分は独立
+      3. 定常増分：$W(t) - W(s) \sim N(0, t-s)$
+      4. 標本路は確率1で連続
+      5. 標本路は確率1で**至る所微分不可能**
+      6. 標本路は**非有界変動**（2次変分は $t$ に等しい）
+
+      (d) は誤り。ブラウン運動の2次変分は有限ですが、1次変分（通常の変動）は無限大になります。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：マルチンゲール
+
+<div class="quiz-container" data-quiz-id="stoch-10" data-correct="b">
+  <div class="quiz-question">
+    確率過程 $\{M_n\}$ がマルチンゲールであるための条件はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">$E[M_{n+1} \mid M_0, \ldots, M_n] = M_0$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">$E[M_{n+1} \mid M_0, \ldots, M_n] = M_n$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">$E[M_{n+1} \mid M_0, \ldots, M_n] > M_n$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">$E[M_{n+1}] = E[M_n] + 1$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      マルチンゲールの定義：
+
+      $$E[M_{n+1} \mid \mathcal{F}_n] = M_n$$
+
+      つまり「将来の期待値は現在の値に等しい」（公平なゲーム）。
+
+      関連概念：
+      - **劣マルチンゲール**：$E[M_{n+1} \mid \mathcal{F}_n] \geq M_n$（平均的に増加）
+      - **優マルチンゲール**：$E[M_{n+1} \mid \mathcal{F}_n] \leq M_n$（平均的に減少）
+
+      例：累積和 $S_n = \sum_{i=1}^n X_i$（$E[X_i] = 0$ のとき）、ブラウン運動
     </div>
   </div>
 </div>

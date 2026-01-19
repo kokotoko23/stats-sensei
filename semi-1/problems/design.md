@@ -10,7 +10,7 @@ permalink: /semi-1/problems/design/
 分散分析、多重比較、標本調査法に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -227,6 +227,228 @@ permalink: /semi-1/problems/design/
       | コスト | 高い（全層にアクセス必要） | 低い（選ばれたクラスターのみ） |
 
       クラスター抽出は地理的に分散した調査でコストを下げるために使用されます。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：ラテン方格法
+
+<div class="quiz-container" data-quiz-id="design-6" data-correct="b">
+  <div class="quiz-question">
+    ラテン方格法の特徴として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">3因子以上の交互作用を検定できる</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">行と列の2つのブロック因子を制御しながら処理効果を検定できる</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">完全無作為化法より必ず効率が低い</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">処理の水準数は自由に設定できる</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      ラテン方格法：$k \times k$ の格子に $k$ 種類の処理を、各行・各列に1回ずつ配置。
+
+      特徴：
+      - 2つのブロック因子（行・列）を制御
+      - 処理数 = 行数 = 列数 が必要
+      - 交互作用は検定できない（誤差と交絡）
+
+      農業試験での畑の位置効果の制御などに使用。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：反復測定
+
+<div class="quiz-container" data-quiz-id="design-7" data-correct="c">
+  <div class="quiz-question">
+    反復測定分散分析で注意が必要な「球面性の仮定」とは何か。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">各時点での分散が等しいこと</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">データが正規分布に従うこと</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">任意の2時点間の差の分散が等しいこと</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">被験者間の分散が0であること</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      球面性（sphericity）の仮定：
+
+      $\text{Var}(Y_i - Y_j) = \text{const.}$ for all $i \neq j$
+
+      すべての時点ペアの差の分散が等しいという条件。
+
+      違反した場合の対処：
+      - Greenhouse-Geisser補正
+      - Huynh-Feldt補正
+      - 多変量検定（MANOVA）の使用
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：系統抽出
+
+<div class="quiz-container" data-quiz-id="design-8" data-correct="a">
+  <div class="quiz-question">
+    系統抽出（等間隔抽出）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">最初の要素を無作為に選び、以後は一定間隔で抽出する</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">母集団の各要素が選ばれる確率が異なる</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">周期性のあるデータに対して最も効率的</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">単純無作為抽出と完全に同じ性質を持つ</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      系統抽出の手順（$N$ から $n$ を抽出、抽出間隔 $k = N/n$）：
+      1. $1$ から $k$ の間で開始点を無作為に選択
+      2. 以後、$k$ 間隔で抽出
+
+      特徴：
+      - 実施が容易
+      - 母集団がランダムなら単純無作為抽出と同等
+      - 周期性があると偏りが生じる（例：毎週月曜の売上だけ抽出）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：分散分析の仮定
+
+<div class="quiz-container" data-quiz-id="design-9" data-correct="d">
+  <div class="quiz-question">
+    一元配置分散分析の仮定として<strong>正しくないもの</strong>はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">各群の母集団は正規分布に従う</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">各群の分散は等しい（等分散性）</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">観測値は互いに独立である</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">各群のサンプルサイズは等しくなければならない</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      ANOVAの3つの仮定：
+      1. **正規性**：各群のデータが正規分布に従う
+      2. **等分散性**：各群の分散が等しい
+      3. **独立性**：観測値が互いに独立
+
+      サンプルサイズは等しくなくてもよい（不均衡データ）が、等しい方が：
+      - 検出力が高い
+      - 等分散性の仮定違反に頑健
+
+      Welch検定は等分散性の仮定を緩和したもの。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：二段抽出
+
+<div class="quiz-container" data-quiz-id="design-10" data-correct="b">
+  <div class="quiz-question">
+    二段抽出法について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">一次抽出単位のすべての要素を調査する</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">選ばれた一次抽出単位から、さらに二次抽出単位を抽出する</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">単純無作為抽出より常に精度が高い</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">層化抽出と同じ方法である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      二段抽出法：
+      1. 一次抽出：クラスター（一次抽出単位）を抽出
+      2. 二次抽出：選ばれたクラスター内から個体を抽出
+
+      例：全国調査で
+      - 一次：市町村を抽出
+      - 二次：選ばれた市町村から世帯を抽出
+
+      特徴：
+      - クラスター抽出（全員調査）よりコストは上がるが精度向上
+      - デザイン効果を考慮した分析が必要
     </div>
   </div>
 </div>

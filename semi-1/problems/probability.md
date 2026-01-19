@@ -10,7 +10,7 @@ permalink: /semi-1/problems/probability/
 条件付き確率、ベイズの定理、母関数、積率と特性値に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -226,6 +226,231 @@ permalink: /semi-1/problems/probability/
       これは標準ガンベル分布（タイプI極値分布）の密度関数です。
 
       極値分布は最大値・最小値の漸近分布として重要です。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：チェビシェフの不等式
+
+<div class="quiz-container" data-quiz-id="prob-6" data-correct="b">
+  <div class="quiz-question">
+    確率変数 $X$ の平均が $\mu$、分散が $\sigma^2$ のとき、チェビシェフの不等式 $P(|X - \mu| \geq k\sigma) \leq ?$ の右辺はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">$k$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">$\displaystyle \frac{1}{k^2}$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">$\displaystyle \frac{1}{k}$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">$\displaystyle \frac{\sigma^2}{k^2}$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      チェビシェフの不等式：任意の $k > 0$ に対して
+
+      $$P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}$$
+
+      例えば $k = 2$ のとき、平均から2標準偏差以上離れる確率は最大でも 25%。
+
+      この不等式は分布の形を仮定せずに成り立ち、大数の法則の証明にも使われます。
+
+      関連：マルコフの不等式 $P(X \geq a) \leq \frac{E[X]}{a}$（$X \geq 0$、$a > 0$）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：条件付き期待値
+
+<div class="quiz-container" data-quiz-id="prob-7" data-correct="a">
+  <div class="quiz-question">
+    確率変数 $X$, $Y$ に対して、全期待値の法則（law of total expectation）の正しい表現はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">$E[X] = E[E[X \mid Y]]$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">$E[X] = E[X \mid E[Y]]$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">$E[X \mid Y] = E[X] \cdot E[Y]$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">$E[X] = E[Y \mid X]$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      全期待値の法則（繰り返し期待値の法則）：
+
+      $$E[X] = E[E[X \mid Y]] = E_Y[E[X \mid Y]]$$
+
+      つまり「$Y$ で条件付けた $X$ の期待値」の期待値は、$X$ の（無条件の）期待値に等しい。
+
+      離散の場合：$E[X] = \sum_y E[X \mid Y = y] \cdot P(Y = y)$
+
+      全分散の法則も重要：$\text{Var}(X) = E[\text{Var}(X \mid Y)] + \text{Var}(E[X \mid Y])$
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：共分散と相関係数
+
+<div class="quiz-container" data-quiz-id="prob-8" data-correct="c">
+  <div class="quiz-question">
+    $X$ と $Y$ の共分散 $\text{Cov}(X, Y) = 0$ のとき、必ず成り立つものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">$X$ と $Y$ は独立である</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">$P(X = Y) = 0$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">$\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">$E[XY] = 0$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      分散の加法性：
+
+      $$\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X, Y)$$
+
+      $\text{Cov}(X, Y) = 0$（無相関）のとき、分散は単純に足し算できます。
+
+      注意：
+      - 無相関 ⇏ 独立（反例：$X \sim N(0,1)$、$Y = X^2$ は無相関だが従属）
+      - 独立 ⇒ 無相関（逆は一般に成り立たない）
+      - $E[XY] = E[X]E[Y] + \text{Cov}(X, Y)$ なので、(d) は $E[X]E[Y] = 0$ のときのみ成立
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：イェンセンの不等式
+
+<div class="quiz-container" data-quiz-id="prob-9" data-correct="d">
+  <div class="quiz-question">
+    凸関数 $g$ と確率変数 $X$ に対するイェンセンの不等式として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">$g(E[X]) \geq E[g(X)]$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">$E[g(X)] = g(E[X])$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">$\text{Var}(g(X)) \leq g(\text{Var}(X))$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">$E[g(X)] \geq g(E[X])$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      イェンセンの不等式：$g$ が凸関数のとき
+
+      $$E[g(X)] \geq g(E[X])$$
+
+      凹関数の場合は不等号が逆転します。
+
+      応用例：
+      - $g(x) = x^2$（凸）：$E[X^2] \geq (E[X])^2$ → $\text{Var}(X) \geq 0$
+      - $g(x) = -\log x$（凸）：$E[-\log X] \geq -\log E[X]$
+      - $g(x) = e^x$（凸）：$E[e^X] \geq e^{E[X]}$
+
+      KLダイバージェンスの非負性の証明などに使われます。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：確率母関数
+
+<div class="quiz-container" data-quiz-id="prob-10" data-correct="b">
+  <div class="quiz-question">
+    非負整数値をとる確率変数 $X$ の確率母関数（PGF）$G_X(s) = E[s^X]$ について、$X \sim \text{Poisson}(\lambda)$ のとき $G_X(s)$ はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">$\displaystyle \frac{\lambda}{1 - s}$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">$e^{\lambda(s-1)}$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">$(1 - p + ps)^n$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">$\displaystyle \frac{p}{1 - (1-p)s}$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      ポアソン分布の PGF：
+
+      $$G_X(s) = E[s^X] = \sum_{k=0}^{\infty} s^k \frac{\lambda^k e^{-\lambda}}{k!} = e^{-\lambda} \sum_{k=0}^{\infty} \frac{(\lambda s)^k}{k!} = e^{-\lambda} e^{\lambda s} = e^{\lambda(s-1)}$$
+
+      各選択肢の PGF：
+      - (a)：これは有効な PGF ではない
+      - (c)：二項分布 $\text{Bin}(n, p)$
+      - (d)：幾何分布 $\text{Geom}(p)$
+
+      PGF の性質：$G'_X(1) = E[X]$、$G''_X(1) = E[X(X-1)]$
     </div>
   </div>
 </div>

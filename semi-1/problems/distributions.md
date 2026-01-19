@@ -10,7 +10,7 @@ permalink: /semi-1/problems/distributions/
 離散型分布、連続型分布、極限定理に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -228,6 +228,235 @@ permalink: /semi-1/problems/distributions/
       $\sqrt{n}(g(\hat{\theta}) - g(\theta)) \approx g'(\theta) \cdot \sqrt{n}(\hat{\theta} - \theta)$
 
       正規分布のスカラー倍は、分散が2乗倍されます。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：t分布
+
+<div class="quiz-container" data-quiz-id="dist-6" data-correct="a">
+  <div class="quiz-question">
+    $Z \sim N(0,1)$ と $V \sim \chi^2_n$ が独立のとき、$T = \frac{Z}{\sqrt{V/n}}$ の分布はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">自由度 $n$ の $t$ 分布</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">自由度 $n-1$ の $t$ 分布</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">標準正規分布</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">$F_{1, n}$ 分布</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      これは $t$ 分布の定義です。
+
+      $$T = \frac{Z}{\sqrt{V/n}} \sim t_n$$
+
+      $t$ 分布の特徴：
+      - 期待値：$n > 1$ のとき 0
+      - 分散：$n > 2$ のとき $\frac{n}{n-2}$
+      - $n \to \infty$ で標準正規分布に収束
+
+      なお、$T^2 \sim F_{1, n}$ なので (d) は $T^2$ の分布です。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：F分布
+
+<div class="quiz-container" data-quiz-id="dist-7" data-correct="c">
+  <div class="quiz-question">
+    $U \sim \chi^2_m$、$V \sim \chi^2_n$ が独立のとき、$F = \frac{U/m}{V/n}$ について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">$E[F] = 1$（$n > 2$ のとき）</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">$1/F \sim F_{m, n}$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">$E[F] = \frac{n}{n-2}$（$n > 2$ のとき）</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">$F$ は負の値をとりうる</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      $F_{m, n}$ 分布の性質：
+
+      - 期待値：$n > 2$ のとき $E[F] = \frac{n}{n-2}$（1より少し大きい）
+      - $F$ は常に正（カイ二乗の比なので）
+      - $1/F \sim F_{n, m}$（分子分母の自由度が入れ替わる）
+
+      (b) は惜しいですが、自由度が $F_{n, m}$ になります。
+
+      $F$ 分布は分散分析や回帰分析の検定統計量として重要です。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：負の二項分布
+
+<div class="quiz-container" data-quiz-id="dist-8" data-correct="b">
+  <div class="quiz-question">
+    成功確率 $p$ のベルヌーイ試行を繰り返し、$r$ 回成功するまでの失敗回数 $X$ が従う分布はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">幾何分布</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">負の二項分布</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">二項分布</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">超幾何分布</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      負の二項分布 $\text{NB}(r, p)$：
+
+      $$P(X = k) = \binom{k+r-1}{k} p^r (1-p)^k, \quad k = 0, 1, 2, \ldots$$
+
+      - 期待値：$E[X] = \frac{r(1-p)}{p}$
+      - 分散：$\text{Var}(X) = \frac{r(1-p)}{p^2}$
+
+      特殊ケース：
+      - $r = 1$：幾何分布
+      - 二項分布は「$n$ 回中の成功数」、負の二項分布は「$r$ 回成功までの失敗数」
+
+      過分散（分散 > 期待値）のカウントデータのモデリングに使われます。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：順序統計量
+
+<div class="quiz-container" data-quiz-id="dist-9" data-correct="d">
+  <div class="quiz-question">
+    $X_1, \ldots, X_n$ が一様分布 $U(0, 1)$ からの i.i.d. 標本のとき、最大値 $X_{(n)}$ の期待値はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">$\displaystyle \frac{1}{2}$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">$\displaystyle \frac{1}{n}$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">$\displaystyle 1 - \frac{1}{n}$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">$\displaystyle \frac{n}{n+1}$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      $U(0,1)$ の順序統計量 $X_{(k)}$ は $\text{Beta}(k, n-k+1)$ に従います。
+
+      最大値 $X_{(n)} \sim \text{Beta}(n, 1)$ なので：
+
+      $$E[X_{(n)}] = \frac{n}{n+1}$$
+
+      同様に、最小値 $X_{(1)} \sim \text{Beta}(1, n)$ なので：
+
+      $$E[X_{(1)}] = \frac{1}{n+1}$$
+
+      一般に、$k$ 番目の順序統計量 $E[X_{(k)}] = \frac{k}{n+1}$。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：多変量正規分布
+
+<div class="quiz-container" data-quiz-id="dist-10" data-correct="a">
+  <div class="quiz-question">
+    $(X, Y)^\top$ が二変量正規分布に従い、$\text{Cov}(X, Y) = 0$ のとき、正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">$X$ と $Y$ は独立である</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">$X + Y$ は正規分布に従わない</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">$X$ と $Y$ の相関係数は 1 である</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">$X$ の周辺分布は正規分布に従わない</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      多変量正規分布の重要な性質：
+
+      **無相関 ⇔ 独立**（多変量正規分布の場合のみ）
+
+      一般の分布では「無相関 ⇏ 独立」ですが、多変量正規分布では同値になります。
+
+      その他の性質：
+      - 周辺分布は正規分布
+      - 線形結合も正規分布
+      - 条件付き分布も正規分布
+
+      $(X, Y) \sim N_2(\boldsymbol{\mu}, \boldsymbol{\Sigma})$ で $\boldsymbol{\Sigma}$ が対角なら独立。
     </div>
   </div>
 </div>

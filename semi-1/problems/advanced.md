@@ -10,7 +10,7 @@ permalink: /semi-1/problems/advanced/
 時系列解析、ベイズ統計、モデル選択、シミュレーションに関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -248,6 +248,242 @@ permalink: /semi-1/problems/advanced/
       - 小標本では精度に限界あり
 
       信頼区間の構成法：パーセンタイル法、BCa法など
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：ARIMA
+
+<div class="quiz-container" data-quiz-id="adv-6" data-correct="a">
+  <div class="quiz-question">
+    ARIMA(p, d, q)モデルで、$d$ は何を表すか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">定常化のために必要な差分の次数</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">自己回帰の次数</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">移動平均の次数</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">季節周期の長さ</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      ARIMA(p, d, q)の各パラメータ：
+
+      - $p$：自己回帰（AR）の次数
+      - $d$：差分の次数（$I$ = Integrated）
+      - $q$：移動平均（MA）の次数
+
+      $d = 1$ は1階差分：$\Delta Y_t = Y_t - Y_{t-1}$
+
+      単位根を持つ非定常系列は差分をとることで定常化できる。
+
+      $d = 0$ ならば ARMA(p, q) モデルと同等。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：MCMC
+
+<div class="quiz-container" data-quiz-id="adv-7" data-correct="c">
+  <div class="quiz-question">
+    マルコフ連鎖モンテカルロ法（MCMC）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">独立なサンプルを生成する</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">解析的に計算可能な事後分布のみに適用できる</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">目標分布を定常分布とするマルコフ連鎖からサンプリングする</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">収束の判定は不要である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      MCMC（マルコフ連鎖モンテカルロ）：
+
+      事後分布が複雑でも、それを定常分布とするマルコフ連鎖を構築してサンプリング。
+
+      代表的な手法：
+      - メトロポリス・ヘイスティングス法
+      - ギブスサンプリング
+      - ハミルトニアンモンテカルロ
+
+      注意点：
+      - サンプルは自己相関を持つ（独立ではない）
+      - バーンイン期間を除外が必要
+      - 収束診断が重要（Gelman-Rubin統計量など）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：交差検証
+
+<div class="quiz-container" data-quiz-id="adv-8" data-correct="b">
+  <div class="quiz-question">
+    Leave-one-out交差検証（LOOCV）の特徴として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">計算コストが常に低い</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">バイアスは小さいが分散が大きくなりやすい</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">k分割交差検証より常に精度が低い</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">データを1つだけ訓練に使い、残りをテストに使う</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      LOOCVの特性：
+      - $n$ 個中 $n-1$ 個で学習、1個でテストを $n$ 回繰り返す
+      - 訓練データが多い → バイアスが小さい
+      - テストサンプルが相関 → 分散が大きい
+
+      比較：
+      | 方法 | バイアス | 分散 | 計算コスト |
+      |-----|---------|------|----------|
+      | LOOCV | 低 | 高 | 高 |
+      | 10分割CV | 中 | 中 | 中 |
+      | 5分割CV | やや高 | やや低 | 低 |
+
+      実用上は5〜10分割CVが推奨されることが多い。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：モンテカルロ積分
+
+<div class="quiz-container" data-quiz-id="adv-9" data-correct="d">
+  <div class="quiz-question">
+    モンテカルロ積分で $\int g(x)f(x)dx$ を推定する方法として正しいものはどれか（$f(x)$ は確率密度関数）。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">$f(x)$ から $n$ 個サンプリングし、$\frac{1}{n}\sum f(x_i)$ を計算</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">区間を等分割して数値積分</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">$g(x)$ の解析的な積分を求める</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">$f(x)$ から $n$ 個サンプリングし、$\frac{1}{n}\sum g(x_i)$ を計算</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      モンテカルロ積分：
+
+      $$E_f[g(X)] = \int g(x)f(x)dx \approx \frac{1}{n}\sum_{i=1}^n g(X_i)$$
+
+      $X_1, \ldots, X_n \sim f(x)$ からサンプリングし、$g(X_i)$ の平均で推定。
+
+      性質：
+      - 不偏推定量
+      - 大数の法則により一致性を持つ
+      - 収束速度は $O(n^{-1/2})$（次元によらない！）
+
+      高次元積分では数値積分より効率的。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：事後予測分布
+
+<div class="quiz-container" data-quiz-id="adv-10" data-correct="a">
+  <div class="quiz-question">
+    ベイズ統計における事後予測分布 $p(\tilde{y} \mid \mathbf{y})$ の正しい表現はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">$\int p(\tilde{y} \mid \theta) p(\theta \mid \mathbf{y}) d\theta$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">$p(\tilde{y} \mid \hat{\theta})$（$\hat{\theta}$ は事後平均）</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">$p(\theta \mid \mathbf{y}, \tilde{y})$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">$p(\tilde{y}) p(\mathbf{y})$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      事後予測分布：パラメータの不確実性を考慮した予測分布
+
+      $$p(\tilde{y} \mid \mathbf{y}) = \int p(\tilde{y} \mid \theta) p(\theta \mid \mathbf{y}) d\theta$$
+
+      - $p(\tilde{y} \mid \theta)$：尤度（パラメータ所与での予測）
+      - $p(\theta \mid \mathbf{y})$：事後分布
+
+      (b) のプラグイン予測と比較して：
+      - 事後予測分布は予測の不確実性をより適切に反映
+      - 予測区間が広くなる傾向（過信を防ぐ）
+
+      MCMCでは、各サンプル $\theta^{(s)}$ から $\tilde{y}^{(s)}$ を生成して推定。
     </div>
   </div>
 </div>

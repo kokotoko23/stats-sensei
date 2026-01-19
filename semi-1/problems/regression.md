@@ -10,7 +10,7 @@ permalink: /semi-1/problems/regression/
 重回帰分析、正則化、一般化線形モデル、生存時間分析に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -232,6 +232,230 @@ permalink: /semi-1/problems/regression/
       「比例ハザード」：任意の2群のハザード比が時間によらず一定。
 
       半パラメトリックモデル：$h_0(t)$ を仮定せずに $\boldsymbol{\beta}$ を推定可能（部分尤度法）。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：多重共線性
+
+<div class="quiz-container" data-quiz-id="reg-6" data-correct="c">
+  <div class="quiz-question">
+    多重共線性（multicollinearity）の問題として<strong>正しくないもの</strong>はどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">係数の推定値が不安定になる</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">係数の標準誤差が大きくなる</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">予測精度が必ず低下する</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">VIF（分散拡大係数）が大きくなる</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      多重共線性の影響：
+      - 係数の推定が不安定（符号が逆転することも）
+      - 標準誤差が大きくなる → 有意にならない
+      - VIF $= 1/(1-R_j^2)$ が大きくなる（目安：VIF > 10 で問題）
+
+      しかし、**予測精度は必ずしも低下しない**。共線性があっても $\mathbf{X}\boldsymbol{\beta}$ 全体としての予測は安定。
+
+      対処法：変数選択、主成分回帰、正則化（リッジ回帰）
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：残差診断
+
+<div class="quiz-container" data-quiz-id="reg-7" data-correct="a">
+  <div class="quiz-question">
+    回帰分析の残差プロットで「等分散性の仮定」が満たされているとき、残差と予測値の散布図はどのようなパターンを示すか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">水平な帯状（ランダムに散らばる）</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">漏斗形（予測値が大きいほど散らばりが大きい）</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">曲線的なパターン</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">右上がりの直線</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      残差診断のパターン：
+
+      | パターン | 意味 |
+      |---------|------|
+      | 水平な帯状 | 仮定が満たされている |
+      | 漏斗形 | 不等分散（heteroscedasticity） |
+      | 曲線的 | 非線形性（変数変換が必要） |
+      | 直線的 | 誤差と説明変数が相関（内生性） |
+
+      対処：加重最小二乗法、ロバスト標準誤差、変数変換
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：LASSO
+
+<div class="quiz-container" data-quiz-id="reg-8" data-correct="d">
+  <div class="quiz-question">
+    LASSO回帰の罰則項として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">$\lambda \sum \beta_j^2$（L2ノルム）</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">$\lambda \sum \beta_j^2 + \mu \sum |\beta_j|$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">$\lambda \log \sum |\beta_j|$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">$\lambda \sum |\beta_j|$（L1ノルム）</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      正則化回帰の比較：
+
+      | 方法 | 罰則項 | 特徴 |
+      |-----|--------|------|
+      | リッジ | $\lambda \sum \beta_j^2$ | 係数を縮小、0にはならない |
+      | LASSO | $\lambda \sum \|\beta_j\|$ | 変数選択（一部が0になる） |
+      | Elastic Net | 両方の線形結合 | 両者の利点を組み合わせ |
+
+      LASSOはスパース推定により、解釈しやすいモデルを得られる。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：ポアソン回帰
+
+<div class="quiz-container" data-quiz-id="reg-9" data-correct="b">
+  <div class="quiz-question">
+    ポアソン回帰でリンク関数として通常使用されるものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">恒等リンク $g(\mu) = \mu$</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">対数リンク $g(\mu) = \log \mu$</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">ロジットリンク $g(\mu) = \log \frac{\mu}{1-\mu}$</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">プロビットリンク $g(\mu) = \Phi^{-1}(\mu)$</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      GLMの構成要素と典型的なリンク関数：
+
+      | 分布 | 典型的なリンク | 用途 |
+      |-----|---------------|------|
+      | 正規 | 恒等 | 連続データ |
+      | ポアソン | 対数 | カウントデータ |
+      | 二項 | ロジット/プロビット | 二値データ |
+      | ガンマ | 逆数/対数 | 正の連続データ |
+
+      ポアソン回帰：$\log E[Y] = \mathbf{x}^\top \boldsymbol{\beta}$、つまり $E[Y] = e^{\mathbf{x}^\top \boldsymbol{\beta}}$
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：カプラン・マイヤー推定量
+
+<div class="quiz-container" data-quiz-id="reg-10" data-correct="a">
+  <div class="quiz-question">
+    生存時間分析のカプラン・マイヤー推定量について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">打ち切りデータを適切に扱える生存関数の推定量</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">パラメトリックな仮定（例：指数分布）が必要</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">共変量の効果を直接推定できる</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">連続的な生存曲線を出力する</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      カプラン・マイヤー推定量：
+
+      $$\hat{S}(t) = \prod_{t_i \leq t} \left(1 - \frac{d_i}{n_i}\right)$$
+
+      - $d_i$：時点 $t_i$ でのイベント数
+      - $n_i$：時点 $t_i$ 直前のリスク集合のサイズ
+
+      特徴：
+      - ノンパラメトリック（分布の仮定不要）
+      - 打ち切りを適切に処理
+      - 階段関数として推定
+      - 共変量の効果を見るにはCox回帰等が必要
     </div>
   </div>
 </div>

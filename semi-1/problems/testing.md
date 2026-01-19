@@ -10,7 +10,7 @@ permalink: /semi-1/problems/testing/
 ネイマン・ピアソンの補題、尤度比検定、UMP検定、多重検定に関する問題です。
 
 <div class="quiz-progress">
-  <span class="quiz-progress-text">0 / 5 正解</span>
+  <span class="quiz-progress-text">0 / 10 正解</span>
   <div class="quiz-progress-bar">
     <div class="quiz-progress-fill" style="width: 0%"></div>
   </div>
@@ -194,6 +194,235 @@ permalink: /semi-1/problems/testing/
       $\text{FWER} = 1 - (1 - 0.05)^{20} = 1 - 0.95^{20} \approx 1 - 0.358 = 0.642$
 
       約64%の確率で少なくとも1つの偽陽性が発生します。これが多重検定の問題であり、ボンフェローニ補正（各 $\alpha = 0.05/20 = 0.0025$）やFDR制御が必要になる理由です。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 6：検出力
+
+<div class="quiz-container" data-quiz-id="test-6" data-correct="c">
+  <div class="quiz-question">
+    検定の検出力（power）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q6" id="q6a">
+      <label for="q6a">有意水準と同じ値である</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q6" id="q6b">
+      <label for="q6b">帰無仮説が真のとき棄却する確率である</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q6" id="q6c">
+      <label for="q6c">対立仮説が真のとき棄却する確率である</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q6" id="q6d">
+      <label for="q6d">第2種の過誤の確率である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      検定における誤りと確率：
+
+      | | 棄却しない | 棄却する |
+      |---|---|---|
+      | $H_0$ 真 | 正しい判断 | 第1種の過誤（$\alpha$） |
+      | $H_1$ 真 | 第2種の過誤（$\beta$） | 正しい判断 |
+
+      - 検出力 $= 1 - \beta = P(\text{棄却} \mid H_1 \text{真})$
+      - 検出力は効果量、サンプルサイズ、有意水準に依存
+      - 検出力分析で必要なサンプルサイズを決定できる
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 7：スコア検定
+
+<div class="quiz-container" data-quiz-id="test-7" data-correct="b">
+  <div class="quiz-question">
+    スコア検定（Rao のスコア検定）の特徴として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q7" id="q7a">
+      <label for="q7a">制約なしの最尤推定量のみを使う</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q7" id="q7b">
+      <label for="q7b">帰無仮説のもとでの推定量のみを使う</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q7" id="q7c">
+      <label for="q7c">尤度比検定と常に同じ結果を与える</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q7" id="q7d">
+      <label for="q7d">小標本でも正確なp値を与える</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(b)</strong>
+    <div class="quiz-explanation">
+      3つの漸近的に同等な検定：
+
+      | 検定 | 使用する推定量 | 特徴 |
+      |-----|--------------|------|
+      | 尤度比検定 | 制約あり・なし両方 | 最も一般的 |
+      | ワルド検定 | 制約なしのMLE | 信頼区間との対応 |
+      | スコア検定 | 制約ありのMLE | $H_0$ 下の計算のみ |
+
+      スコア検定は $H_0$ のもとでの計算だけで済むため、制約なしMLEの計算が困難な場合に有用。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 8：信頼区間と検定
+
+<div class="quiz-container" data-quiz-id="test-8" data-correct="a">
+  <div class="quiz-question">
+    95%信頼区間と有意水準5%の両側検定の関係として正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q8" id="q8a">
+      <label for="q8a">$\theta_0$ が95%信頼区間に含まれないことと、$H_0: \theta = \theta_0$ を棄却することは同値</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q8" id="q8b">
+      <label for="q8b">$\theta_0$ が95%信頼区間に含まれることと、$H_0: \theta = \theta_0$ を棄却することは同値</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q8" id="q8c">
+      <label for="q8c">信頼区間と検定は無関係である</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q8" id="q8d">
+      <label for="q8d">信頼区間が広いほど検出力が高い</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(a)</strong>
+    <div class="quiz-explanation">
+      信頼区間と仮説検定の双対性：
+
+      $100(1-\alpha)\%$ 信頼区間を $C$ とすると：
+      - $\theta_0 \notin C$ ⇔ 有意水準 $\alpha$ で $H_0: \theta = \theta_0$ を棄却
+
+      これは同じピボット量を使っているため。
+
+      例：$\bar{X} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$ の区間の外に $\mu_0$ があれば棄却。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 9：FDR制御
+
+<div class="quiz-container" data-quiz-id="test-9" data-correct="d">
+  <div class="quiz-question">
+    偽発見率（FDR: False Discovery Rate）の制御について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q9" id="q9a">
+      <label for="q9a">ボンフェローニ補正より常に保守的である</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q9" id="q9b">
+      <label for="q9b">FDRは第1種の過誤の確率と同じである</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q9" id="q9c">
+      <label for="q9c">FDRは常にFWERより大きい</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q9" id="q9d">
+      <label for="q9d">Benjamini-Hochberg法はFDRを制御する方法である</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(d)</strong>
+    <div class="quiz-explanation">
+      多重検定における誤り制御：
+
+      - **FWER**（ファミリーワイズエラー率）：1つでも偽陽性が出る確率
+      - **FDR**（偽発見率）：棄却した中での偽陽性の割合の期待値
+
+      $\text{FDR} = E\left[\frac{\text{偽陽性の数}}{\text{棄却した数}}\right]$
+
+      Benjamini-Hochberg法：
+      1. p値を昇順にソート：$p_{(1)} \leq \cdots \leq p_{(m)}$
+      2. $p_{(k)} \leq \frac{k}{m}q$ を満たす最大の $k$ を見つける
+      3. $p_{(1)}, \ldots, p_{(k)}$ を棄却
+
+      FDRはFWERより緩いので、より多くの発見ができる。
+    </div>
+  </div>
+</div>
+
+---
+
+## 問題 10：ノンパラメトリック検定
+
+<div class="quiz-container" data-quiz-id="test-10" data-correct="c">
+  <div class="quiz-question">
+    2群の位置の差を検定するウィルコクソンの順位和検定（マン・ホイットニーのU検定）について正しいものはどれか。
+  </div>
+  <div class="quiz-options">
+    <div class="quiz-option" data-value="a">
+      <input type="radio" name="q10" id="q10a">
+      <label for="q10a">正規分布を仮定している</label>
+    </div>
+    <div class="quiz-option" data-value="b">
+      <input type="radio" name="q10" id="q10b">
+      <label for="q10b">対応のあるデータにのみ使用できる</label>
+    </div>
+    <div class="quiz-option" data-value="c">
+      <input type="radio" name="q10" id="q10c">
+      <label for="q10c">順位に基づく検定で、外れ値に頑健である</label>
+    </div>
+    <div class="quiz-option" data-value="d">
+      <input type="radio" name="q10" id="q10d">
+      <label for="q10d">t検定より常に検出力が高い</label>
+    </div>
+  </div>
+  <button class="quiz-btn" disabled>解答を確認</button>
+  <div class="quiz-feedback">
+    <span class="quiz-feedback-icon"></span>
+    <strong>正解：(c)</strong>
+    <div class="quiz-explanation">
+      ノンパラメトリック検定の特徴：
+
+      | 検定 | 対応 | 用途 |
+      |-----|-----|------|
+      | ウィルコクソン順位和検定 | なし | 2群の位置の差 |
+      | ウィルコクソン符号順位検定 | あり | 対応のある2群 |
+      | クラスカル・ウォリス検定 | なし | 3群以上の位置の差 |
+
+      順位検定の利点：
+      - 分布を仮定しない
+      - 外れ値に頑健
+      - 順序尺度でも使用可能
+
+      正規分布のときはt検定の方が検出力が高いが、歪んだ分布では順位検定が優れる。
     </div>
   </div>
 </div>
