@@ -142,10 +142,15 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 
 試験形式に合わせた選択式問題で理解度を確認しましょう。
 
+- [確率論の問題]({{ site.baseurl }}/semi-1/problems/probability/)（条件付き確率、ベイズ、母関数）
+- [確率分布の問題]({{ site.baseurl }}/semi-1/problems/distributions/)（ガンマ、ベータ、極限定理）
+- [確率過程の問題]({{ site.baseurl }}/semi-1/problems/stochastic/)（マルコフ連鎖、ポアソン過程）
 - [推定の問題]({{ site.baseurl }}/semi-1/problems/estimation/)（MLE、十分統計量、CRLB）
 - [検定の問題]({{ site.baseurl }}/semi-1/problems/testing/)（尤度比検定、UMP、多重検定）
-- 信頼区間の問題（準備中）
-- 多変量解析の問題（準備中）
+- [実験計画・調査の問題]({{ site.baseurl }}/semi-1/problems/design/)（分散分析、多重比較、標本調査）
+- [回帰分析の問題]({{ site.baseurl }}/semi-1/problems/regression/)（重回帰、正則化、GLM）
+- [多変量解析の問題]({{ site.baseurl }}/semi-1/problems/multivariate/)（PCA、判別、クラスター）
+- [発展的手法の問題]({{ site.baseurl }}/semi-1/problems/advanced/)（時系列、ベイズ、モデル選択）
 
 [すべての問題を見る →]({{ site.baseurl }}/semi-1/problems/)
 

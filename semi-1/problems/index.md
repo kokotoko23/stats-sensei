@@ -24,8 +24,18 @@ permalink: /semi-1/problems/
 
 <div class="category-section">
 <div class="category-header">
-<h2>確率・分布</h2>
-<span class="category-stats">確率分布、極限定理</span>
+<h2>確率論・確率分布</h2>
+<span class="category-stats">確率、分布、極限定理</span>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/semi-1/problems/probability/">確率論の問題</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-1">基本</span>
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="time-estimate">5問</span>
+</div>
+<p>条件付き確率、ベイズの定理、母関数、積率</p>
 </div>
 
 <div class="problem-card">
@@ -33,18 +43,18 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>離散分布・連続分布の性質、モーメント、積率母関数</p>
+<p>ガンマ分布、ベータ分布、カイ二乗分布、極限定理</p>
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/semi-1/problems/limit-theorems/">極限定理の問題</a></h3>
+<h3><a href="{{ site.baseurl }}/semi-1/problems/stochastic/">確率過程の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>中心極限定理、大数の法則、デルタ法</p>
+<p>マルコフ連鎖、ポアソン過程、定常分布</p>
 </div>
 
 </div>
@@ -60,7 +70,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
 <p>最尤推定、十分統計量、フィッシャー情報量、CRLB</p>
 </div>
@@ -70,35 +80,35 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
 <p>尤度比検定、UMP検定、多重検定</p>
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/semi-1/problems/interval/">信頼区間の問題</a></h3>
+<h3><a href="{{ site.baseurl }}/semi-1/problems/design/">実験計画・調査の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>信頼区間の構成、検定との関係</p>
+<p>分散分析、多重比較、標本調査法</p>
 </div>
 
 </div>
 
 <div class="category-section">
 <div class="category-header">
-<h2>多変量解析</h2>
-<span class="category-stats">回帰・主成分・判別</span>
+<h2>回帰・多変量解析</h2>
+<span class="category-stats">回帰・主成分・判別・クラスター</span>
 </div>
 
 <div class="problem-card">
 <h3><a href="{{ site.baseurl }}/semi-1/problems/regression/">回帰分析の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>重回帰、残差分析、モデル診断</p>
+<p>重回帰、正則化、GLM、生存時間分析</p>
 </div>
 
 <div class="problem-card">
@@ -106,9 +116,9 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>主成分分析、因子分析、判別分析、クラスター分析</p>
+<p>主成分分析、判別分析、クラスター分析、因子分析</p>
 </div>
 
 </div>
@@ -116,26 +126,17 @@ permalink: /semi-1/problems/
 <div class="category-section">
 <div class="category-header">
 <h2>発展的手法</h2>
-<span class="category-stats">ベイズ・時系列・モデル選択</span>
+<span class="category-stats">時系列・ベイズ・モデル選択</span>
 </div>
 
 <div class="problem-card">
-<h3><a href="{{ site.baseurl }}/semi-1/problems/bayesian/">ベイズ統計の問題</a></h3>
+<h3><a href="{{ site.baseurl }}/semi-1/problems/advanced/">発展的手法の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">10問</span>
+<span class="time-estimate">5問</span>
 </div>
-<p>事後分布、共役事前分布、ベイズ推定</p>
-</div>
-
-<div class="problem-card">
-<h3><a href="{{ site.baseurl }}/semi-1/problems/model-selection/">モデル選択の問題</a></h3>
-<div class="meta">
-<span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">10問</span>
-</div>
-<p>AIC、BIC、交差検証</p>
+<p>時系列解析、ベイズ統計、モデル選択、ブートストラップ</p>
 </div>
 
 </div>
