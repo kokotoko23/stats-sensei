@@ -315,6 +315,7 @@ function submitExam() {
   // 採点
   let correct = 0;
   const categoryResults = {};
+  const questionResults = [];
 
   examState.questions.forEach((q, index) => {
     const userAnswer = examState.answers[index];
@@ -326,6 +327,17 @@ function submitExam() {
     }
     categoryResults[q.category].total++;
     if (isCorrect) categoryResults[q.category].correct++;
+
+    questionResults.push({
+      index: index,
+      question: q.question,
+      options: q.options,
+      userAnswer: userAnswer,
+      correctAnswer: q.correct,
+      isCorrect: isCorrect,
+      category: q.category,
+      difficulty: q.difficulty
+    });
   });
 
   const score = Math.round((correct / examState.questions.length) * 100);
@@ -337,23 +349,75 @@ function submitExam() {
   document.getElementById('mock-exam-submit').classList.remove('active');
   document.getElementById('mock-exam-results').classList.add('active');
 
-  document.getElementById('result-score').textContent = `${score}%`;
-  document.getElementById('result-detail').textContent = `${examState.questions.length}問中${correct}問正解`;
+  document.getElementById('result-score').textContent = score + '%';
+  document.getElementById('result-detail').textContent = examState.questions.length + '問中' + correct + '問正解';
 
   const minutes = Math.floor(elapsedSeconds / 60);
   const seconds = elapsedSeconds % 60;
   document.getElementById('result-time').textContent =
-    `所要時間: ${minutes}分${seconds}秒`;
+    '所要時間: ' + minutes + '分' + seconds + '秒';
 
   // 分野別結果
   let breakdownHtml = '<h3>分野別結果</h3><table><tr><th>分野</th><th>正解</th><th>正答率</th></tr>';
   Object.keys(categoryResults).forEach(cat => {
     const r = categoryResults[cat];
     const rate = Math.round((r.correct / r.total) * 100);
-    breakdownHtml += `<tr><td>${cat}</td><td>${r.correct}/${r.total}</td><td>${rate}%</td></tr>`;
+    breakdownHtml += '<tr><td>' + cat + '</td><td>' + r.correct + '/' + r.total + '</td><td>' + rate + '%</td></tr>';
   });
   breakdownHtml += '</table>';
+
+  // 問題の振り返り
+  const difficultyLabels = {easy: '基礎', medium: '標準', hard: '発展'};
+  const optionLabels = ['(a)', '(b)', '(c)', '(d)'];
+
+  breakdownHtml += '<h3 style="margin-top: 32px;">問題の振り返り</h3>';
+  breakdownHtml += '<p style="color: #666; font-size: 14px;">各問題の正誤を確認できます。</p>';
+
+  questionResults.forEach((result, idx) => {
+    const statusClass = result.isCorrect ? 'correct' : 'incorrect';
+    const statusIcon = result.isCorrect ? '○' : '×';
+    const statusColor = result.isCorrect ? '#22c55e' : '#ef4444';
+
+    breakdownHtml += '<div class="review-question" style="background: white; border: 2px solid ' + (result.isCorrect ? '#22c55e' : '#ef4444') + '; border-radius: 12px; padding: 20px; margin: 16px 0;">';
+    breakdownHtml += '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">';
+    breakdownHtml += '<span style="font-weight: 600;">問題 ' + (idx + 1) + ' <span style="color: ' + statusColor + '; font-size: 20px;">' + statusIcon + '</span></span>';
+    breakdownHtml += '<span style="background: ' + (result.difficulty === 'easy' ? '#4CAF50' : result.difficulty === 'medium' ? '#FF9800' : '#F44336') + '; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">' + difficultyLabels[result.difficulty] + '</span>';
+    breakdownHtml += '</div>';
+    breakdownHtml += '<div style="font-weight: 500; margin-bottom: 16px;">' + result.question + '</div>';
+    breakdownHtml += '<div style="display: flex; flex-direction: column; gap: 8px;">';
+
+    result.options.forEach((opt, optIdx) => {
+      let optStyle = 'padding: 10px 14px; border-radius: 6px; border: 1px solid #e0e0e0;';
+      let prefix = '';
+
+      if (optIdx === result.correctAnswer) {
+        optStyle = 'padding: 10px 14px; border-radius: 6px; border: 2px solid #22c55e; background: #dcfce7;';
+        prefix = '<strong style="color: #22c55e;">正解 → </strong>';
+      }
+      if (optIdx === result.userAnswer && !result.isCorrect) {
+        optStyle = 'padding: 10px 14px; border-radius: 6px; border: 2px solid #ef4444; background: #fee2e2;';
+        prefix = '<strong style="color: #ef4444;">あなたの回答 → </strong>';
+      }
+      if (optIdx === result.userAnswer && result.isCorrect) {
+        prefix = '<strong style="color: #22c55e;">正解 → </strong>';
+      }
+
+      breakdownHtml += '<div style="' + optStyle + '">' + prefix + optionLabels[optIdx] + ' ' + opt + '</div>';
+    });
+
+    if (result.userAnswer === undefined) {
+      breakdownHtml += '<div style="color: #999; font-style: italic; margin-top: 8px;">未回答</div>';
+    }
+
+    breakdownHtml += '</div></div>';
+  });
+
   document.getElementById('result-breakdown').innerHTML = breakdownHtml;
+
+  // MathJaxを再レンダリング
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
 }
 </script>
 
