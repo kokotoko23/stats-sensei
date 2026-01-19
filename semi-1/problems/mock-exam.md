@@ -205,6 +205,7 @@ function selectRandomQuestions(count) {
 function renderQuestions() {
   const container = document.getElementById('questions-container');
   container.innerHTML = '';
+  const difficultyLabels = {easy: '基礎', medium: '標準', hard: '発展'};
 
   examState.questions.forEach((q, index) => {
     const optionsHtml = q.options.map((opt, i) => `
@@ -214,11 +215,12 @@ function renderQuestions() {
       </div>
     `).join('');
 
+    const diffLabel = difficultyLabels[q.difficulty];
     const questionHtml = `
       <div class="quiz-container" id="question-${index}" data-difficulty="${q.difficulty}">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
           <span style="font-weight: 600; color: #666;">問題 ${index + 1} / ${examState.questions.length}</span>
-          <span class="difficulty-tag">${{easy: '基礎', medium: '標準', hard: '発展'}[q.difficulty]}</span>
+          <span class="difficulty-tag">${diffLabel}</span>
         </div>
         <div class="quiz-question">${q.question}</div>
         <div class="quiz-options">${optionsHtml}</div>
