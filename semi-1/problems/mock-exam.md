@@ -65,67 +65,67 @@ permalink: /semi-1/problems/mock-exam/
 // 問題データベース（各分野から取得）
 const questionDatabase = {
   probability: [
-    { id: 'prob-1', question: '事象 $A$ と $B$ が独立であるとき、$P(A \\cup B)$ を $P(A) = p$、$P(B) = q$ を用いて表すとどれか。', options: ['$p + q$', '$pq$', '$p + q - pq$', '$1 - (1-p)(1-q)$'], correct: 2, difficulty: 'easy', category: '確率論' },
-    { id: 'prob-2', question: '有病率1%、感度95%、特異度90%の検査で陽性と判定された人が実際に病気である確率に最も近いものはどれか。', options: ['約5%', '約9%', '約50%', '約95%'], correct: 1, difficulty: 'medium', category: '確率論' },
-    { id: 'prob-3', question: 'MGFが $M_X(t) = e^{3t + 2t^2}$ のとき、$E[X]$ と $\\text{Var}(X)$ の値はどれか。', options: ['$E[X] = 3$、$\\text{Var}(X) = 4$', '$E[X] = 3$、$\\text{Var}(X) = 2$', '$E[X] = 2$、$\\text{Var}(X) = 3$', '$E[X] = 5$、$\\text{Var}(X) = 4$'], correct: 0, difficulty: 'medium', category: '確率論' },
-    { id: 'prob-6', question: 'チェビシェフの不等式 $P(|X - \\mu| \\geq k\\sigma) \\leq ?$ の右辺はどれか。', options: ['$k$', '$1/k^2$', '$1/k$', '$\\sigma^2/k^2$'], correct: 1, difficulty: 'easy', category: '確率論' },
-    { id: 'prob-7', question: '全期待値の法則の正しい表現はどれか。', options: ['$E[X] = E[E[X \\mid Y]]$', '$E[X] = E[X \\mid E[Y]]$', '$E[X \\mid Y] = E[X] \\cdot E[Y]$', '$E[X] = E[Y \\mid X]$'], correct: 0, difficulty: 'medium', category: '確率論' }
+    { id: 'prob-1', question: '事象 $A$ と $B$ が独立であるとき、$P(A \\cup B)$ を $P(A) = p$、$P(B) = q$ を用いて表すとどれか。', options: ['$p + q$', '$pq$', '$p + q - pq$', '$1 - (1-p)(1-q)$'], correct: 2, difficulty: 'easy', category: '確率論', explanation: '加法定理より $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$。独立なので $P(A \\cap B) = pq$。よって $p + q - pq$。なお、選択肢(c)と(d)は同値（$(1-p)(1-q) = 1-p-q+pq$ より $1-(1-p)(1-q) = p+q-pq$）。' },
+    { id: 'prob-2', question: '有病率1%、感度95%、特異度90%の検査で陽性と判定された人が実際に病気である確率に最も近いものはどれか。', options: ['約5%', '約9%', '約50%', '約95%'], correct: 1, difficulty: 'medium', category: '確率論', explanation: 'ベイズの定理を適用。$P(病気|陽性) = \\frac{0.01 \\times 0.95}{0.01 \\times 0.95 + 0.99 \\times 0.10} = \\frac{0.0095}{0.1085} \\approx 0.088 \\approx 9\\%$。有病率が低いと偽陽性が多くなります。' },
+    { id: 'prob-3', question: 'MGFが $M_X(t) = e^{3t + 2t^2}$ のとき、$E[X]$ と $\\text{Var}(X)$ の値はどれか。', options: ['$E[X] = 3$、$\\text{Var}(X) = 4$', '$E[X] = 3$、$\\text{Var}(X) = 2$', '$E[X] = 2$、$\\text{Var}(X) = 3$', '$E[X] = 5$、$\\text{Var}(X) = 4$'], correct: 0, difficulty: 'medium', category: '確率論', explanation: '$M\'_X(t) = (3 + 4t)e^{3t + 2t^2}$ より $E[X] = M\'_X(0) = 3$。$M\'\'_X(t) = (4 + (3+4t)^2)e^{3t+2t^2}$ より $E[X^2] = M\'\'_X(0) = 4 + 9 = 13$。$\\text{Var}(X) = 13 - 9 = 4$。' },
+    { id: 'prob-6', question: 'チェビシェフの不等式 $P(|X - \\mu| \\geq k\\sigma) \\leq ?$ の右辺はどれか。', options: ['$k$', '$1/k^2$', '$1/k$', '$\\sigma^2/k^2$'], correct: 1, difficulty: 'easy', category: '確率論', explanation: 'チェビシェフの不等式は $P(|X - \\mu| \\geq k\\sigma) \\leq 1/k^2$。任意の分布に適用でき、平均から $k$ 標準偏差以上離れる確率は最大 $1/k^2$ です。' },
+    { id: 'prob-7', question: '全期待値の法則の正しい表現はどれか。', options: ['$E[X] = E[E[X \\mid Y]]$', '$E[X] = E[X \\mid E[Y]]$', '$E[X \\mid Y] = E[X] \\cdot E[Y]$', '$E[X] = E[Y \\mid X]$'], correct: 0, difficulty: 'medium', category: '確率論', explanation: '全期待値の法則（反復期待値の法則）は $E[X] = E[E[X \\mid Y]]$。条件付き期待値の期待値は無条件の期待値に等しいという重要な性質です。' }
   ],
   distributions: [
-    { id: 'dist-1', question: '$X \\sim N(0,1)$ のとき、$X^2$ の分布はどれか。', options: ['$N(0, 1)$', '$\\chi^2(1)$', '$t(1)$', '$F(1, 1)$'], correct: 1, difficulty: 'easy', category: '確率分布' },
-    { id: 'dist-2', question: '中心極限定理で、標本平均の分布が正規分布に収束するために必要な条件はどれか。', options: ['母集団が正規分布に従う', '分散が有限である', '標本サイズが30以上', '独立同分布である'], correct: 0, difficulty: 'medium', category: '確率分布' },
-    { id: 'dist-3', question: '$X_1, \\ldots, X_n \\sim N(\\mu, \\sigma^2)$ のとき、$(n-1)S^2/\\sigma^2$ の分布はどれか。', options: ['$\\chi^2(n)$', '$\\chi^2(n-1)$', '$t(n-1)$', '$F(n-1, n-1)$'], correct: 2, difficulty: 'medium', category: '確率分布' },
-    { id: 'dist-6', question: 't分布の定義として正しいものはどれか。', options: ['$Z/\\sqrt{V/n}$（$Z \\sim N(0,1)$, $V \\sim \\chi^2(n)$、独立）', '$V_1/V_2$（$V_i \\sim \\chi^2(n_i)$、独立）', '$Z^2$（$Z \\sim N(0,1)$）', '$\\sum Z_i^2$（$Z_i \\sim N(0,1)$、独立）'], correct: 0, difficulty: 'easy', category: '確率分布' },
-    { id: 'dist-8', question: '負の二項分布 $NB(r, p)$ の平均はどれか。', options: ['$rp$', '$r/p$', '$r(1-p)/p$', '$(1-p)/p$'], correct: 2, difficulty: 'hard', category: '確率分布' }
+    { id: 'dist-1', question: '$X \\sim N(0,1)$ のとき、$X^2$ の分布はどれか。', options: ['$N(0, 1)$', '$\\chi^2(1)$', '$t(1)$', '$F(1, 1)$'], correct: 1, difficulty: 'easy', category: '確率分布', explanation: '標準正規分布の2乗は自由度1のカイ二乗分布に従います。一般に、独立な標準正規確率変数 $n$ 個の2乗和は $\\chi^2(n)$ に従います。' },
+    { id: 'dist-2', question: '中心極限定理で、標本平均の分布が正規分布に収束するために必要な条件はどれか。', options: ['母集団が正規分布に従う', '分散が有限である', '標本サイズが30以上', '独立同分布である'], correct: 0, difficulty: 'medium', category: '確率分布', explanation: '中心極限定理の条件は「独立同分布で分散が有限」。母集団が正規分布である必要はなく、n=30は経験則に過ぎません。正確には(a)「母集団が正規分布」ではなく、条件は「分散が有限」です。' },
+    { id: 'dist-3', question: '$X_1, \\ldots, X_n \\sim N(\\mu, \\sigma^2)$ のとき、$(n-1)S^2/\\sigma^2$ の分布はどれか。', options: ['$\\chi^2(n)$', '$\\chi^2(n-1)$', '$t(n-1)$', '$F(n-1, n-1)$'], correct: 1, difficulty: 'medium', category: '確率分布', explanation: '正規母集団からの標本分散 $S^2$ について、$(n-1)S^2/\\sigma^2$ は自由度 $n-1$ のカイ二乗分布に従います。自由度が1つ減るのは、$\\bar{X}$ を使って偏差を計算するためです。' },
+    { id: 'dist-6', question: 't分布の定義として正しいものはどれか。', options: ['$Z/\\sqrt{V/n}$（$Z \\sim N(0,1)$, $V \\sim \\chi^2(n)$、独立）', '$V_1/V_2$（$V_i \\sim \\chi^2(n_i)$、独立）', '$Z^2$（$Z \\sim N(0,1)$）', '$\\sum Z_i^2$（$Z_i \\sim N(0,1)$、独立）'], correct: 0, difficulty: 'easy', category: '確率分布', explanation: 't分布は標準正規変数をカイ二乗変数の平方根で割った形。$T = Z/\\sqrt{V/n}$ で自由度 $n$ のt分布に従います。(b)はF分布、(c)はカイ二乗分布(自由度1)、(d)はカイ二乗分布の定義です。' },
+    { id: 'dist-8', question: '負の二項分布 $NB(r, p)$ の平均はどれか。', options: ['$rp$', '$r/p$', '$r(1-p)/p$', '$(1-p)/p$'], correct: 2, difficulty: 'hard', category: '確率分布', explanation: '負の二項分布（$r$回成功するまでの失敗回数）の平均は $r(1-p)/p$。幾何分布（$r=1$）の場合は $(1-p)/p$ です。' }
   ],
   stochastic: [
-    { id: 'stoch-1', question: 'マルコフ連鎖の「マルコフ性」を正しく表しているものはどれか。', options: ['$P(X_{n+1} = j) = P(X_n = j)$', '$P(X_{n+1} = j \\mid X_0, \\ldots, X_n) = P(X_{n+1} = j)$', '$P(X_{n+1} = j \\mid X_0, \\ldots, X_n) = P(X_{n+1} = j \\mid X_n)$', '$P(X_{n+1} = j \\mid X_n = i) = P(X_1 = j \\mid X_0 = i)$'], correct: 2, difficulty: 'easy', category: '確率過程' },
-    { id: 'stoch-3', question: 'ポアソン過程 $N(t)$ と $N(s+t) - N(s)$ の分布について正しいものはどれか。', options: ['$N(t) \\sim \\text{Poi}(\\lambda)$', '$N(t) \\sim \\text{Poi}(\\lambda t)$、$N(s+t) - N(s) \\sim \\text{Poi}(\\lambda t)$', '$N(t) \\sim \\text{Poi}(\\lambda t)$、$N(s+t) - N(s) \\sim \\text{Poi}(\\lambda s)$', '$N(t) \\sim \\text{Exp}(\\lambda t)$'], correct: 1, difficulty: 'easy', category: '確率過程' },
-    { id: 'stoch-4', question: 'ポアソン過程の到着間隔 $T$ の分布はどれか。', options: ['$\\text{Poi}(\\lambda)$', '$\\text{Gamma}(2, \\lambda)$', '$U(0, 1/\\lambda)$', '$\\text{Exp}(\\lambda)$'], correct: 3, difficulty: 'easy', category: '確率過程' },
-    { id: 'stoch-5', question: '有限状態マルコフ連鎖がエルゴード的であるための条件はどれか。', options: ['すべての推移確率が正', '可約である', '既約かつ非周期的', '周期的である'], correct: 2, difficulty: 'medium', category: '確率過程' },
-    { id: 'stoch-10', question: 'マルチンゲールの条件として正しいものはどれか。', options: ['$E[M_{n+1} \\mid M_0, \\ldots, M_n] = M_0$', '$E[M_{n+1} \\mid M_0, \\ldots, M_n] = M_n$', '$E[M_{n+1} \\mid M_0, \\ldots, M_n] > M_n$', '$E[M_{n+1}] = E[M_n] + 1$'], correct: 1, difficulty: 'hard', category: '確率過程' }
+    { id: 'stoch-1', question: 'マルコフ連鎖の「マルコフ性」を正しく表しているものはどれか。', options: ['$P(X_{n+1} = j) = P(X_n = j)$', '$P(X_{n+1} = j \\mid X_0, \\ldots, X_n) = P(X_{n+1} = j)$', '$P(X_{n+1} = j \\mid X_0, \\ldots, X_n) = P(X_{n+1} = j \\mid X_n)$', '$P(X_{n+1} = j \\mid X_n = i) = P(X_1 = j \\mid X_0 = i)$'], correct: 2, difficulty: 'easy', category: '確率過程', explanation: 'マルコフ性は「未来は現在のみに依存し、過去には依存しない」という性質。(c)が正しい定義です。(d)は時間斉次性（定常性）を表しています。' },
+    { id: 'stoch-3', question: 'ポアソン過程 $N(t)$ と $N(s+t) - N(s)$ の分布について正しいものはどれか。', options: ['$N(t) \\sim \\text{Poi}(\\lambda)$', '$N(t) \\sim \\text{Poi}(\\lambda t)$、$N(s+t) - N(s) \\sim \\text{Poi}(\\lambda t)$', '$N(t) \\sim \\text{Poi}(\\lambda t)$、$N(s+t) - N(s) \\sim \\text{Poi}(\\lambda s)$', '$N(t) \\sim \\text{Exp}(\\lambda t)$'], correct: 1, difficulty: 'easy', category: '確率過程', explanation: 'ポアソン過程では、時刻0からtまでのイベント数は $\\text{Poi}(\\lambda t)$ に従います。また、定常増分性より任意の長さtの区間のイベント数も $\\text{Poi}(\\lambda t)$ です。' },
+    { id: 'stoch-4', question: 'ポアソン過程の到着間隔 $T$ の分布はどれか。', options: ['$\\text{Poi}(\\lambda)$', '$\\text{Gamma}(2, \\lambda)$', '$U(0, 1/\\lambda)$', '$\\text{Exp}(\\lambda)$'], correct: 3, difficulty: 'easy', category: '確率過程', explanation: 'ポアソン過程の到着間隔（イベント間の時間）は指数分布 $\\text{Exp}(\\lambda)$ に従います。これは「memoryless」という重要な性質を持ちます。' },
+    { id: 'stoch-5', question: '有限状態マルコフ連鎖がエルゴード的であるための条件はどれか。', options: ['すべての推移確率が正', '可約である', '既約かつ非周期的', '周期的である'], correct: 2, difficulty: 'medium', category: '確率過程', explanation: 'エルゴード的とは、初期状態によらず定常分布に収束すること。そのための条件は「既約（すべての状態間を行き来できる）かつ非周期的」です。' },
+    { id: 'stoch-10', question: 'マルチンゲールの条件として正しいものはどれか。', options: ['$E[M_{n+1} \\mid M_0, \\ldots, M_n] = M_0$', '$E[M_{n+1} \\mid M_0, \\ldots, M_n] = M_n$', '$E[M_{n+1} \\mid M_0, \\ldots, M_n] > M_n$', '$E[M_{n+1}] = E[M_n] + 1$'], correct: 1, difficulty: 'hard', category: '確率過程', explanation: 'マルチンゲールは「将来の期待値が現在の値に等しい」という性質を持つ確率過程。公平なギャンブルの賭け金がその例です。(c)はサブマルチンゲールの条件。' }
   ],
   estimation: [
-    { id: 'est-1', question: 'MLEの性質として正しくないものはどれか。', options: ['一致性', '漸近正規性', '不偏性（有限標本で常に成立）', '不変性'], correct: 2, difficulty: 'easy', category: '推定' },
-    { id: 'est-2', question: 'ベルヌーイ分布 $\\text{Ber}(p)$ のフィッシャー情報量はどれか。', options: ['$1/p$', '$1/(p(1-p))$', '$p(1-p)$', '$1/p^2$'], correct: 1, difficulty: 'medium', category: '推定' },
-    { id: 'est-4', question: '$X_1, \\ldots, X_n \\sim N(\\mu, 1)$ のクラメル・ラオ下界はどれか。', options: ['$1$', '$1/\\sqrt{n}$', '$1/n^2$', '$1/n$'], correct: 3, difficulty: 'medium', category: '推定' },
-    { id: 'est-5', question: 'ポアソン分布の $\\lambda$ の最尤推定量はどれか。', options: ['$n/\\sum X_i$', '$\\sqrt{\\bar{X}}$', '$\\bar{X}$', '$\\sum X_i^2/n$'], correct: 2, difficulty: 'easy', category: '推定' },
-    { id: 'est-10', question: '二乗損失のベイズ推定量はどれか。', options: ['事後平均', 'MAP推定量', '事後中央値', '最尤推定量'], correct: 0, difficulty: 'hard', category: '推定' }
+    { id: 'est-1', question: 'MLEの性質として正しくないものはどれか。', options: ['一致性', '漸近正規性', '不偏性（有限標本で常に成立）', '不変性'], correct: 2, difficulty: 'easy', category: '推定', explanation: 'MLEは一致性、漸近正規性、不変性を持ちますが、一般に不偏性は保証されません。例：$\\sigma^2$のMLEは$S^2(n-1)/n$で、偏りがあります。' },
+    { id: 'est-2', question: 'ベルヌーイ分布 $\\text{Ber}(p)$ のフィッシャー情報量はどれか。', options: ['$1/p$', '$1/(p(1-p))$', '$p(1-p)$', '$1/p^2$'], correct: 1, difficulty: 'medium', category: '推定', explanation: '$I(p) = E[(-\\frac{\\partial^2}{\\partial p^2}\\log f(x;p))^2] = E[(\\frac{X-p}{p(1-p)})^2] = \\frac{1}{p(1-p)}$。対数尤度の2階微分の期待値の負を計算します。' },
+    { id: 'est-4', question: '$X_1, \\ldots, X_n \\sim N(\\mu, 1)$ のクラメル・ラオ下界はどれか。', options: ['$1$', '$1/\\sqrt{n}$', '$1/n^2$', '$1/n$'], correct: 3, difficulty: 'medium', category: '推定', explanation: 'クラメル・ラオ下界は $1/(nI(\\theta))$。$N(\\mu, 1)$のフィッシャー情報量は1なので、下界は$1/n$。標本平均$\\bar{X}$の分散が$1/n$で下界に一致するので、UMVUEです。' },
+    { id: 'est-5', question: 'ポアソン分布の $\\lambda$ の最尤推定量はどれか。', options: ['$n/\\sum X_i$', '$\\sqrt{\\bar{X}}$', '$\\bar{X}$', '$\\sum X_i^2/n$'], correct: 2, difficulty: 'easy', category: '推定', explanation: 'ポアソン分布の対数尤度を$\\lambda$で微分して0とおくと、$\\sum X_i/n - \\lambda = 0$。よってMLE は標本平均 $\\bar{X}$。' },
+    { id: 'est-10', question: '二乗損失のベイズ推定量はどれか。', options: ['事後平均', 'MAP推定量', '事後中央値', '最尤推定量'], correct: 0, difficulty: 'hard', category: '推定', explanation: '二乗損失$(\\hat{\\theta}-\\theta)^2$を最小化するベイズ推定量は事後平均。絶対損失なら事後中央値、0-1損失ならMAP推定量が最適です。' }
   ],
   testing: [
-    { id: 'test-1', question: '第一種の過誤（Type I error）の定義はどれか。', options: ['対立仮説が真のとき帰無仮説を棄却しない', '帰無仮説が真のとき帰無仮説を棄却する', '対立仮説が真のとき帰無仮説を棄却する', '帰無仮説が真のとき帰無仮説を棄却しない'], correct: 1, difficulty: 'easy', category: '検定' },
-    { id: 'test-2', question: '尤度比検定統計量 $\\Lambda$ の定義として正しいものはどれか。', options: ['$L(\\hat{\\theta})/L(\\theta_0)$', '$L(\\theta_0)/L(\\hat{\\theta})$', '$\\log L(\\hat{\\theta}) - \\log L(\\theta_0)$', '$2[\\log L(\\hat{\\theta}) - \\log L(\\theta_0)]$'], correct: 1, difficulty: 'medium', category: '検定' },
-    { id: 'test-4', question: 'p値の定義として正しいものはどれか。', options: ['帰無仮説が真である確率', '対立仮説が真である確率', '検定統計量が観測値以上に極端な値をとる確率', '第二種の過誤を犯す確率'], correct: 2, difficulty: 'easy', category: '検定' },
-    { id: 'test-6', question: '検定の検出力（power）の定義はどれか。', options: ['対立仮説が真のとき帰無仮説を棄却する確率', '帰無仮説が真のとき帰無仮説を棄却しない確率', '第一種の過誤の確率', '帰無仮説が真のとき帰無仮説を棄却する確率'], correct: 0, difficulty: 'medium', category: '検定' },
-    { id: 'test-9', question: 'FDR（偽発見率）制御で用いられる方法はどれか。', options: ['ボンフェローニ補正', 'ベンジャミニ・ホッホベルグ法', 'シダック補正', 'ホルム法'], correct: 1, difficulty: 'hard', category: '検定' }
+    { id: 'test-1', question: '第一種の過誤（Type I error）の定義はどれか。', options: ['対立仮説が真のとき帰無仮説を棄却しない', '帰無仮説が真のとき帰無仮説を棄却する', '対立仮説が真のとき帰無仮説を棄却する', '帰無仮説が真のとき帰無仮説を棄却しない'], correct: 1, difficulty: 'easy', category: '検定', explanation: '第一種の過誤（偽陽性）は「帰無仮説が真なのに棄却する」誤り。有意水準αで制御されます。第二種の過誤（偽陰性）は「対立仮説が真なのに棄却しない」誤りです。' },
+    { id: 'test-2', question: '尤度比検定統計量 $\\Lambda$ の定義として正しいものはどれか。', options: ['$L(\\hat{\\theta})/L(\\theta_0)$', '$L(\\theta_0)/L(\\hat{\\theta})$', '$\\log L(\\hat{\\theta}) - \\log L(\\theta_0)$', '$2[\\log L(\\hat{\\theta}) - \\log L(\\theta_0)]$'], correct: 1, difficulty: 'medium', category: '検定', explanation: '尤度比検定統計量は $\\Lambda = L(\\theta_0)/L(\\hat{\\theta})$（帰無仮説下の尤度 / 最大尤度）。$-2\\log\\Lambda$ が漸近的にカイ二乗分布に従います。' },
+    { id: 'test-4', question: 'p値の定義として正しいものはどれか。', options: ['帰無仮説が真である確率', '対立仮説が真である確率', '検定統計量が観測値以上に極端な値をとる確率', '第二種の過誤を犯す確率'], correct: 2, difficulty: 'easy', category: '検定', explanation: 'p値は「帰無仮説が真のとき、観測されたデータ以上に極端なデータが得られる確率」。帰無仮説の確率ではないことに注意。p値≦αなら帰無仮説を棄却します。' },
+    { id: 'test-6', question: '検定の検出力（power）の定義はどれか。', options: ['対立仮説が真のとき帰無仮説を棄却する確率', '帰無仮説が真のとき帰無仮説を棄却しない確率', '第一種の過誤の確率', '帰無仮説が真のとき帰無仮説を棄却する確率'], correct: 0, difficulty: 'medium', category: '検定', explanation: '検出力は $1 - \\beta$（第二種の過誤の確率の補数）。「対立仮説が真のとき正しく棄却できる確率」で、効果量とサンプルサイズが大きいほど高くなります。' },
+    { id: 'test-9', question: 'FDR（偽発見率）制御で用いられる方法はどれか。', options: ['ボンフェローニ補正', 'ベンジャミニ・ホッホベルグ法', 'シダック補正', 'ホルム法'], correct: 1, difficulty: 'hard', category: '検定', explanation: 'ベンジャミニ・ホッホベルグ法はFDR（棄却した仮説のうち偽陽性の割合）を制御。ボンフェローニ、シダック、ホルムはFWER（ファミリーワイズ誤り率）を制御します。' }
   ],
   design: [
-    { id: 'design-1', question: '乱塊法（RBD）の主な目的はどれか。', options: ['ブロック間のばらつきを制御', '交互作用を検出', '系統誤差を除去', '多重比較を行う'], correct: 0, difficulty: 'easy', category: '実験計画' },
-    { id: 'design-2', question: '2元配置分散分析で検出できないものはどれか。', options: ['因子Aの主効果', '因子Bの主効果', '交互作用', '3次の交互作用'], correct: 2, difficulty: 'medium', category: '実験計画' },
-    { id: 'design-4', question: '層化抽出法の利点はどれか。', options: ['実施が容易', '各層の特性を反映した推定が可能', '無作為抽出が不要', '標本サイズを小さくできる'], correct: 1, difficulty: 'easy', category: '実験計画' },
-    { id: 'design-6', question: 'ラテン方格法で制御できるブロック因子の数はどれか。', options: ['0個', '1個', '2個', '3個'], correct: 2, difficulty: 'hard', category: '実験計画' },
-    { id: 'design-9', question: '系統抽出法の特徴として正しいものはどれか。', options: ['完全に無作為', '周期性があると偏りが生じる可能性', '層化抽出より常に優れる', '母集団リストが不要'], correct: 1, difficulty: 'easy', category: '実験計画' }
+    { id: 'design-1', question: '乱塊法（RBD）の主な目的はどれか。', options: ['ブロック間のばらつきを制御', '交互作用を検出', '系統誤差を除去', '多重比較を行う'], correct: 0, difficulty: 'easy', category: '実験計画', explanation: '乱塊法（Randomized Block Design）は、実験単位をブロックに分け、ブロック内で処理を無作為に割り当てます。ブロック間のばらつきを除去して処理効果を検出しやすくします。' },
+    { id: 'design-2', question: '2元配置分散分析で検出できないものはどれか。', options: ['因子Aの主効果', '因子Bの主効果', '交互作用', '3次の交互作用'], correct: 3, difficulty: 'medium', category: '実験計画', explanation: '2元配置分散分析では、因子Aの主効果、因子Bの主効果、A×Bの交互作用（2次）を検出できます。3次の交互作用は3因子以上でのみ存在します。' },
+    { id: 'design-4', question: '層化抽出法の利点はどれか。', options: ['実施が容易', '各層の特性を反映した推定が可能', '無作為抽出が不要', '標本サイズを小さくできる'], correct: 1, difficulty: 'easy', category: '実験計画', explanation: '層化抽出は母集団を同質なグループ（層）に分け、各層から無作為抽出します。層ごとの推定が可能で、層内分散が小さければ全体の推定精度も向上します。' },
+    { id: 'design-6', question: 'ラテン方格法で制御できるブロック因子の数はどれか。', options: ['0個', '1個', '2個', '3個'], correct: 2, difficulty: 'hard', category: '実験計画', explanation: 'ラテン方格法は行と列の2つのブロック因子を同時に制御できます。n×nの方格で、各行・各列に各処理が1回ずつ現れるように配置します。' },
+    { id: 'design-9', question: '系統抽出法の特徴として正しいものはどれか。', options: ['完全に無作為', '周期性があると偏りが生じる可能性', '層化抽出より常に優れる', '母集団リストが不要'], correct: 1, difficulty: 'easy', category: '実験計画', explanation: '系統抽出は一定間隔で抽出する方法。実施は容易ですが、母集団に周期性があると抽出間隔と一致して偏りが生じる危険があります。' }
   ],
   regression: [
-    { id: 'reg-1', question: '最小二乗法の推定量 $\\hat{\\beta}$ を不偏にする条件はどれか。', options: ['誤差項が正規分布', '$E[\\varepsilon] = 0$', '誤差項が等分散', '説明変数が確率変数でない'], correct: 1, difficulty: 'easy', category: '回帰分析' },
-    { id: 'reg-2', question: '決定係数 $R^2$ について正しいものはどれか。', options: ['負の値をとりうる', '説明変数を増やすと必ず増加', '0から1の値をとる', '因果関係を示す'], correct: 3, difficulty: 'medium', category: '回帰分析' },
-    { id: 'reg-4', question: 'VIF（分散拡大係数）が10以上のとき懸念される問題はどれか。', options: ['不均一分散', '系列相関', '外れ値', '多重共線性'], correct: 0, difficulty: 'easy', category: '回帰分析' },
-    { id: 'reg-6', question: 'LASSOの正則化項はどれか。', options: ['$\\lambda \\sum |\\beta_j|$', '$\\lambda \\sum \\beta_j^2$', '$\\lambda \\sum |\\beta_j|^{1/2}$', '$\\lambda \\max |\\beta_j|$'], correct: 2, difficulty: 'hard', category: '回帰分析' },
-    { id: 'reg-9', question: 'ポアソン回帰のリンク関数はどれか。', options: ['恒等関数', 'ロジット関数', '対数関数', 'プロビット関数'], correct: 2, difficulty: 'hard', category: '回帰分析' }
+    { id: 'reg-1', question: '最小二乗法の推定量 $\\hat{\\beta}$ を不偏にする条件はどれか。', options: ['誤差項が正規分布', '$E[\\varepsilon] = 0$', '誤差項が等分散', '説明変数が確率変数でない'], correct: 1, difficulty: 'easy', category: '回帰分析', explanation: 'OLSが不偏となる条件は $E[\\varepsilon|X] = 0$（外生性）。正規性や等分散性は不偏性には不要です。正規性は検定統計量の分布に、等分散性は効率性に関係します。' },
+    { id: 'reg-2', question: '決定係数 $R^2$ について正しいものはどれか。', options: ['負の値をとりうる', '説明変数を増やすと必ず増加', '0から1の値をとる', '因果関係を示す'], correct: 1, difficulty: 'medium', category: '回帰分析', explanation: '$R^2$は説明変数を増やすと単調増加（または不変）します。そのため、変数選択には自由度調整済み$R^2$やAICを使います。$R^2$は相関であり因果関係を示しません。' },
+    { id: 'reg-4', question: 'VIF（分散拡大係数）が10以上のとき懸念される問題はどれか。', options: ['不均一分散', '系列相関', '外れ値', '多重共線性'], correct: 3, difficulty: 'easy', category: '回帰分析', explanation: 'VIF（Variance Inflation Factor）は多重共線性の指標。VIF=10は、その変数を他の変数で説明したときの$R^2$が0.9に相当し、係数の推定が不安定になります。' },
+    { id: 'reg-6', question: 'LASSOの正則化項はどれか。', options: ['$\\lambda \\sum |\\beta_j|$', '$\\lambda \\sum \\beta_j^2$', '$\\lambda \\sum |\\beta_j|^{1/2}$', '$\\lambda \\max |\\beta_j|$'], correct: 0, difficulty: 'hard', category: '回帰分析', explanation: 'LASSOはL1正則化 $\\lambda \\sum |\\beta_j|$ を使います。係数を0に縮小でき、変数選択の効果があります。(b)はリッジ回帰のL2正則化です。' },
+    { id: 'reg-9', question: 'ポアソン回帰のリンク関数はどれか。', options: ['恒等関数', 'ロジット関数', '対数関数', 'プロビット関数'], correct: 2, difficulty: 'hard', category: '回帰分析', explanation: 'ポアソン回帰では対数リンク $\\log(\\mu) = X\\beta$ を使います。これにより $\\mu > 0$ が保証されます。ロジット/プロビットは二項データ、恒等は正規分布で使われます。' }
   ],
   multivariate: [
-    { id: 'mv-1', question: '主成分分析の目的はどれか。', options: ['変数間の因果関係を推定', '次元削減と情報の要約', 'グループ間の差異を最大化', 'クラスターの発見'], correct: 1, difficulty: 'easy', category: '多変量解析' },
-    { id: 'mv-2', question: '主成分の固有値が表すものはどれか。', options: ['元の変数の分散', '主成分が説明する分散', '主成分間の相関', '標準化係数'], correct: 2, difficulty: 'medium', category: '多変量解析' },
-    { id: 'mv-4', question: '判別分析の目的はどれか。', options: ['変数の次元削減', '潜在因子の発見', 'グループへの分類', 'クラスターの形成'], correct: 2, difficulty: 'easy', category: '多変量解析' },
-    { id: 'mv-5', question: 'k-means法の特徴として正しいものはどれか。', options: ['階層的クラスタリング', 'クラスター数を事前に指定', '樹形図を出力', 'クラスター数を自動決定'], correct: 1, difficulty: 'medium', category: '多変量解析' },
-    { id: 'mv-7', question: '多次元尺度構成法（MDS）の主な目的はどれか。', options: ['変数間の因果関係推定', '類似度データの可視化', 'グループ分類', '次元の独立性検定'], correct: 1, difficulty: 'hard', category: '多変量解析' }
+    { id: 'mv-1', question: '主成分分析の目的はどれか。', options: ['変数間の因果関係を推定', '次元削減と情報の要約', 'グループ間の差異を最大化', 'クラスターの発見'], correct: 1, difficulty: 'easy', category: '多変量解析', explanation: 'PCAは分散が最大となる方向に射影し、少数の主成分でデータを要約します。(c)は判別分析、(d)はクラスター分析の目的です。' },
+    { id: 'mv-2', question: '主成分の固有値が表すものはどれか。', options: ['元の変数の分散', '主成分が説明する分散', '主成分間の相関', '標準化係数'], correct: 1, difficulty: 'medium', category: '多変量解析', explanation: '固有値は対応する主成分の分散を表します。寄与率は「固有値/固有値の合計」で、その主成分が全体の分散のどれだけを説明するかを示します。' },
+    { id: 'mv-4', question: '判別分析の目的はどれか。', options: ['変数の次元削減', '潜在因子の発見', 'グループへの分類', 'クラスターの形成'], correct: 2, difficulty: 'easy', category: '多変量解析', explanation: '判別分析は既知のグループを判別する関数を求め、新しいデータを分類します。(a)はPCA、(b)は因子分析、(d)はクラスター分析の目的です。' },
+    { id: 'mv-5', question: 'k-means法の特徴として正しいものはどれか。', options: ['階層的クラスタリング', 'クラスター数を事前に指定', '樹形図を出力', 'クラスター数を自動決定'], correct: 1, difficulty: 'medium', category: '多変量解析', explanation: 'k-means法は非階層的手法で、クラスター数kを事前に指定します。樹形図を出力するのは階層的クラスタリング（ウォード法など）です。' },
+    { id: 'mv-7', question: '多次元尺度構成法（MDS）の主な目的はどれか。', options: ['変数間の因果関係推定', '類似度データの可視化', 'グループ分類', '次元の独立性検定'], correct: 1, difficulty: 'hard', category: '多変量解析', explanation: 'MDSは対象間の類似度（距離）データを低次元空間に配置して可視化します。心理学のイメージ調査などで、対象間の関係性を視覚的に把握するのに使われます。' }
   ],
   advanced: [
-    { id: 'adv-1', question: 'ARIMA(p,d,q)モデルの d は何を表すか。', options: ['AR次数', '差分の階数', 'MA次数', '季節周期'], correct: 2, difficulty: 'medium', category: '発展的手法' },
-    { id: 'adv-4', question: 'AICを最小化する意味はどれか。', options: ['過学習を防ぎつつ当てはまりを良くする', '計算量を減らす', '解釈を容易にする', '外れ値の影響を減らす'], correct: 0, difficulty: 'medium', category: '発展的手法' },
-    { id: 'adv-6', question: 'Leave-One-Out交差検証の特徴はどれか。', options: ['計算が高速', '分散が小さい', 'ほぼ不偏だが分散が大きい', 'データ数によらず5分割'], correct: 2, difficulty: 'medium', category: '発展的手法' },
-    { id: 'adv-7', question: 'MCMCの主な用途はどれか。', options: ['最尤推定', '事後分布からのサンプリング', '仮説検定', '主成分分析'], correct: 1, difficulty: 'hard', category: '発展的手法' },
-    { id: 'adv-9', question: 'モンテカルロ積分で推定されるものはどれか。', options: ['最大値', '期待値（積分）', '分散', 'モード'], correct: 1, difficulty: 'hard', category: '発展的手法' }
+    { id: 'adv-1', question: 'ARIMA(p,d,q)モデルの d は何を表すか。', options: ['AR次数', '差分の階数', 'MA次数', '季節周期'], correct: 1, difficulty: 'medium', category: '発展的手法', explanation: 'ARIMA(p,d,q)でpはAR次数、dは差分の階数、qはMA次数。dは非定常な時系列を定常にするための差分回数です。d=1なら1階差分をとります。' },
+    { id: 'adv-4', question: 'AICを最小化する意味はどれか。', options: ['過学習を防ぎつつ当てはまりを良くする', '計算量を減らす', '解釈を容易にする', '外れ値の影響を減らす'], correct: 0, difficulty: 'medium', category: '発展的手法', explanation: 'AIC = -2×対数尤度 + 2×パラメータ数。当てはまりの良さ（対数尤度）とモデルの複雑さ（パラメータ数）のバランスをとり、予測性能を重視したモデル選択ができます。' },
+    { id: 'adv-6', question: 'Leave-One-Out交差検証の特徴はどれか。', options: ['計算が高速', '分散が小さい', 'ほぼ不偏だが分散が大きい', 'データ数によらず5分割'], correct: 2, difficulty: 'medium', category: '発展的手法', explanation: 'LOOCVはn個のデータで各1個を検証用にするためn回学習が必要（計算コスト大）。訓練データが重複するため、推定値の相関が高く分散が大きくなりますが、ほぼ不偏です。' },
+    { id: 'adv-7', question: 'MCMCの主な用途はどれか。', options: ['最尤推定', '事後分布からのサンプリング', '仮説検定', '主成分分析'], correct: 1, difficulty: 'hard', category: '発展的手法', explanation: 'MCMC（マルコフ連鎖モンテカルロ法）はベイズ統計で事後分布からサンプルを生成するのに使います。メトロポリス法やギブスサンプリングが代表的なアルゴリズムです。' },
+    { id: 'adv-9', question: 'モンテカルロ積分で推定されるものはどれか。', options: ['最大値', '期待値（積分）', '分散', 'モード'], correct: 1, difficulty: 'hard', category: '発展的手法', explanation: 'モンテカルロ積分は $E[g(X)] = \\int g(x)f(x)dx$ を、$f(x)$からのサンプル平均 $\\frac{1}{n}\\sum g(X_i)$ で近似します。解析的に積分できない場合に有用です。' }
   ]
 };
 
@@ -336,7 +336,8 @@ function submitExam() {
       correctAnswer: q.correct,
       isCorrect: isCorrect,
       category: q.category,
-      difficulty: q.difficulty
+      difficulty: q.difficulty,
+      explanation: q.explanation || ''
     });
   });
 
@@ -407,6 +408,14 @@ function submitExam() {
 
     if (result.userAnswer === undefined) {
       breakdownHtml += '<div style="color: #999; font-style: italic; margin-top: 8px;">未回答</div>';
+    }
+
+    // 解説を表示
+    if (result.explanation) {
+      breakdownHtml += '<div style="margin-top: 16px; padding: 16px; background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 0 8px 8px 0;">';
+      breakdownHtml += '<div style="font-weight: 600; color: #1e40af; margin-bottom: 8px;">📝 解説</div>';
+      breakdownHtml += '<div style="color: #334155; line-height: 1.7;">' + result.explanation + '</div>';
+      breakdownHtml += '</div>';
     }
 
     breakdownHtml += '</div></div>';
