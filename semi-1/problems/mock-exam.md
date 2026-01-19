@@ -413,7 +413,7 @@ function submitExam() {
     // 解説を表示
     if (result.explanation) {
       breakdownHtml += '<div style="margin-top: 16px; padding: 16px; background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 0 8px 8px 0;">';
-      breakdownHtml += '<div style="font-weight: 600; color: #1e40af; margin-bottom: 8px;">📝 解説</div>';
+      breakdownHtml += '<div style="font-weight: 600; color: #1e40af; margin-bottom: 8px;">解説</div>';
       breakdownHtml += '<div style="color: #334155; line-height: 1.7;">' + result.explanation + '</div>';
       breakdownHtml += '</div>';
     }
