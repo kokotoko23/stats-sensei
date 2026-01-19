@@ -33,7 +33,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>条件付き確率、ベイズの定理、母関数、積率</p>
 </div>
@@ -43,7 +43,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-1">基本</span>
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>ガンマ分布、ベータ分布、カイ二乗分布、極限定理</p>
 </div>
@@ -52,7 +52,7 @@ permalink: /semi-1/problems/
 <h3><a href="{{ site.baseurl }}/semi-1/problems/stochastic/">確率過程の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>マルコフ連鎖、ポアソン過程、定常分布</p>
 </div>
@@ -70,7 +70,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>最尤推定、十分統計量、フィッシャー情報量、CRLB</p>
 </div>
@@ -80,7 +80,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>尤度比検定、UMP検定、多重検定</p>
 </div>
@@ -89,7 +89,7 @@ permalink: /semi-1/problems/
 <h3><a href="{{ site.baseurl }}/semi-1/problems/design/">実験計画・調査の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>分散分析、多重比較、標本調査法</p>
 </div>
@@ -106,7 +106,7 @@ permalink: /semi-1/problems/
 <h3><a href="{{ site.baseurl }}/semi-1/problems/regression/">回帰分析の問題</a></h3>
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>重回帰、正則化、GLM、生存時間分析</p>
 </div>
@@ -116,7 +116,7 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>主成分分析、判別分析、クラスター分析、因子分析</p>
 </div>
@@ -134,9 +134,27 @@ permalink: /semi-1/problems/
 <div class="meta">
 <span class="difficulty-badge difficulty-2">標準</span>
 <span class="difficulty-badge difficulty-3">発展</span>
-<span class="time-estimate">5問</span>
+<span class="time-estimate">10問</span>
 </div>
 <p>時系列解析、ベイズ統計、モデル選択、ブートストラップ</p>
+</div>
+
+</div>
+
+<div class="category-section">
+<div class="category-header">
+<h2>模擬試験</h2>
+<span class="category-stats">本番形式で腕試し</span>
+</div>
+
+<div class="problem-card">
+<h3><a href="{{ site.baseurl }}/semi-1/problems/mock-exam/">模擬試験モード</a></h3>
+<div class="meta">
+<span class="difficulty-badge difficulty-2">標準</span>
+<span class="essential-badge">NEW</span>
+<span class="time-estimate">20問・30分</span>
+</div>
+<p>全分野からランダムに出題。制限時間付きで本番さながらの練習ができます。</p>
 </div>
 
 </div>

@@ -632,6 +632,203 @@
       color: #666;
       margin-left: auto;
     }
+
+    /* 模擬試験モード */
+    .mock-exam-setup {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 32px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .mock-exam-setup h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+    .mock-exam-options {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .mock-exam-option {
+      padding: 16px 24px;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 140px;
+    }
+    .mock-exam-option:hover {
+      border-color: var(--primary-color);
+    }
+    .mock-exam-option.selected {
+      border-color: var(--primary-color);
+      background: #f0fdf4;
+    }
+    .mock-exam-option .option-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    .mock-exam-option .option-desc {
+      font-size: 13px;
+      color: #666;
+    }
+    .mock-exam-start {
+      padding: 16px 48px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mock-exam-start:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(21, 153, 87, 0.3);
+    }
+    .mock-exam-timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: 2px solid var(--primary-color);
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      display: none;
+    }
+    .mock-exam-timer.active {
+      display: block;
+    }
+    .mock-exam-timer .timer-label {
+      font-size: 12px;
+      color: #666;
+    }
+    .mock-exam-timer .timer-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    .mock-exam-timer.warning .timer-value {
+      color: var(--difficulty-medium);
+    }
+    .mock-exam-timer.danger .timer-value {
+      color: var(--difficulty-hard);
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .mock-exam-progress {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: white;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      display: none;
+    }
+    .mock-exam-progress.active {
+      display: block;
+    }
+    .mock-exam-progress .progress-label {
+      font-size: 12px;
+      color: #666;
+    }
+    .mock-exam-progress .progress-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+    }
+    .mock-exam-submit {
+      text-align: center;
+      margin: 32px 0;
+      display: none;
+    }
+    .mock-exam-submit.active {
+      display: block;
+    }
+    .mock-exam-submit button {
+      padding: 16px 48px;
+      background: var(--difficulty-hard);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .mock-exam-results {
+      background: white;
+      border: 2px solid var(--primary-color);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 24px 0;
+      text-align: center;
+      display: none;
+    }
+    .mock-exam-results.active {
+      display: block;
+    }
+    .mock-exam-results .result-score {
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    .mock-exam-results .result-detail {
+      font-size: 18px;
+      color: #666;
+      margin: 16px 0;
+    }
+    .mock-exam-results .result-time {
+      font-size: 14px;
+      color: #999;
+    }
+    .mock-exam-question-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 24px 0;
+      padding: 16px;
+      background: var(--bg-light);
+      border-radius: 8px;
+    }
+    .mock-exam-question-nav .nav-item {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mock-exam-question-nav .nav-item:hover {
+      border-color: var(--primary-color);
+    }
+    .mock-exam-question-nav .nav-item.answered {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+    .mock-exam-question-nav .nav-item.current {
+      border-color: var(--difficulty-medium);
+      box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+    }
   </style>
   {% include head-custom.html %}
 </head>
