@@ -137,20 +137,21 @@ description: 統計検定準1級の対策コンテンツ。理論解説と問題
 <div class="category-section" markdown="1">
 <div class="category-header" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
 <h2>問題演習</h2>
-<span class="category-stats">選択式問題で実力チェック</span>
+<span class="category-stats">選択式問題で実力チェック（計90問）</span>
 </div>
 
 試験形式に合わせた選択式問題で理解度を確認しましょう。
 
-- [確率論の問題]({{ site.baseurl }}/semi-1/problems/probability/)（条件付き確率、ベイズ、母関数）
-- [確率分布の問題]({{ site.baseurl }}/semi-1/problems/distributions/)（ガンマ、ベータ、極限定理）
-- [確率過程の問題]({{ site.baseurl }}/semi-1/problems/stochastic/)（マルコフ連鎖、ポアソン過程）
-- [推定の問題]({{ site.baseurl }}/semi-1/problems/estimation/)（MLE、十分統計量、CRLB）
-- [検定の問題]({{ site.baseurl }}/semi-1/problems/testing/)（尤度比検定、UMP、多重検定）
-- [実験計画・調査の問題]({{ site.baseurl }}/semi-1/problems/design/)（分散分析、多重比較、標本調査）
-- [回帰分析の問題]({{ site.baseurl }}/semi-1/problems/regression/)（重回帰、正則化、GLM）
-- [多変量解析の問題]({{ site.baseurl }}/semi-1/problems/multivariate/)（PCA、判別、クラスター）
-- [発展的手法の問題]({{ site.baseurl }}/semi-1/problems/advanced/)（時系列、ベイズ、モデル選択）
+- [確率論の問題]({{ site.baseurl }}/semi-1/problems/probability/)（10問：条件付き確率、ベイズ、母関数）
+- [確率分布の問題]({{ site.baseurl }}/semi-1/problems/distributions/)（10問：ガンマ、ベータ、極限定理）
+- [確率過程の問題]({{ site.baseurl }}/semi-1/problems/stochastic/)（10問：マルコフ連鎖、ポアソン過程）
+- [推定の問題]({{ site.baseurl }}/semi-1/problems/estimation/)（10問：MLE、十分統計量、CRLB）
+- [検定の問題]({{ site.baseurl }}/semi-1/problems/testing/)（10問：尤度比検定、UMP、多重検定）
+- [実験計画・調査の問題]({{ site.baseurl }}/semi-1/problems/design/)（10問：分散分析、多重比較、標本調査）
+- [回帰分析の問題]({{ site.baseurl }}/semi-1/problems/regression/)（10問：重回帰、正則化、GLM）
+- [多変量解析の問題]({{ site.baseurl }}/semi-1/problems/multivariate/)（10問：PCA、判別、クラスター）
+- [発展的手法の問題]({{ site.baseurl }}/semi-1/problems/advanced/)（10問：時系列、ベイズ、モデル選択）
+- **[模擬試験モード]({{ site.baseurl }}/semi-1/problems/mock-exam/)**（全分野からランダム出題、制限時間付き）
 
 [すべての問題を見る →]({{ site.baseurl }}/semi-1/problems/)
 
